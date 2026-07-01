@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solutions | JieLabs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0d0e12;
+      --bg-container: #16181f;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent-cyan: #00f5d4;
+      --border-color: #1f2937;
+      --bg-card: rgba(255, 255, 255, 0.02);
+    }
+    * { box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    body { background-color: var(--bg-dark); color: var(--text-main); margin: 0; padding: 0; line-height: 1.7; }
+    
+    .jl-header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-color); background-color: rgba(13, 14, 18, 0.8); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 100; }
+    .jl-logo { text-decoration: none; font-size: 1.5rem; letter-spacing: -0.05em; }
+    .logo-bold { color: var(--text-main); font-weight: 800; }
+    .logo-light { color: var(--text-muted); font-weight: 300; }
+    .logo-cursor { color: var(--accent-cyan); font-weight: 800; }
+    .jl-nav { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
+    .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s ease; }
+    .nav-link:hover { color: var(--text-main); }
+    .nav-link.active { color: var(--accent-cyan); }
+
+    .content-container { max-width: 900px; margin: 60px auto; padding: 40px; background-color: var(--bg-container); border: 1px solid var(--border-color); border-radius: 12px; }
+    h1 { font-size: 2.5rem; font-weight: 800; margin: 0 0 5px 0; letter-spacing: -0.03em; }
+    .subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 40px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
+    
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
+    .card { background: var(--bg-card); border: 1px solid var(--border-color); padding: 25px; border-radius: 8px; }
+    .card h3 { margin-top: 0; color: var(--text-main); font-size: 1.3rem; }
+    .card p { color: var(--text-muted); margin-bottom: 0; }
+
+    .policy-footer { text-align: center; padding: 40px 20px 0 20px; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--border-color); margin-top: 60px; }
+    .footer-links { margin-bottom: 15px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .footer-link { color: var(--text-muted); text-decoration: none; }
+    .footer-link:hover { color: var(--accent-cyan); }
+  </style>
+</head>
+<body>
+  <header class="jl-header">
+    <a href="index.html" class="jl-logo"><span class="logo-bold">Jie</span><span class="logo-light">Labs</span><span class="logo-cursor">_</span></a>
+    <nav class="jl-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="solutions.html" class="nav-link active">Solutions</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="company.html" class="nav-link">Company</a>
+      <a href="developers.html" class="nav-link">Developers</a>
+      <a href="security.html" class="nav-link">Security</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+  </header>
+  <main class="content-container">
+    <h1>Enterprise Solutions</h1>
+    <div class="subtitle">Architectural alignments built for high-reliability ecosystems.</div>
+    <p>We configure edge computing, intelligence parsing, and operational system integrations designed to minimize structural latency and secure absolute data integrity.</p>
+    
+    <div class="grid">
+      <div class="card">
+        <h3>Healthcare Integration</h3>
+        <p>Connecting complex hospital data pipelines and custom internal networks securely without relying on third-party cloud aggregators.</p>
+      </div>
+      <div class="card">
+        <h3>Zero-Trust Frameworks</h3>
+        <p>Hardening enterprise software layers against vulnerability vectors using localized sandboxing and isolated memory bounds.</p>
+      </div>
+    </div>
+
+    <footer class="policy-footer">
+      <div class="footer-links">
+        <a href="privacy.html" class="footer-link">Privacy Policy</a> | 
+        <a href="terms.html" class="footer-link">Terms of Service</a> | 
+        <a href="security.html" class="footer-link">Security Framework</a>
+      </div>
+      <div>&copy; 2026 JieLabs. All rights reserved.</div>
+    </footer>
+  </main>
+</body>
+</html>
