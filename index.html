@@ -24,7 +24,6 @@
       line-height: 1.7;
     }
 
-    /* Enterprise Navigation */
     .jl-header {
       display: flex;
       justify-content: space-between;
@@ -59,9 +58,9 @@
       transition: color 0.2s;
     }
     .nav-link:hover { color: var(--text-main); }
+    .nav-link.active { color: var(--text-main); font-weight: 700; }
     .nav-link.highlight { color: var(--accent-cyan); }
 
-    /* Corporate Hero Section */
     .hero-section {
       text-align: center;
       padding: 80px 20px 60px 20px;
@@ -120,7 +119,6 @@
       border-color: var(--text-muted);
     }
 
-    /* Core Solutions Focus */
     .solutions-section {
       max-width: 1000px;
       margin: 40px auto 80px auto;
@@ -159,7 +157,6 @@
       font-size: 0.95rem;
     }
 
-    /* Enterprise Products Catalog */
     .products-section {
       max-width: 1000px;
       margin: 40px auto 100px auto;
@@ -197,7 +194,6 @@
       max-width: 600px;
     }
 
-    /* Corporate Footer */
     .corporate-footer {
       background-color: #090a0d;
       border-top: 1px solid var(--border-color);
@@ -213,69 +209,31 @@
       flex-wrap: wrap;
       gap: 40px;
     }
-    .footer-brand h4 {
-      margin: 0 0 8px 0;
-      font-size: 1.25rem;
-    }
-    .footer-division {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-    .footer-nav {
-      display: flex;
-      gap: 40px;
-    }
-    .footer-column h5 {
-      color: var(--text-main);
-      margin: 0 0 15px 0;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .footer-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .footer-list li {
-      margin-bottom: 10px;
-    }
-    .footer-list a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.2s;
-    }
-    .footer-list a:hover {
-      color: var(--accent-cyan);
-    }
-    .footer-bottom {
-      max-width: 1000px;
-      margin: 40px auto 0 auto;
-      padding-top: 25px;
-      border-top: 1px solid var(--border-color);
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
+    .footer-brand h4 { margin: 0 0 8px 0; font-size: 1.25rem; }
+    .footer-division { font-size: 0.85rem; color: var(--text-muted); }
+    .footer-nav { display: flex; gap: 40px; }
+    .footer-column h5 { color: var(--text-main); margin: 0 0 15px 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .footer-list { list-style: none; padding: 0; margin: 0; }
+    .footer-list li { margin-bottom: 10px; }
+    .footer-list a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-list a:hover { color: var(--accent-cyan); }
+    .footer-bottom { max-width: 1000px; margin: 40px auto 0 auto; padding-top: 25px; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.85rem; color: var(--text-muted); }
   </style>
 </head>
 <body>
 
-  <!-- Main Navigation Layout -->
   <header class="jl-header">
     <a href="index.html" class="jl-logo">
       <span class="logo-bold">Jie</span><span class="logo-light">Labs</span><span class="logo-cursor">_</span>
     </a>
     <nav class="jl-nav">
-      <a href="index.html" class="nav-link" style="color: var(--text-main);">Home</a>
+      <a href="index.html" class="nav-link active">Home</a>
       <a href="architecture.html" class="nav-link">Solutions</a>
-      <a href="architecture.html" class="nav-link">Products</a>
+      <a href="product.html" class="nav-link">Products</a>
       <a href="https://developer.jielabs.com" class="nav-link highlight">Developers</a>
     </nav>
   </header>
 
-  <!-- Hero Branding -->
   <section class="hero-section">
     <div class="hero-logo-center">
       <span class="logo-bold">Jie</span><span class="logo-light">Labs</span><span class="logo-cursor">_</span>
@@ -286,12 +244,11 @@
       JieLabs builds secure AI-powered software systems that help organizations automate repetitive work, improve accuracy, and run complex operations with less manual effort.
     </p>
     <div class="cta-group">
-      <a href="https://developer.jielabs.com" class="cta-btn primary">Request Enterprise Consultation</a>
+      <a href="contact.html" class="cta-btn primary">Request Enterprise Consultation</a>
       <a href="architecture.html" class="cta-btn">View System Specs</a>
     </div>
   </section>
 
-  <!-- Core Problem Solving Layout -->
   <section class="solutions-section">
     <div class="section-header">What We Solve</div>
     <div class="solutions-grid">
@@ -306,7 +263,6 @@
     </div>
   </section>
 
-  <!-- Product Portfolio -->
   <section class="products-section">
     <div class="section-header">Our Software Architecture Portfolio</div>
 
@@ -343,7 +299,6 @@
     </div>
   </section>
 
-  <!-- Structured Corporate Footer (Updated Links) -->
   <footer class="corporate-footer">
     <div class="footer-container">
       <div class="footer-brand">
@@ -354,16 +309,16 @@
         <div class="footer-column">
           <h5>Trust &amp; Governance</h5>
           <ul class="footer-list">
-            <li><a href="https://developer.jielabs.com">Privacy Policy</a></li>
-            <li><a href="https://developer.jielabs.com">Terms of Service</a></li>
-            <li><a href="architecture.html">Security</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="security.html">Security</a></li>
           </ul>
         </div>
         <div class="footer-column">
           <h5>Resources</h5>
           <ul class="footer-list">
-            <li><a href="https://developer.jielabs.com">Support</a></li>
-            <li><a href="https://developer.jielabs.com">Contact</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="contact.html">Contact</a></li>
             <li><a href="https://developer.jielabs.com" target="_blank">Developer Center</a></li>
           </ul>
         </div>
