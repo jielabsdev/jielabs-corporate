@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JieLabs | System Specifications Architecture</title>
+  <style>
+    :root {
+      --bg-dark: #0d0e12;
+      --bg-container: #16181f;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent-cyan: #00f5d4;
+      --accent-blue: #38bdf8;
+      --border-color: #1f2937;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    /* Shared Navigation */
+    .jl-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border-color);
+      background-color: rgba(13, 14, 18, 0.8);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .jl-logo { text-decoration: none; font-size: 1.5rem; letter-spacing: -0.05em; }
+    .logo-bold { color: var(--text-main); font-weight: 800; }
+    .logo-light { color: var(--text-muted); font-weight: 300; }
+    .logo-cursor { color: var(--accent-cyan); font-weight: 800; }
+    .jl-nav { display: flex; gap: 1.75rem; flex-wrap: wrap; }
+    .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-link:hover { color: var(--text-main); }
+
+    /* Layout Wrapper */
+    .spec-container {
+      max-width: 900px;
+      margin: 60px auto 100px auto;
+      padding: 0 20px;
+    }
+
+    .spec-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .spec-header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 10px;
+    }
+    .spec-subtitle {
+      color: var(--accent-cyan);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* System Block Rows */
+    .system-block {
+      background-color: var(--bg-container);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+    .system-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+    }
+    .system-title-row h2 {
+      margin: 0;
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+    .engine-tag {
+      background-color: rgba(0, 245, 212, 0.07);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(0, 245, 212, 0.3);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    /* Specs Matrix */
+    .spec-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      row-gap: 12px;
+      column-gap: 20px;
+      font-size: 0.95rem;
+    }
+    .spec-label {
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .spec-value {
+      color: var(--text-main);
+    }
+
+    /* Corporate Footer */
+    .corporate-footer { background-color: #090a0d; border-top: 1px solid var(--border-color); padding: 40px 20px; margin-top: 120px; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+  <header class="jl-header">
+    <a href="https://jielabsdev.github.io/index.html" class="jl-logo">
+      <span class="logo-bold">Jie</span><span class="logo-light">Labs</span><span class="logo-cursor">_</span>
+    </a>
+    <nav class="jl-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">Solutions</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="about.html" class="nav-link">Company</a>
+      <a href="developer.html" class="nav-link">Developers</a>
+      <a href="security.html" class="nav-link">Security</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <div class="spec-container">
+    <div class="spec-header">
+      <span class="spec-subtitle">Operational Specifications</span>
+      <h1>System Architectures</h1>
+    </div>
+
+    <!-- VHS HOS Section -->
+    <div class="system-block">
+      <div class="system-title-row">
+        <h2>VHS HOS Matrix</h2>
+        <span class="engine-tag">Production Engine</span>
+      </div>
+      <div class="spec-grid">
+        <div class="spec-label">Environment Class</div>
+        <div class="spec-value">Healthcare Operating System Layer</div>
+        
+        <div class="spec-label">Orchestration Target</div>
+        <div class="spec-value">Clinical state synchronization & administrative pipelines</div>
+        
+        <div class="spec-label">Security Parameters</div>
+        <div class="spec-value">Deterministic validation check-points & execution isolation</div>
+        
+        <div class="spec-label">Integration State</div>
+        <div class="spec-value">Inter-operable engine configured for automated tracking pipelines</div>
+      </div>
+    </div>
+
+    <!-- Apeiron Core Section -->
+    <div class="system-block">
+      <div class="system-title-row">
+        <h2>Apeiron Core Specifications</h2>
+        <span class="engine-tag">Core Engine</span>
+      </div>
+      <div class="spec-grid">
+        <div class="spec-label">Core Paradigm</div>
+        <div class="spec-value">Deterministic Execution Infrastructure</div>
+        
+        <div class="spec-label">Task State Routing</div>
+        <div class="spec-value">Synchronous state orchestration logic running natively</div>
+        
+        <div class="spec-label">Integrations Matrix</div>
+        <div class="spec-value">Extensible connector pipelines for context-aware co-pilots (VEDA)</div>
+        
+        <div class="spec-label">Reliability Index</div>
+        <div class="spec-value">Absolute operational fault containment and token isolation</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="corporate-footer">
+    <div>&copy; 2026 JieLabs. All rights reserved. A division of Pristine Total Care Services LLC.</div>
+  </footer>
+
+</body>
+</html>
