@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JieLabs | Request Enterprise Consultation</title>
+  <style>
+    :root {
+      --bg-dark: #0d0e12;
+      --bg-container: #16181f;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent-cyan: #00f5d4;
+      --accent-blue: #38bdf8;
+      --border-color: #1f2937;
+      --input-bg: #111319;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    /* Shared Navigation */
+    .jl-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border-color);
+      background-color: rgba(13, 14, 18, 0.8);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .jl-logo { text-decoration: none; font-size: 1.5rem; letter-spacing: -0.05em; }
+    .logo-bold { color: var(--text-main); font-weight: 800; }
+    .logo-light { color: var(--text-muted); font-weight: 300; }
+    .logo-cursor { color: var(--accent-cyan); font-weight: 800; }
+    .jl-nav { display: flex; gap: 1.75rem; flex-wrap: wrap; }
+    .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-link:hover { color: var(--text-main); }
+    .nav-link.highlight { color: var(--accent-cyan); }
+
+    /* Layout Wrapper */
+    .page-container {
+      max-width: 700px;
+      margin: 60px auto 100px auto;
+      padding: 0 20px;
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .form-header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 10px;
+    }
+    .form-subtitle {
+      color: var(--accent-blue);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .form-desc {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    /* Enterprise Form Control */
+    .consultation-form {
+      background-color: var(--bg-container);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 40px;
+    }
+    .form-group {
+      margin-bottom: 25px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 640px) { .form-row { grid-template-columns: 1fr; } }
+    
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    input, select, textarea {
+      width: 100%;
+      background-color: var(--input-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 0.85rem;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent-blue);
+    }
+    
+    .submit-btn {
+      width: 100%;
+      background-color: rgba(56, 189, 248, 0.05);
+      color: var(--text-main);
+      border: 1px solid var(--accent-blue);
+      padding: 1rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s, border-color 0.2s;
+    }
+    .submit-btn:hover {
+      background-color: rgba(56, 189, 248, 0.15);
+    }
+
+    /* Corporate Footer */
+    .corporate-footer { background-color: #090a0d; border-top: 1px solid var(--border-color); padding: 40px 20px; margin-top: 120px; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+  <header class="jl-header">
+    <a href="https://jielabsdev.github.io/index.html" class="jl-logo">
+      <span class="logo-bold">Jie</span><span class="logo-light">Labs</span><span class="logo-cursor">_</span>
+    </a>
+    <nav class="jl-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">Solutions</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="about.html" class="nav-link">Company</a>
+      <a href="developer.html" class="nav-link">Developers</a>
+      <a href="security.html" class="nav-link">Security</a>
+      <a href="contact.html" class="nav-link highlight">Contact</a>
+    </nav>
+  </header>
+
+  <div class="page-container">
+    <div class="form-header">
+      <span class="form-subtitle">Secure Gateway</span>
+      <h1>Enterprise Consultation</h1>
+      <p class="form-desc">Initiate formal project vetting parameters. Our solutions engineering team will respond securely within 24 operational business hours.</p>
+    </div>
+
+    <form class="consultation-form" onsubmit="event.preventDefault(); alert('Consultation parameters submitted securely.');">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" required placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label for="email">Corporate Email</label>
+          <input type="email" id="email" required placeholder="j.doe@enterprise.com">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="organization">Organization</label>
+          <input type="text" id="organization" required placeholder="Company Name LLC">
+        </div>
+        <div class="form-group">
+          <label for="architecture">Primary System Context</label>
+          <select id="architecture">
+            <option value="vhs">VHS HOS Integration</option>
+            <option value="veda">VEDA Deployment</option>
+            <option value="apeiron">Apeiron Core Infrastructure</option>
+            <option value="custom">Custom Semantic Processing</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="scope">Operational Mission / Scope of Needs</label>
+        <textarea id="scope" rows="5" required placeholder="Describe the operational friction, compliance parameters, or automation requirements..."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Initialize Engagement Protocol</button>
+    </form>
+  </div>
+
+  <footer class="corporate-footer">
+    <div>&copy; 2026 JieLabs. All rights reserved. A division of Pristine Total Care Services LLC.</div>
+  </footer>
+
+</body>
+</html>
