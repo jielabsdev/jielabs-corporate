@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JieLabs | Request Enterprise Consultation</title>
+  <title>Enterprise Consultation | JieLabs</title>
   <style>
     :root {
       --bg-dark: #0d0e12;
@@ -13,7 +13,11 @@
       --accent-cyan: #00f5d4;
       --accent-blue: #38bdf8;
       --border-color: #1f2937;
-      --input-bg: #111319;
+      --input-bg: #1e222b;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
@@ -25,7 +29,7 @@
       line-height: 1.7;
     }
 
-    /* Shared Navigation */
+    /* Universal Header matching index.html, security.html, and developers.html */
     .jl-header {
       display: flex;
       justify-content: space-between;
@@ -38,105 +42,216 @@
       top: 0;
       z-index: 100;
     }
-    .jl-logo { text-decoration: none; font-size: 1.5rem; letter-spacing: -0.05em; }
+    .jl-logo {
+      text-decoration: none;
+      font-size: 1.5rem;
+      letter-spacing: -0.05em;
+    }
     .logo-bold { color: var(--text-main); font-weight: 800; }
     .logo-light { color: var(--text-muted); font-weight: 300; }
     .logo-cursor { color: var(--accent-cyan); font-weight: 800; }
-    .jl-nav { display: flex; gap: 1.75rem; flex-wrap: wrap; }
-    .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    
+    .jl-nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
     .nav-link:hover { color: var(--text-main); }
-    .nav-link.highlight { color: var(--accent-cyan); }
+    .nav-link.active { color: var(--text-main); font-weight: 700; }
 
-    /* Layout Wrapper */
-    .page-container {
-      max-width: 700px;
-      margin: 60px auto 100px auto;
-      padding: 0 20px;
+    /* Layout Containers */
+    .contact-container { 
+      max-width: 1000px; 
+      margin: 60px auto 100px auto; 
+      padding: 0 20px; 
     }
-
-    .form-header {
-      text-align: center;
-      margin-bottom: 40px;
+    
+    .contact-header { 
+      text-align: center; 
+      margin-bottom: 50px; 
     }
-    .form-header h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      margin-bottom: 10px;
+    .contact-header h1 { 
+      font-size: 2.5rem; 
+      font-weight: 800; 
+      letter-spacing: -0.04em; 
+      margin-bottom: 10px; 
     }
-    .form-subtitle {
+    .contact-subtitle {
+      font-size: 1.25rem;
       color: var(--accent-blue);
-      font-size: 0.95rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+      font-weight: 600;
+      max-width: 800px;
+      margin: 0 auto 25px auto;
     }
-    .form-desc {
+    
+    .intro-text {
       color: var(--text-muted);
       font-size: 1.1rem;
+      max-width: 850px;
+      margin: 0 auto 40px auto;
+      text-align: center;
     }
 
-    /* Enterprise Form Control */
+    /* Flex Grid Layout for Form and Info split */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 50px;
+      margin-top: 40px;
+    }
+    @media (max-width: 850px) { .contact-grid { grid-template-columns: 1fr; gap: 60px; } }
+
+    /* Consultation Form Styles */
     .consultation-form {
       background-color: var(--bg-container);
       border: 1px solid var(--border-color);
-      border-radius: 8px;
       padding: 40px;
+      border-radius: 8px;
+    }
+    .form-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 25px;
+      color: var(--text-main);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 10px;
     }
     .form-group {
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-    @media (max-width: 640px) { .form-row { grid-template-columns: 1fr; } }
-    
-    label {
+    .form-group label {
       display: block;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-muted);
       margin-bottom: 8px;
+      color: var(--text-main);
     }
-    input, select, textarea {
+    .form-group input, .form-group select, .form-group textarea {
       width: 100%;
       background-color: var(--input-bg);
       border: 1px solid var(--border-color);
+      border-radius: 4px;
+      padding: 12px 16px;
       color: var(--text-main);
-      padding: 0.85rem;
-      border-radius: 6px;
       font-size: 0.95rem;
-      box-sizing: border-box;
       font-family: inherit;
       transition: border-color 0.2s;
     }
-    input:focus, select:focus, textarea:focus {
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
       outline: none;
       border-color: var(--accent-blue);
     }
-    
     .submit-btn {
-      width: 100%;
-      background-color: rgba(56, 189, 248, 0.05);
-      color: var(--text-main);
-      border: 1px solid var(--accent-blue);
-      padding: 1rem;
-      border-radius: 6px;
+      background-color: transparent;
+      color: var(--accent-cyan);
+      border: 1px solid var(--accent-cyan);
+      padding: 14px 28px;
       font-size: 1rem;
-      font-weight: 600;
+      font-weight: 700;
+      border-radius: 4px;
       cursor: pointer;
-      transition: background-color 0.2s, border-color 0.2s;
+      width: 100%;
+      transition: background-color 0.2s;
     }
     .submit-btn:hover {
-      background-color: rgba(56, 189, 248, 0.15);
+      background-color: rgba(0, 245, 212, 0.05);
     }
 
-    /* Corporate Footer */
-    .corporate-footer { background-color: #090a0d; border-top: 1px solid var(--border-color); padding: 40px 20px; margin-top: 120px; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
+    /* Enterprise Details & Contact Blocks */
+    .info-section-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-main);
+      margin-top: 0;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 8px;
+    }
+    .info-block {
+      margin-bottom: 30px;
+    }
+    .info-block h4 {
+      margin: 0 0 4px 0;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .info-email {
+      font-family: monospace;
+      font-size: 0.95rem;
+      color: var(--accent-blue);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+    .info-email:hover { text-decoration: underline; }
+    .info-desc {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .meta-text {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin: 0 0 8px 0;
+    }
+    .meta-highlight {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* Social Links Matrix */
+    .link-matrix {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .matrix-link {
+      font-size: 0.9rem;
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .matrix-link:hover { text-decoration: underline; }
+
+    /* Corporate Footer matching index.html, security.html, and developers.html */
+    .corporate-footer {
+      background-color: #090a0d;
+      border-top: 1px solid var(--border-color);
+      padding: 60px 20px 40px 20px;
+      margin-top: 120px;
+    }
+    .footer-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .footer-brand h4 { margin: 0 0 8px 0; font-size: 1.25rem; }
+    .footer-division { font-size: 0.85rem; color: var(--text-muted); }
+    .footer-nav { display: flex; gap: 40px; }
+    .footer-column h5 { color: var(--text-main); margin: 0 0 15px 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .footer-list { list-style: none; padding: 0; margin: 0; }
+    .footer-list li { margin-bottom: 10px; }
+    .footer-list a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-list a:hover { color: var(--accent-cyan); }
+    .footer-bottom { max-width: 1000px; margin: 40px auto 0 auto; padding-top: 25px; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.85rem; color: var(--text-muted); }
   </style>
 </head>
 <body>
@@ -156,52 +271,158 @@
     </nav>
   </header>
 
-  <div class="page-container">
-    <div class="form-header">
-      <span class="form-subtitle">Secure Gateway</span>
-      <h1>Enterprise Consultation</h1>
-      <p class="form-desc">Initiate formal project vetting parameters. Our solutions engineering team will respond securely within 24 operational business hours.</p>
+  <main class="contact-container">
+    <div class="contact-header">
+      <h1>Start Your Enterprise Transformation</h1>
+      <div class="contact-subtitle">Enterprise Consultation</div>
     </div>
+    
+    <p class="intro-text">
+      Whether you are evaluating HOS, planning an enterprise deployment, or exploring isolated operational automation, our engineering team will work with you to analyze your system goals and map out a reliable architecture. We typically respond within one business day.
+    </p>
 
-    <form class="consultation-form" onsubmit="event.preventDefault(); alert('Consultation parameters submitted securely.');">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" required placeholder="John Doe">
-        </div>
-        <div class="form-group">
-          <label for="email">Corporate Email</label>
-          <input type="email" id="email" required placeholder="j.doe@enterprise.com">
-        </div>
-      </div>
+    <div class="contact-grid">
+      <!-- Consultation Form Block -->
+      <section>
+        <form class="consultation-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Consultation request received. Our engineering team will contact you within one business day.');">
+          <div class="form-title">Consultation Form</div>
+          
+          <div class="form-group">
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" name="full-name" placeholder="Jane Smith" required />
+          </div>
 
-      <div class="form-row">
-        <div class="form-group">
-          <label for="organization">Organization</label>
-          <input type="text" id="organization" required placeholder="Company Name LLC">
-        </div>
-        <div class="form-group">
-          <label for="architecture">Primary System Context</label>
-          <select id="architecture">
-            <option value="vhs">VHS HOS Integration</option>
-            <option value="veda">VEDA Deployment</option>
-            <option value="apeiron">Apeiron Core Infrastructure</option>
-            <option value="custom">Custom Semantic Processing</option>
-          </select>
-        </div>
-      </div>
+          <div class="form-group">
+            <label for="business-email">Business Email</label>
+            <input type="email" id="business-email" name="business-email" placeholder="jsmith@organization.com" required />
+          </div>
 
-      <div class="form-group">
-        <label for="scope">Operational Mission / Scope of Needs</label>
-        <textarea id="scope" rows="5" required placeholder="Describe the operational friction, compliance parameters, or automation requirements..."></textarea>
-      </div>
+          <div class="form-group">
+            <label for="organization">Organization</label>
+            <input type="text" id="organization" name="organization" placeholder="Organization Name" required />
+          </div>
 
-      <button type="submit" class="submit-btn">Initialize Engagement Protocol</button>
-    </form>
-  </div>
+          <div class="form-group">
+            <label for="industry">Industry</label>
+            <select id="industry" name="industry" required>
+              <option value="" disabled selected>Select your industry</option>
+              <option value="healthcare">Healthcare</option>
+              <option value="government">Government</option>
+              <option value="enterprise">Enterprise</option>
+              <option value="professional-services">Professional Services</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="help-type">How can we help?</label>
+            <select id="help-type" name="help-type" required>
+              <option value="" disabled selected>Select your primary inquiry</option>
+              <option value="learn-hos">Learn about HOS</option>
+              <option value="schedule-demo">Schedule a Demo</option>
+              <option value="request-consult">Request Enterprise Consultation</option>
+              <option value="systems-integration">Systems Integration</option>
+              <option value="ai-solutions">AI Solutions</option>
+              <option value="security-review">Security Review</option>
+              <option value="partnership">Partnership Opportunity</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="project-details">Tell us about your project</label>
+            <textarea id="project-details" name="project-details" rows="5" placeholder="Provide a brief summary of your system timeline or operational challenges..." required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Request a Consultation</button>
+        </form>
+      </section>
+
+      <!-- Structural Sidebar Contact Info Blocks -->
+      <aside>
+        <div class="info-section-title">Contact Information</div>
+        
+        <div class="info-block">
+          <h4>General Information</h4>
+          <a href="mailto:info@jielabs.com" class="info-email">info@jielabs.com</a>
+          <p class="info-desc">General questions regarding JieLabs architecture and platforms.</p>
+        </div>
+
+        <div class="info-block">
+          <h4>Sales &amp; Enterprise</h4>
+          <a href="mailto:partnerships@jielabs.com" class="info-email">partnerships@jielabs.com</a>
+          <p class="info-desc">Platform demonstrations, baseline deployments, and enterprise license options.</p>
+        </div>
+
+        <div class="info-block">
+          <h4>Developer Relations</h4>
+          <a href="mailto:developer@jielabs.com" class="info-email">developer@jielabs.com</a>
+          <p class="info-desc">Sandbox configuration, internal integrations, open-source projects, and technical documentation.</p>
+        </div>
+
+        <div class="info-block">
+          <h4>Customer Support</h4>
+          <a href="mailto:support@jielabs.com" class="info-email">support@jielabs.com</a>
+          <p class="info-desc">Technical assistance and client onboarding support desks.</p>
+        </div>
+
+        <div class="info-block">
+          <h4>Security Desk</h4>
+          <a href="mailto:security@jielabs.com" class="info-email">security@jielabs.com</a>
+          <p class="info-desc">Responsible vulnerability disclosure and infrastructural security-related inquiries.</p>
+        </div>
+
+        <div class="info-section-title" style="margin-top: 40px;">Headquarters</div>
+        <div class="info-block">
+          <p class="meta-text">Based in <span class="meta-highlight">Florida, USA</span></p>
+          <p class="info-desc">Serving enterprise organizations throughout the United States. Office location visits are available exclusively by appointment.</p>
+        </div>
+
+        <div class="info-section-title" style="margin-top: 40px;">Business Hours</div>
+        <div class="info-block">
+          <p class="meta-text"><span class="meta-highlight">Monday – Friday</span></p>
+          <p class="meta-text">9:00 AM – 5:00 PM Eastern Time</p>
+          <p class="info-desc" style="font-style: italic;">Emergency coverage is continuously monitored for active enterprise SLA accounts.</p>
+        </div>
+
+        <div class="info-section-title" style="margin-top: 40px;">Connect With JieLabs</div>
+        <div class="link-matrix">
+          <a href="https://github.com" class="matrix-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://linkedin.com" class="matrix-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="developers.html" class="matrix-link">Developer Center</a>
+        </div>
+      </aside>
+    </div>
+  </main>
 
   <footer class="corporate-footer">
-    <div>&copy; 2026 JieLabs. All rights reserved. A division of Pristine Total Care Services LLC.</div>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4><span class="logo-bold">Jie</span><span class="logo-light">Labs</span></h4>
+        <p class="footer-division">A division of Pristine Total Care Services LLC.</p>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-column">
+          <h5>Trust &amp; Governance</h5>
+          <ul class="footer-list">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="security.html">Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h5>Resources</h5>
+          <ul class="footer-list">
+            <li><a href="support.html">Support</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="developers.html">Developer Center</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 JieLabs. All rights reserved. Operational Runtimes Sovereign.</div>
+    </div>
   </footer>
 
 </body>
