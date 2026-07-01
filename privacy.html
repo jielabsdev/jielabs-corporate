@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | JieLabs</title>
+  <style>
+    :root {
+      --bg-dark: #0d0e12;
+      --bg-container: #16181f;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent-cyan: #00f5d4;
+      --accent-blue: #38bdf8;
+      --border-color: #1f2937;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    /* Universal Header */
+    .jl-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border-color);
+      background-color: rgba(13, 14, 18, 0.8);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .jl-logo { text-decoration: none; font-size: 1.5rem; letter-spacing: -0.05em; }
+    .logo-bold { color: var(--text-main); font-weight: 800; }
+    .logo-light { color: var(--text-muted); font-weight: 300; }
+    .logo-cursor { color: var(--accent-cyan); font-weight: 800; }
+
+    .jl-nav { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
+    .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s ease; }
+    .nav-link:hover { color: var(--text-main); }
+
+    /* Layout Container */
+    .policy-container {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 40px;
+      background-color: var(--bg-container);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; margin: 0 0 5px 0; }
+    .policy-subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 40px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
+    
+    h2 { font-size: 1.4rem; font-weight: 700; margin-top: 40px; margin-bottom: 15px; color: var(--text-main); }
+    p, ul { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 20px; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    strong { color: var(--text-main); }
+
+    .compliance-box {
+      background: rgba(56, 189, 248, 0.03);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      padding: 20px;
+      border-radius: 6px;
+      margin: 25px 0;
+    }
+
+    /* Footer Links */
+    .policy-footer {
+      text-align: center;
+      padding: 40px 20px 0 20px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      margin-top: 60px;
+    }
+    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 15px; }
+    .footer-link { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .footer-link:hover { color: var(--accent-cyan); }
+    .footer-divider { color: var(--border-color); }
+
+    @media (max-width: 768px) {
+      .policy-container { margin: 20px; padding: 24px; }
+      h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="jl-header">
+    <div class="jl-logo-container">
+      <a href="index.html" class="jl-logo">
+        <span class="logo-bold">JIE</span><span class="logo-light">labs</span><span class="logo-cursor">_</span>
+      </a>
+    </div>
+    <nav class="jl-nav">
+      <a href="about.html" class="nav-link">About</a>
+      <a href="architecture.html" class="nav-link">Architecture</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="developer.html" class="nav-link">Dev Portal</a>
+      <a href="security.html" class="nav-link">Security</a>
+      <a href="support.html" class="nav-link">Support</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <main class="policy-container">
+    <h1>Privacy Policy</h1>
+    <div class="policy-subtitle">Last Updated: June 2026 // Sovereign Runtime Principles</div>
+
+    <p>
+      At JieLabs, we build localized, deterministic software architectures engineered to safeguard data integrity. Your computational footprint and administrative operational profiles are restricted under zero-trust safety bounds.
+    </p>
+
+    <div class="compliance-box">
+      <strong>Sovereign Data Mandate:</strong> JieLabs vertical frameworks (including VHS HOS architectural sandbox environments) process operational inputs through local compute layers. Internal data loops pass fluidly within host memory parameters rather than utilizing centralized third-party data-mining clouds.
+    </div>
+
+    <h2>1. Information We Coordinate</h2>
+    <p>
+      Because our primary systems run on localized sandboxes, we only collect or process transactional variables necessary to maintain core stability and account authorization:
+    </p>
+    <ul>
+      <li><strong>Identity Records:</strong> Standard telemetry metadata, basic contact portals, and authorization parameters managed directly via your core profile setup.</li>
+      <li><strong>Telemetry Logs:</strong> High-reliability run-state metrics used strictly by our background monitors (such as ProofScope) to guarantee system execution pathways do not drift.</li>
+    </ul>
+
+    <h2>2. Processing Guardrails &amp; Third Parties</h2>
+    <p>
+      We do not trade, sell, or rent your processing profiles. When interacting with critical industry ecosystems (including staging structures for external EHR/EMR pipelines or sandbox integrations), data transitions are isolated exclusively to pre-validated, cryptographically linked pathways.
+    </p>
+
+    <h2>3. Security Architecture &amp; Storage Boundaries</h2>
+    <p>
+      Every downstream product inherits physical and digital isolation barriers enforced by <strong>Apeiron Core</strong> layers. Information is securely retained inside protected environmental pools to prevent cross-tenant data leakage or unauthorized edge parsing.
+    </p>
+
+    <h2>4. Your Governance Rights</h2>
+    <p>
+      You maintain absolute command over your infrastructure states. You may audit, scrub, or completely wipe deployment tokens and stored configurations directly through your local dashboard node at any point.
+    </p>
+
+    <footer class="policy-footer">
+      <div class="footer-links">
+        <a href="privacy.html" class="footer-link">Privacy Policy</a>
+        <span class="footer-divider">|</span>
+        <a href="terms.html" class="footer-link">Terms of Service</a>
+        <span class="footer-divider">|</span>
+        <a href="security.html" class="footer-link">Security Framework</a>
+      </div>
+      <div>&copy; 2026 JieLabs. All rights reserved. System Runtimes Sovereign.</div>
+    </footer>
+  </main>
+
+</body>
+</html>
