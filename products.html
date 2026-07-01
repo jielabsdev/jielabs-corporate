@@ -3,11 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JieLabs | Products Portfolio Catalog</title>
-  <!-- Explicitly importing the Inter font family -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Platforms &amp; Technologies | JieLabs</title>
   <style>
     :root {
       --bg-dark: #0d0e12;
@@ -21,18 +17,18 @@
 
     * {
       box-sizing: border-box;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
     body {
       background-color: var(--bg-dark);
       color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.7;
     }
 
-    /* Universal Header matching image_34621a.png */
+    /* Universal Header matching index.html exactly */
     .jl-header {
       display: flex;
       justify-content: space-between;
@@ -45,29 +41,62 @@
       top: 0;
       z-index: 100;
     }
-    .jl-logo { text-decoration: none; font-size: 1.5rem; letter-spacing: -0.05em; }
+    .jl-logo { 
+      text-decoration: none; 
+      font-size: 1.5rem; 
+      letter-spacing: -0.05em; 
+    }
     .logo-bold { color: var(--text-main); font-weight: 800; }
     .logo-light { color: var(--text-muted); font-weight: 300; }
     .logo-cursor { color: var(--accent-cyan); font-weight: 800; }
     
-    .jl-nav { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
-    .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s ease; }
+    .jl-nav { 
+      display: flex; 
+      gap: 1.5rem; 
+      flex-wrap: wrap; 
+      align-items: center; 
+    }
+    .nav-link { 
+      color: var(--text-muted); 
+      text-decoration: none; 
+      font-size: 0.9rem; 
+      font-weight: 500; 
+      transition: color 0.2s ease; 
+    }
     .nav-link:hover { color: var(--text-main); }
-    .nav-link.active { color: var(--accent-cyan); font-weight: 700; }
+    .nav-link.active { color: var(--text-main); font-weight: 700; }
+    .nav-link.highlight { color: var(--accent-cyan); }
 
-    /* Layout Content styling from original file */
+    /* Layout Portfolio Container */
     .catalog-container { max-width: 1000px; margin: 60px auto 100px auto; padding: 0 20px; }
-    .catalog-header { text-align: center; margin-bottom: 50px; }
+    .catalog-header { text-align: center; margin-bottom: 60px; }
     .catalog-header h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.04em; margin-bottom: 10px; }
     
-    .product-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 30px 0; border-bottom: 1px solid var(--border-color); }
-    @media (max-width: 640px) { .product-row { flex-direction: column; gap: 10px; } }
-    .product-meta { min-width: 250px; }
-    .product-meta h3 { margin: 0 0 4px 0; font-size: 1.4rem; font-weight: 700; }
-    .product-tag { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-blue); }
-    .product-desc { color: var(--text-muted); margin: 0; font-size: 1rem; max-width: 600px; }
+    /* Section Classification Headers */
+    .section-category {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+      margin: 50px 0 20px 0;
+      letter-spacing: -0.02em;
+    }
+    .section-intro {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 30px;
+      max-width: 800px;
+    }
 
-    /* Corporate Footer styling from original file */
+    /* Structured Product Rows */
+    .product-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 30px 0; border-bottom: 1px solid var(--border-color); }
+    @media (max-width: 640px) { .product-row { flex-direction: column; gap: 12px; } }
+    .product-meta { min-width: 280px; padding-right: 20px; }
+    .product-meta h3 { margin: 0 0 4px 0; font-size: 1.4rem; font-weight: 700; color: var(--text-main); }
+    .product-tag { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); display: block; margin-bottom: 6px; }
+    .product-status { font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 0.05em; }
+    .product-desc { color: var(--text-muted); margin: 0; font-size: 1rem; max-width: 620px; flex-grow: 1; }
+
+    /* Corporate Footer matching layout specs */
     .corporate-footer { background-color: #090a0d; border-top: 1px solid var(--border-color); padding: 60px 20px 40px 20px; margin-top: 120px; }
     .footer-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px; }
     .footer-brand h4 { margin: 0 0 8px 0; font-size: 1.25rem; }
@@ -83,7 +112,6 @@
 </head>
 <body>
 
-  <!-- Updated to include the unified 7 tabs -->
   <header class="jl-header">
     <a href="index.html" class="jl-logo">
       <span class="logo-bold">Jie</span><span class="logo-light">Labs</span><span class="logo-cursor">_</span>
@@ -99,43 +127,80 @@
     </nav>
   </header>
 
-  <section class="catalog-container">
+  <main class="catalog-container">
     <div class="catalog-header">
-      <h1>Software Engine Catalog</h1>
+      <h1>Platforms &amp; Technologies</h1>
     </div>
 
+    <!-- Tier 1: Software Platforms -->
+    <div class="section-category">Software Platforms</div>
+    
     <div class="product-row">
       <div class="product-meta">
-        <h3>VHS HOS</h3>
+        <h3>HOS</h3>
         <span class="product-tag">Healthcare Operating System</span>
+        <span class="product-status">Production Platform</span>
       </div>
-      <p class="product-desc">Optimizes complex administrative pipelines, clinical task tracking, and medical operational frameworks safely.</p>
+      <p class="product-desc">An enterprise healthcare operations platform that unifies patient intake, scheduling, provider coordination, billing, payroll automation, and operational intelligence into one secure ecosystem.</p>
     </div>
 
     <div class="product-row">
       <div class="product-meta">
-        <h3>VEDA</h3>
-        <span class="product-tag">Intelligent Operations Assistant</span>
+        <h3>VEDA Intelligence</h3>
+        <span class="product-tag">Enterprise Operations Assistant</span>
+        <span class="product-status">Integrated Intelligence Layer</span>
       </div>
-      <p class="product-desc">A context-aware system orchestration co-pilot tailored to run securely within explicit corporate boundaries.</p>
+      <p class="product-desc">A private AI operations assistant that provides contextual guidance, workflow automation, document intelligence, and decision support while operating entirely within your organization's secure infrastructure.</p>
     </div>
+
+    <!-- Tier 2: Core Technology -->
+    <div class="section-category" style="margin-top: 60px;">Core Technology</div>
 
     <div class="product-row">
       <div class="product-meta">
         <h3>Apeiron Core</h3>
         <span class="product-tag">Deterministic Orchestration Engine</span>
+        <span class="product-status">Core Technology</span>
       </div>
-      <p class="product-desc">The high-reliability foundational engine driving private systems integration and predictable run-state executions.</p>
+      <p class="product-desc">The foundational execution engine that powers every JieLabs platform, delivering deterministic workflow orchestration, secure systems integration, and high-reliability enterprise automation.</p>
+    </div>
+
+    <!-- Tier 3: Open Source Technologies -->
+    <div class="section-category" style="margin-top: 60px;">Open Source Technologies</div>
+    <p class="section-intro">JieLabs actively contributes foundational infrastructure to the open-source community. These projects provide secure building blocks for developers creating reliable AI and enterprise systems.</p>
+
+    <div class="product-row">
+      <div class="product-meta">
+        <h3>Subjectus</h3>
+        <span class="product-tag">AI Governance Framework</span>
+      </div>
+      <p class="product-desc">A policy-driven Human-in-the-Loop (HITL) governance framework that validates autonomous AI decisions before execution, improving operational safety and oversight.</p>
     </div>
 
     <div class="product-row">
       <div class="product-meta">
-        <h3>ASCE</h3>
-        <span class="product-tag">Semantic Compression Research Engine</span>
+        <h3>ProofScope</h3>
+        <span class="product-tag">Verification &amp; Audit Platform</span>
       </div>
-      <p class="product-desc">Advanced data processing architecture engineered for token optimization and high-fidelity background parsing.</p>
+      <p class="product-desc">Enterprise-grade cryptographic verification and audit infrastructure that transforms proof artifacts into verifiable, tamper-evident compliance records.</p>
     </div>
-  </section>
+
+    <div class="product-row">
+      <div class="product-meta">
+        <h3>BeaconNode</h3>
+        <span class="product-tag">Agent Resource Discovery Engine</span>
+      </div>
+      <p class="product-desc">A decentralized service discovery framework that enables intelligent agents to locate services, resources, and capabilities across distributed environments.</p>
+    </div>
+
+    <div class="product-row">
+      <div class="product-meta">
+        <h3>IronCircuit</h3>
+        <span class="product-tag">AI Safety Framework</span>
+      </div>
+      <p class="product-desc">A lightweight protection layer that prevents runaway costs, unauthorized execution, and unsafe behavior in autonomous AI systems through real-time policy enforcement.</p>
+    </div>
+  </main>
 
   <footer class="corporate-footer">
     <div class="footer-container">
