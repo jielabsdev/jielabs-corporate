@@ -3,11 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Security | JieLabs</title>
-  <!-- Explicitly importing the Inter font family to resolve text styling from image_345a7b.png -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Security &amp; Trust | JieLabs</title>
   <style>
     :root {
       --bg-dark: #0d0e12;
@@ -17,127 +13,395 @@
       --accent-cyan: #00f5d4;
       --accent-blue: #38bdf8;
       --border-color: #1f2937;
-      --bg-card: rgba(255, 255, 255, 0.02);
     }
 
     * {
       box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
     }
 
     body {
       background-color: var(--bg-dark);
       color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.7;
     }
 
-    /* Universal Header matching image_345a5a.png */
-    .jl-header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-color); background-color: rgba(13, 14, 18, 0.8); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 100; }
-    .jl-logo { text-decoration: none; font-size: 1.5rem; letter-spacing: -0.05em; }
+    /* Universal Header matching index.html and developers.html exactly */
+    .jl-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border-color);
+      background-color: rgba(13, 14, 18, 0.8);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .jl-logo {
+      text-decoration: none;
+      font-size: 1.5rem;
+      letter-spacing: -0.05em;
+    }
     .logo-bold { color: var(--text-main); font-weight: 800; }
     .logo-light { color: var(--text-muted); font-weight: 300; }
     .logo-cursor { color: var(--accent-cyan); font-weight: 800; }
     
-    .jl-nav { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
-    .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s ease; }
+    .jl-nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
     .nav-link:hover { color: var(--text-main); }
-    .nav-link.active { color: var(--accent-cyan); }
+    .nav-link.active { color: var(--text-main); font-weight: 700; }
 
-    .sec-container { max-width: 850px; margin: 60px auto; padding: 40px; background-color: var(--bg-container); border: 1px solid var(--border-color); border-radius: 12px; }
-    h1 { font-size: 2.5rem; font-weight: 800; margin: 0 0 5px 0; letter-spacing: -0.03em; color: var(--text-main); }
-    .sec-subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 40px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
+    /* Layout Containers */
+    .sec-container { 
+      max-width: 1000px; 
+      margin: 60px auto 100px auto; 
+      padding: 0 20px; 
+    }
     
-    h2 { font-size: 1.4rem; font-weight: 700; margin-top: 40px; margin-bottom: 15px; color: var(--text-main); display: flex; align-items: center; letter-spacing: -0.02em; }
-    h2::before { content: ">"; color: var(--accent-cyan); margin-right: 10px; font-family: monospace; font-weight: 800; }
+    .sec-header { 
+      text-align: center; 
+      margin-bottom: 50px; 
+    }
+    .sec-header h1 { 
+      font-size: 2.5rem; 
+      font-weight: 800; 
+      letter-spacing: -0.04em; 
+      margin-bottom: 10px; 
+    }
+    .sec-subtitle {
+      font-size: 1.25rem;
+      color: var(--accent-blue);
+      font-weight: 600;
+      max-width: 800px;
+      margin: 0 auto 25px auto;
+    }
     
-    p, ul { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 20px; }
-    ul { padding-left: 20px; }
-    li { margin-bottom: 10px; }
-    strong { color: var(--text-main); }
+    .intro-text {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 850px;
+      margin: 0 auto 40px auto;
+      text-align: center;
+    }
 
-    .vulnerability-box { border: 1px solid rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.03); padding: 24px; border-radius: 8px; margin-top: 30px; }
-    .vulnerability-box h3 { margin-top: 0; color: #ef4444; font-size: 1.15rem; font-weight: 700; }
+    .section-header {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 50px 0 25px 0;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
+      color: var(--text-main);
+    }
 
-    .policy-footer { text-align: center; padding: 40px 20px 0 20px; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--border-color); margin-top: 60px; }
-    .footer-links { margin-bottom: 15px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-    .footer-link { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-    .footer-link:hover { color: var(--accent-cyan); }
-    .footer-divider { color: var(--border-color); }
+    /* Core Pillars Layout */
+    .pillar-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 25px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+    @media (max-width: 768px) { .pillar-row { flex-direction: column; gap: 10px; } }
+    
+    .pillar-meta { min-width: 280px; }
+    .pillar-meta h3 { margin: 0; font-size: 1.3rem; font-weight: 700; color: var(--text-main); }
+    .pillar-meta span { font-size: 0.8rem; color: var(--accent-blue); font-family: monospace; font-weight: 600; }
+    
+    .pillar-content { max-width: 650px; color: var(--text-muted); font-size: 1rem; margin: 0; }
+    .pillar-content ul { margin: 15px 0 0 0; padding-left: 20px; }
+    .pillar-content li { margin-bottom: 6px; }
 
-    @media (max-width: 768px) { .sec-container { margin: 20px; padding: 24px; } h1 { font-size: 2rem; } }
+    /* Security Matrix Table */
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 40px 0;
+      background-color: var(--bg-container);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .matrix-table th, .matrix-table td {
+      padding: 15px 20px;
+      text-align: left;
+    }
+    .matrix-table th {
+      background-color: rgba(255, 255, 255, 0.02);
+      color: var(--text-main);
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-bottom: 2px solid var(--border-color);
+    }
+    .matrix-table td {
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.95rem;
+    }
+    .matrix-table tr:last-child td { border-bottom: none; }
+    .feature-name { font-weight: 600; color: var(--text-main); display: flex; align-items: center; gap: 8px; }
+    .feature-desc { color: var(--text-muted); }
+
+    /* Security Contact Box */
+    .sec-contact-block {
+      background-color: var(--bg-container);
+      border: 1px solid var(--border-color);
+      padding: 40px;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 60px;
+    }
+    .sec-contact-block h3 { margin-top: 0; margin-bottom: 10px; font-size: 1.4rem; }
+    .sec-contact-block p { color: var(--text-muted); margin-bottom: 20px; max-width: 700px; margin-left: auto; margin-right: auto; }
+    .sec-email { font-family: monospace; font-size: 1.1rem; color: var(--accent-cyan); text-decoration: none; font-weight: 600; }
+
+    /* Corporate Footer matching index.html and developers.html exactly */
+    .corporate-footer {
+      background-color: #090a0d;
+      border-top: 1px solid var(--border-color);
+      padding: 60px 20px 40px 20px;
+      margin-top: 120px;
+    }
+    .footer-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .footer-brand h4 { margin: 0 0 8px 0; font-size: 1.25rem; }
+    .footer-division { font-size: 0.85rem; color: var(--text-muted); }
+    .footer-nav { display: flex; gap: 40px; }
+    .footer-column h5 { color: var(--text-main); margin: 0 0 15px 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .footer-list { list-style: none; padding: 0; margin: 0; }
+    .footer-list li { margin-bottom: 10px; }
+    .footer-list a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-list a:hover { color: var(--accent-cyan); }
+    .footer-bottom { max-width: 1000px; margin: 40px auto 0 auto; padding-top: 25px; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.85rem; color: var(--text-muted); }
   </style>
 </head>
 <body>
 
   <header class="jl-header">
-    <div class="jl-logo-container">
-      <a href="index.html" class="jl-logo">
-        <span class="logo-bold">Jie</span><span class="logo-light">Labs</span><span class="logo-cursor">_</span>
-      </a>
-    </div>
+    <a href="index.html" class="jl-logo">
+      <span class="logo-bold">Jie</span><span class="logo-light">Labs</span><span class="logo-cursor">_</span>
+    </a>
     <nav class="jl-nav">
       <a href="index.html" class="nav-link">Home</a>
       <a href="solutions.html" class="nav-link">Solutions</a>
-      <a href="products.html" class="nav-link">Products</a>
+      <a href="products.html" class="nav-link">Platforms &amp; Technologies</a>
       <a href="company.html" class="nav-link">Company</a>
-      <a href="developers.html" class="nav-link">Developers</a>
+      <a href="developers.html" class="nav-link">Developer Center</a>
       <a href="security.html" class="nav-link active">Security</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </nav>
   </header>
 
   <main class="sec-container">
-    <h1>Security Posture &amp; Architecture</h1>
-    <div class="sec-subtitle">Zero-Trust Directives, System Sandboxing &amp; Data Hardening Protocols</div>
-
-    <h2>Zero-Trust Local Execution Bounds</h2>
-    <p>
-      JieLabs platforms enforce a rigorous structural security approach. Our environments isolate operational memory spaces completely, assuming any lateral network vector could be subject to compromise:
-    </p>
-    <ul>
-      <li><strong>Isolated Micro-Sandboxing:</strong> Core runtime workflows operate within closed environment scopes, blocking unmapped read/write requests from exploring file system roots.</li>
-      <li><strong>Encrypted Local Configurations:</strong> High-security parameters, connection configurations, and systemic keys are protected locally using verified cryptographic layers rather than exposed text variables.</li>
-      <li><strong>Role-Based Approval Gates:</strong> Downstream operations are locked behind strict credential criteria, blocking execution tasks from firing unless authentications match explicit role profiles.</li>
-    </ul>
-
-    <h2>Immutable Verification Logging</h2>
-    <p>
-      System telemetry registers every transaction state change instantly. The internal ledger records interactions into a tamper-resistant local log array, guaranteeing that administrative teams maintain clear transparency for diagnostic audits.
+    <div class="sec-header">
+      <h1>Security &amp; Trust</h1>
+      <div class="sec-subtitle">Enterprise Security Built Into Every Platform</div>
+    </div>
+    
+    <p class="intro-text">
+      Security is not an add-on at JieLabs—it is a foundational design principle. Every platform we build is engineered to protect sensitive information, maintain operational integrity, and support organizations operating in highly regulated, mission-critical environments. Our architecture emphasizes data sovereignty, private infrastructure, least-privilege access, and continuous operational verification.
     </p>
 
-    <h2>Sovereign Data Protection &amp; Recovery</h2>
-    <p>
-      Client databases retain absolute, uncompromised structural data isolation:
-    </p>
-    <ul>
-      <li><strong>Absolute Data Ownership:</strong> Client data blocks pass strictly through localized memory lanes and are never stored or reviewed by JieLabs.</li>
-      <li><strong>Disaster Recovery Snapshots:</strong> Runtimes build localized, encrypted system snapshots, allowing configurations to recover smoothly if severe local host faults occur.</li>
-    </ul>
+    <div class="section-header">Core Security Architecture Pillars</div>
 
-    <div class="vulnerability-box">
-      <h3>Responsible Disclosure &amp; Vulnerability Protocol</h3>
-      <p style="margin-bottom: 15px; font-size: 0.95rem;">
-        JieLabs values proactive technical defense. If you are a security researcher or system engineer who has discovered an execution anomaly, connection weakness, or logic drift vector, contact us immediately.
-      </p>
-      <p style="margin: 0; font-size: 0.95rem;">
-        Secure Vulnerability Channel: <a href="mailto:jielabs.dev@gmail.com" style="color: #ef4444; font-weight: bold; text-decoration: underline;">jielabs.dev@gmail.com</a><br />
-        <em>Protocol Agreement: We request that developers avoid disclosing security details publicly until our engineering response team has evaluated the logs and deployed necessary updates.</em>
-      </p>
+    <!-- Data Sovereignty -->
+    <div class="pillar-row">
+      <div class="pillar-meta">
+        <h3>Data Sovereignty</h3>
+        <span>Data Guardrail</span>
+      </div>
+      <div class="pillar-content">
+        Organizations should never lose ownership of their operational data. JieLabs platforms are designed to support deployments where business-critical information remains within the organization's own infrastructure, allowing customers to maintain total control over how their data is stored, processed, protected, and governed.
+      </div>
     </div>
 
-    <footer class="policy-footer">
-      <div class="footer-links">
-        <a href="privacy.html" class="footer-link">Privacy Policy</a>
-        <span class="footer-divider">|</span>
-        <a href="terms.html" class="footer-link">Terms of Service</a>
-        <span class="footer-divider">|</span>
-        <a href="security.html" class="footer-link">Security Framework</a>
+    <!-- Private by Design -->
+    <div class="pillar-row">
+      <div class="pillar-meta">
+        <h3>Private by Design</h3>
+        <span>Infrastructure Control</span>
       </div>
-      <div>&copy; 2026 JieLabs. All rights reserved. System Runtimes Sovereign.</div>
-    </footer>
+      <div class="pillar-content">
+        Your organization's data belongs to you. JieLabs solutions are designed to operate within your own secure perimeter whenever possible, allowing networks to maintain complete ownership and control of operational files. We do not build platforms that depend on transmitting confidential business information to public third-party AI services.
+      </div>
+    </div>
+
+    <!-- Zero-Trust Security -->
+    <div class="pillar-row">
+      <div class="pillar-meta">
+        <h3>Zero-Trust Security</h3>
+        <span>Continuous Verification</span>
+      </div>
+      <div class="pillar-content">
+        Our platforms operate under a rigid zero-trust framework: every request is verified, every user is authenticated, and every action is authorized. This is consistently maintained across:
+        <ul>
+          <li>Role-Based Access Control (RBAC)</li>
+          <li>Least-Privilege Authorization mappings</li>
+          <li>Secure Session Management loops</li>
+          <li>Protected Administrative Operations boundaries</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Data Protection -->
+    <div class="pillar-row">
+      <div class="pillar-meta">
+        <h3>Data Protection</h3>
+        <span>Information Integrity</span>
+      </div>
+      <div class="pillar-content">
+        Protecting sensitive information is fundamental to every deployment. Our architectural parameters natively support encrypted communications, encrypted environment configuration management, secure credential storage, private infrastructure deployment layouts, and robust data isolation between distinct system clients.
+      </div>
+    </div>
+
+    <!-- Audit & Compliance -->
+    <div class="pillar-row">
+      <div class="pillar-meta">
+        <h3>Audit &amp; Compliance</h3>
+        <span>Operational Visibility</span>
+      </div>
+      <div class="pillar-content">
+        Organizations operating in regulated spaces require complete operational transparency. JieLabs platforms offer comprehensive tracking layers to support internal reviews, compliance reporting, and operational diagnostics:
+        <ul>
+          <li>Immutable audit logging configurations</li>
+          <li>Granular historical activity logs</li>
+          <li>Administrative and configuration event tracking</li>
+          <li>Isolated operational telemetry pipelines</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Business Continuity -->
+    <div class="pillar-row">
+      <div class="pillar-meta">
+        <h3>Business Continuity</h3>
+        <span>System Resilience</span>
+      </div>
+      <div class="pillar-content">
+        Reliable software must continue operating smoothly when unexpected infrastructure events occur. Our platforms support automated backup strategies, encrypted recovery snapshots, high-availability deployment models, and systemic failure safeguards to ensure operational resilience.
+      </div>
+    </div>
+
+    <!-- AI Security -->
+    <div class="pillar-row">
+      <div class="pillar-meta">
+        <h3>AI Security</h3>
+        <span>Isolated Intelligence</span>
+      </div>
+      <div class="pillar-content">
+        Artificial Intelligence should operate securely inside your organization—not outside it. Where appropriate, JieLabs explicitly supports private, local AI deployments that allow organizations to leverage advanced, intelligent workflows without exposing proprietary data records to public large language models.
+      </div>
+    </div>
+
+    <div class="section-header">Security Principles</div>
+    <p class="intro-text" style="text-align: left; margin: 0 0 30px 0; font-size: 1.05rem;">
+      Every engineering decision across our division follows five guiding structural guidelines:
+    </p>
+    <div class="pillar-row"><div class="pillar-meta">Security by Design</div><p class="pillar-content">Security is deeply built into the core structural architecture—never patched on as an after-thought.</p></div>
+    <div class="pillar-row"><div class="pillar-meta">Privacy by Default</div><p class="pillar-content">Organizations maintain baseline custody and complete operational visibility of their own information assets.</p></div>
+    <div class="pillar-row"><div class="pillar-meta">Least Privilege</div><p class="pillar-content">Every automated user, process, and background service receives only the exact minimum scope of permissions required to execute its tasks.</p></div>
+    <div class="pillar-row"><div class="pillar-meta">Continuous Verification</div><p class="pillar-content">Access authorizations are continuously validated throughout system lifetimes rather than trusting a single perimeter entry check.</p></div>
+    <div class="pillar-row"><div class="pillar-meta">Defense in Depth</div><p class="pillar-content">Multiple administrative, network, and execution layers work in tandem to insulate your operational pipelines from risk.</p></div>
+
+    <div class="section-header">Security Capabilities Matrix</div>
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="feature-name">🔒 End-to-End Encryption</td>
+          <td class="feature-desc">Protects sensitive enterprise communications and active system configurations.</td>
+        </tr>
+        <tr>
+          <td class="feature-name">🛡️ Zero-Trust Architecture</td>
+          <td class="feature-desc">Enforces continuous validation of users, system processes, and network connections.</td>
+        </tr>
+        <tr>
+          <td class="feature-name">👤 Role-Based Access Control</td>
+          <td class="feature-desc">Delivers granular permission management rulesets for secure system operations.</td>
+        </tr>
+        <tr>
+          <td class="feature-name">📜 Immutable Audit Logs</td>
+          <td class="feature-desc">Maintains clear, reliable visibility into administrative changes and user activity histories.</td>
+        </tr>
+        <tr>
+          <td class="feature-name">🖥️ On-Premises Deployment</td>
+          <td class="feature-desc">Allows teams to host environments locally, retaining full authority over network infrastructure.</td>
+        </tr>
+        <tr>
+          <td class="feature-name">🤖 Private AI Support</td>
+          <td class="feature-desc">Runs intelligent model parsing entirely within your organization's own secure boundary.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="section-header">Responsible Disclosure</div>
+    <p class="intro-text" style="text-align: left; margin: 0 0 20px 0; font-size: 1.05rem;">
+      JieLabs values responsible security research and coordinated vulnerability disclosure. If you discover a potential vulnerability, configuration weakness, or unexpected behavior in our open-source tools or platforms, we kindly request that you notify our team privately.
+    </p>
+    <p class="intro-text" style="text-align: left; margin: 0; font-size: 1.05rem;">
+      We ask that security researchers avoid public disclosures until our technical desk has investigated the report and implemented appropriate remediation steps.
+    </p>
+
+    <div class="sec-contact-block">
+      <h3>Contact Security Desk</h3>
+      <p>Submit cryptographic inquiries, security audit requests, or coordinated vulnerability reports directly to:</p>
+      <a href="mailto:security@jielabs.com" class="sec-email">security@jielabs.com</a>
+    </div>
   </main>
+
+  <footer class="corporate-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4><span class="logo-bold">Jie</span><span class="logo-light">Labs</span></h4>
+        <p class="footer-division">A division of Pristine Total Care Services LLC</p>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-column">
+          <h5>Trust &amp; Governance</h5>
+          <ul class="footer-list">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="security.html">Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h5>Resources</h5>
+          <ul class="footer-list">
+            <li><a href="support.html">Support</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="developers.html">Developer Center</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 JieLabs. All rights reserved. Operational Runtimes Sovereign.</div>
+    </div>
+  </footer>
 
 </body>
 </html>
