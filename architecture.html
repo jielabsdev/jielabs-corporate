@@ -24,7 +24,6 @@
       line-height: 1.7;
     }
 
-    /* Shared Navigation */
     .jl-header {
       display: flex;
       justify-content: space-between;
@@ -44,141 +43,34 @@
     .jl-nav { display: flex; gap: 1.75rem; flex-wrap: wrap; }
     .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
     .nav-link:hover { color: var(--text-main); }
+    .nav-link.active { color: var(--text-main); font-weight: 700; }
+    .nav-link.highlight { color: var(--accent-cyan); }
 
-    /* Layout Wrapper */
-    .spec-container {
-      max-width: 900px;
-      margin: 60px auto 100px auto;
-      padding: 0 20px;
-    }
+    .spec-container { max-width: 900px; margin: 60px auto 100px auto; padding: 0 20px; }
+    .spec-header { text-align: center; margin-bottom: 50px; }
+    .spec-header h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.04em; margin-bottom: 10px; }
+    .spec-subtitle { color: var(--accent-cyan); font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
 
-    .spec-header {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-    .spec-header h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      margin-bottom: 10px;
-    }
-    .spec-subtitle {
-      color: var(--accent-cyan);
-      font-size: 0.95rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
+    .system-block { background-color: var(--bg-container); border: 1px solid var(--border-color); border-radius: 8px; padding: 30px; margin-bottom: 30px; }
+    .system-title-row { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; margin-bottom: 20px; }
+    .system-title-row h2 { margin: 0; font-size: 1.6rem; font-weight: 700; }
+    .engine-tag { background-color: rgba(0, 245, 212, 0.07); color: var(--accent-cyan); border: 1px solid rgba(0, 245, 212, 0.3); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
 
-    /* System Block Rows */
-    .system-block {
-      background-color: var(--bg-container);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 30px;
-      margin-bottom: 30px;
-    }
-    .system-title-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 15px;
-      margin-bottom: 20px;
-    }
-    .system-title-row h2 {
-      margin: 0;
-      font-size: 1.6rem;
-      font-weight: 700;
-    }
-    .engine-tag {
-      background-color: rgba(0, 245, 212, 0.07);
-      color: var(--accent-cyan);
-      border: 1px solid rgba(0, 245, 212, 0.3);
-      padding: 4px 10px;
-      border-radius: 4px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
+    .spec-grid { display: grid; grid-template-columns: 1fr 2fr; row-gap: 12px; column-gap: 20px; font-size: 0.95rem; }
+    .spec-label { color: var(--text-muted); font-weight: 600; }
+    .spec-value { color: var(--text-main); }
 
-    /* Specs Matrix */
-    .spec-grid {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      row-gap: 12px;
-      column-gap: 20px;
-      font-size: 0.95rem;
-    }
-    .spec-label {
-      color: var(--text-muted);
-      font-weight: 600;
-    }
-    .spec-value {
-      color: var(--text-main);
-    }
-
-    /* Corporate Footer Components */
-    .corporate-footer {
-      background-color: #090a0d;
-      border-top: 1px solid var(--border-color);
-      padding: 60px 20px 40px 20px;
-      margin-top: 120px;
-    }
-    .footer-container {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 40px;
-    }
-    .footer-brand h4 {
-      margin: 0 0 8px 0;
-      font-size: 1.25rem;
-    }
-    .footer-division {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-    .footer-nav {
-      display: flex;
-      gap: 40px;
-    }
-    .footer-column h5 {
-      color: var(--text-main);
-      margin: 0 0 15px 0;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .footer-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .footer-list li {
-      margin-bottom: 10px;
-    }
-    .footer-list a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.2s;
-    }
-    .footer-list a:hover {
-      color: var(--accent-cyan);
-    }
-    .footer-bottom {
-      max-width: 900px;
-      margin: 40px auto 0 auto;
-      padding-top: 25px;
-      border-top: 1px solid var(--border-color);
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
+    .corporate-footer { background-color: #090a0d; border-top: 1px solid var(--border-color); padding: 60px 20px 40px 20px; margin-top: 120px; }
+    .footer-container { max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px; }
+    .footer-brand h4 { margin: 0 0 8px 0; font-size: 1.25rem; }
+    .footer-division { font-size: 0.85rem; color: var(--text-muted); }
+    .footer-nav { display: flex; gap: 40px; }
+    .footer-column h5 { color: var(--text-main); margin: 0 0 15px 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .footer-list { list-style: none; padding: 0; margin: 0; }
+    .footer-list li { margin-bottom: 10px; }
+    .footer-list a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-list a:hover { color: var(--accent-cyan); }
+    .footer-bottom { max-width: 900px; margin: 40px auto 0 auto; padding-top: 25px; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.85rem; color: var(--text-muted); }
   </style>
 </head>
 <body>
@@ -189,9 +81,9 @@
     </a>
     <nav class="jl-nav">
       <a href="index.html" class="nav-link">Home</a>
-      <a href="architecture.html" class="nav-link" style="color: var(--accent-cyan);">Solutions</a>
-      <a href="architecture.html" class="nav-link">Products</a>
-      <a href="https://developer.jielabs.com" class="nav-link">Developers</a>
+      <a href="architecture.html" class="nav-link active">Solutions</a>
+      <a href="product.html" class="nav-link">Products</a>
+      <a href="https://developer.jielabs.com" class="nav-link highlight">Developers</a>
     </nav>
   </header>
 
@@ -201,7 +93,6 @@
       <h1>System Architectures</h1>
     </div>
 
-    <!-- VHS HOS Section -->
     <div class="system-block">
       <div class="system-title-row">
         <h2>VHS HOS Matrix</h2>
@@ -210,19 +101,15 @@
       <div class="spec-grid">
         <div class="spec-label">Environment Class</div>
         <div class="spec-value">Healthcare Operating System Layer</div>
-        
         <div class="spec-label">Orchestration Target</div>
         <div class="spec-value">Clinical state synchronization & administrative pipelines</div>
-        
         <div class="spec-label">Security Parameters</div>
         <div class="spec-value">Deterministic validation check-points & execution isolation</div>
-        
         <div class="spec-label">Integration State</div>
         <div class="spec-value">Inter-operable engine configured for automated tracking pipelines</div>
       </div>
     </div>
 
-    <!-- Apeiron Core Section -->
     <div class="system-block">
       <div class="system-title-row">
         <h2>Apeiron Core Specifications</h2>
@@ -231,20 +118,16 @@
       <div class="spec-grid">
         <div class="spec-label">Core Paradigm</div>
         <div class="spec-value">Deterministic Execution Infrastructure</div>
-        
         <div class="spec-label">Task State Routing</div>
         <div class="spec-value">Synchronous state orchestration logic running natively</div>
-        
         <div class="spec-label">Integrations Matrix</div>
         <div class="spec-value">Extensible connector pipelines for context-aware co-pilots (VEDA)</div>
-        
         <div class="spec-label">Reliability Index</div>
         <div class="spec-value">Absolute operational fault containment and token isolation</div>
       </div>
     </div>
   </div>
 
-  <!-- Identical Footer Architecture for Uniform Experience -->
   <footer class="corporate-footer">
     <div class="footer-container">
       <div class="footer-brand">
@@ -255,16 +138,16 @@
         <div class="footer-column">
           <h5>Trust &amp; Governance</h5>
           <ul class="footer-list">
-            <li><a href="https://developer.jielabs.com">Privacy Policy</a></li>
-            <li><a href="https://developer.jielabs.com">Terms of Service</a></li>
-            <li><a href="architecture.html">Security</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="security.html">Security</a></li>
           </ul>
         </div>
         <div class="footer-column">
           <h5>Resources</h5>
           <ul class="footer-list">
-            <li><a href="https://developer.jielabs.com">Support</a></li>
-            <li><a href="https://developer.jielabs.com">Contact</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="contact.html">Contact</a></li>
             <li><a href="https://developer.jielabs.com" target="_blank">Developer Center</a></li>
           </ul>
         </div>
