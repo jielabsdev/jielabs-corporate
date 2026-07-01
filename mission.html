@@ -30,15 +30,16 @@
     .logo-bold { color: var(--text-main); font-weight: 800; }
     .logo-light { color: var(--text-muted); font-weight: 300; }
     .logo-cursor { color: var(--accent-cyan); font-weight: 800; }
-    .jl-nav { display: flex; gap: 2rem; align-items: center; }
-    .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; font-weight: 500; }
+    .jl-nav { display: flex; gap: 1.75rem; flex-wrap: wrap; }
+    .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
     .nav-link:hover { color: var(--text-main); }
+    .nav-link.highlight { color: var(--accent-cyan); }
 
     .mission-container { max-width: 800px; margin: 60px auto; padding: 40px; background-color: var(--bg-container); border: 1px solid var(--border-color); border-radius: 12px; }
     h1 { font-size: 2.5rem; font-weight: 800; margin: 0 0 5px 0; }
     .mission-subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 40px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
     
-    h2 { font-size: 1.35rem; font-weight: 700; margin-top: 35px; margin-bottom: 15px; color: var(--text-main); display: flex; align-items: center; }
+    h2 { font-size: 1.4rem; font-weight: 700; margin-top: 40px; margin-bottom: 15px; color: var(--text-main); display: flex; align-items: center; }
     h2::before { content: ">"; color: var(--accent-cyan); margin-right: 10px; font-family: monospace; font-weight: 800; }
     
     p, ul { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 20px; }
@@ -54,18 +55,22 @@
     .principle-title { font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 6px; }
     .principle-desc { color: var(--text-muted); margin: 0; font-size: 1rem; }
 
-    .policy-footer { text-align: center; margin-top: 60px; margin-bottom: 40px; font-size: 0.85rem; color: var(--text-muted); }
+    .corporate-footer { background-color: #090a0d; border-top: 1px solid var(--border-color); padding: 40px 20px; margin-top: 120px; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
   </style>
 </head>
 <body>
 
   <header class="jl-header">
-    <div class="jl-logo-container">
-      <a href="index.html" class="jl-logo"><span class="logo-bold">JIE</span><span class="logo-light">labs</span><span class="logo-cursor">_</span></a>
-    </div>
+    <a href="index.html" class="jl-logo">
+      <span class="logo-bold">Jie</span><span class="logo-light">Labs</span><span class="logo-cursor">_</span>
+    </a>
     <nav class="jl-nav">
-      <a href="about.html" class="nav-link">About</a>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">Solutions</a>
       <a href="products.html" class="nav-link">Products</a>
+      <a href="about.html" class="nav-link">Company</a>
+      <a href="https://developer.jielabs.com" class="nav-link highlight" target="_blank">Dev Portal</a>
+      <a href="security.html" class="nav-link">Security</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </nav>
   </header>
@@ -107,6 +112,8 @@
     </div>
   </main>
 
-  <footer class="policy-footer">&copy; 2026 JieLabs. All rights reserved.</footer>
+  <footer class="corporate-footer">
+    <div>&copy; 2026 JieLabs. All rights reserved. A division of Pristine Total Care Services LLC.</div>
+  </footer>
 </body>
 </html>
