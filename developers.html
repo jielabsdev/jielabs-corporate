@@ -178,13 +178,14 @@
     .list-row {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: center;
       padding: 18px 0;
       border-bottom: 1px solid var(--border-color);
     }
-    @media (max-width: 640px) { .list-row { flex-direction: column; gap: 5px; } }
-    .list-meta { font-weight: 700; font-size: 1.1rem; color: var(--text-main); min-width: 300px; }
+    @media (max-width: 640px) { .list-row { flex-direction: column; align-items: flex-start; gap: 5px; } }
+    .list-meta { font-weight: 700; font-size: 1.1rem; color: var(--text-main); }
     .list-desc { color: var(--text-muted); margin: 0; font-size: 1rem; }
+    .inline-status { font-family: monospace; font-size: 0.8rem; color: var(--accent-blue); }
 
     /* Developer Contact Block */
     .dev-contact-block {
@@ -235,7 +236,7 @@
     <nav class="jl-nav">
       <a href="index.html" class="nav-link">Home</a>
       <a href="solutions.html" class="nav-link">Solutions</a>
-      <a href="products.html" class="nav-link">Products</a>
+      <a href="products.html" class="nav-link">Platforms &amp; Technologies</a>
       <a href="company.html" class="nav-link">Company</a>
       <a href="developers.html" class="nav-link active">Developer Center</a>
       <a href="security.html" class="nav-link">Security</a>
@@ -250,46 +251,45 @@
     </div>
     
     <p class="intro-text">
-      JieLabs provides secure, enterprise-grade technologies designed for organizations that require reliable automation, intelligent workflows, and private infrastructure. Whether you're integrating with healthcare systems, extending enterprise workflows, or building AI-powered applications, our platform is engineered for secure interoperability and long-term scalability.
+      JieLabs provides secure, enterprise-grade technologies designed for organizations that require reliable automation, intelligent workflows, and private infrastructure. Our core platform architecture is engineered for long-term scalability, data sovereignty, and robust interface compliance.
     </p>
 
     <div class="hero-actions">
       <a href="https://github.com" class="btn-primary" target="_blank" rel="noopener noreferrer">Explore Our GitHub Projects &rarr;</a>
     </div>
 
-    <div class="section-header">Integration First</div>
+    <div class="section-header">Architecture Framework Alignment</div>
     <p class="intro-text" style="text-align: left; margin: 0 0 30px 0; font-size: 1.05rem;">
-      We believe enterprise software should work with the systems organizations already rely on. Our platforms are designed for secure integration with:
+      We believe enterprise software should be structurally built to fit seamlessly into modern technical ecosystems. Our data contracts and platform runtimes are designed to align with:
     </p>
-    <div class="list-row"><div class="list-meta">Electronic Health Record (EHR) systems</div></div>
-    <div class="list-row"><div class="list-meta">REST APIs</div></div>
-    <div class="list-row"><div class="list-meta">FHIR-enabled healthcare platforms</div></div>
-    <div class="list-row"><div class="list-meta">Internal enterprise applications</div></div>
-    <div class="list-row"><div class="list-meta">Identity providers</div></div>
-    <div class="list-row"><div class="list-meta">Business automation platforms</div></div>
+    <div class="list-row"><div class="list-meta">Standard REST APIs &amp; Webhooks</div><span class="inline-status">Native Core Protocol</span></div>
+    <div class="list-row"><div class="list-meta">Internal Enterprise Networks</div><span class="inline-status">Private VPC/On-Prem Support</span></div>
+    <div class="list-row"><div class="list-meta">Federated Identity Providers (OIDC/SAML)</div><span class="inline-status">IAM Integration Framework</span></div>
+    <div class="list-row"><div class="list-meta">Secure Document Processing Channels</div><span class="inline-status">Structured Payload Processing</span></div>
+    <div class="list-row"><div class="list-meta">Business Automation Plattforms</div><span class="inline-status">Modular Orchestration Loop</span></div>
 
     <div class="section-header">Developer Resources</div>
     <div class="resource-grid">
       <div class="resource-card">
         <div>
           <h3>API Documentation</h3>
-          <p>Comprehensive documentation for platform integrations, authentication, and service endpoints.</p>
+          <p>Comprehensive schemas for local platform orchestration, secure tokens, and internal service loops.</p>
         </div>
-        <div class="resource-status">Status: Coming Soon</div>
+        <div class="resource-status">Status: Pre-Release Staging</div>
       </div>
       
       <div class="resource-card">
         <div>
           <h3>SDKs &amp; Libraries</h3>
-          <p>Official development libraries and tooling for building on JieLabs platforms.</p>
+          <p>Official core development tooling and integration libraries built for private environment executions.</p>
         </div>
-        <div class="resource-status">Status: In Development</div>
+        <div class="resource-status">Status: Under Development</div>
       </div>
 
       <div class="resource-card">
         <div>
-          <h3>GitHub</h3>
-          <p>Explore our open-source projects and developer tools directly within our code repositories.</p>
+          <h3>GitHub Repositories</h3>
+          <p>Explore our open-source safety frameworks, governance modules, and ecosystem tooling directly.</p>
         </div>
         <div><a href="https://github.com" class="resource-link" target="_blank" rel="noopener noreferrer">View Open Source Projects &rarr;</a></div>
       </div>
@@ -297,18 +297,18 @@
       <div class="resource-card">
         <div>
           <h3>Security Documentation</h3>
-          <p>Review our security architecture, responsible disclosure process, and infrastructure deployment standards.</p>
+          <p>Review our core isolation standards, cryptographic audit footprints, and infrastructure hardening baselines.</p>
         </div>
         <div class="resource-status">Status: Available upon request</div>
       </div>
     </div>
 
     <div class="list-row" style="margin-top: 20px;">
-      <div class="list-meta">Integration Guides</div>
-      <p class="list-desc">Step-by-step implementation guides for enterprise deployments and healthcare integrations.</p>
+      <div class="list-meta">Implementation Guides</div>
+      <p class="list-desc">Draft blueprints for internal network orchestration and secure enterprise baseline deployments.</p>
     </div>
 
-    <div class="section-header">Open Source Projects</div>
+    <div class="section-header">Open Source Frameworks</div>
     <div class="resource-grid">
       <div class="resource-card">
         <div>
@@ -337,29 +337,28 @@
     </div>
 
     <div class="section-header">Platform Principles</div>
-    <div class="list-row"><div class="list-meta">Security First</div><p class="list-desc">Enterprise-grade security designed into every layer.</p></div>
-    <div class="list-row"><div class="list-meta">API Driven</div><p class="list-desc">Modular services designed for interoperability.</p></div>
-    <div class="list-row"><div class="list-meta">Privacy by Design</div><p class="list-desc">Support for on-premises and private deployments.</p></div>
-    <div class="list-row"><div class="list-meta">Built to Scale</div><p class="list-desc">Architecture engineered for long-term enterprise growth.</p></div>
+    <div class="list-row"><div class="list-meta">Security First</div><p class="list-desc">Enterprise-grade network and execution security designed into every layer.</p></div>
+    <div class="list-row"><div class="list-meta">API Driven</div><p class="list-desc">Modular interface schemas tailored to ease engineering overhead.</p></div>
+    <div class="list-row"><div class="list-meta">Privacy by Design</div><p class="list-desc">Sovereign control architecture supporting isolated execution contexts.</p></div>
+    <div class="list-row"><div class="list-meta">Built to Scale</div><p class="list-desc">Stateless runtime loops engineered for long-term data expansion.</p></div>
 
-    <div class="section-header">Enterprise Integrations</div>
+    <div class="section-header">Ecosystem Interoperability Roadmaps</div>
     <p class="intro-text" style="text-align: left; margin: 0 0 30px 0; font-size: 1.05rem;">
-      Our platforms are designed to integrate with modern enterprise ecosystems including healthcare, business automation, and operational infrastructure. Current integration initiatives include:
+      Our platform architectures are engineered to support industry-specific frameworks. Ongoing sandbox evaluations, testing iterations, and planned future integrations include:
     </p>
-    <div class="list-row"><div class="list-meta">Practice Fusion</div></div>
-    <div class="list-row"><div class="list-meta">FHIR Standards</div></div>
-    <div class="list-row"><div class="list-meta">Email Automation</div></div>
-    <div class="list-row"><div class="list-meta">Payroll Systems</div></div>
-    <div class="list-row"><div class="list-meta">Secure Document Processing</div></div>
+    <div class="list-row"><div class="list-meta">FHIR Healthcare Standard Frameworks</div><span class="inline-status">Pipeline Architecture Stage</span></div>
+    <div class="list-row"><div class="list-meta">Practice Fusion Ecosystem Mapping</div><span class="inline-status">Development Planning</span></div>
+    <div class="list-row"><div class="list-meta">Epic &amp; Athenahealth Data Interface Formats</div><span class="inline-status">Compatibility Assessment</span></div>
+    <div class="list-row"><div class="list-meta">Enterprise Payroll &amp; Automation Pipelines</div><span class="inline-status">Staging Design</span></div>
 
     <div class="section-header">Developer Community</div>
     <p class="intro-text" style="text-align: left; margin: 0; font-size: 1.05rem;">
-      We're building an ecosystem for developers, partners, and enterprise customers interested in secure AI, workflow automation, and enterprise software. GitHub repositories, documentation, SDKs, and additional resources will continue expanding as the platform evolves.
+      We're establishing an ecosystem for developers, engineering partners, and enterprise architects focused on structured safety and deterministic computing. Public codebases, reference maps, and sandbox tools will continue expanding as verification cycles complete.
     </p>
 
     <div class="dev-contact-block">
-      <h3>Contact Developers</h3>
-      <p>Need help with an integration or enterprise deployment?</p>
+      <h3>Contact Technical Desk</h3>
+      <p>Inquire about system specs, sandbox status, or enterprise reference builds:</p>
       <a href="mailto:developer@jielabs.com" class="dev-email">developer@jielabs.com</a>
     </div>
   </main>
