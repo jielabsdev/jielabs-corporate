@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy | JieLabs</title>
+  <!-- Explicitly importing the Inter font family -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-dark: #0d0e12;
@@ -15,16 +19,20 @@
       --border-color: #1f2937;
     }
 
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
     body {
       background-color: var(--bg-dark);
       color: var(--text-main);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.7;
     }
 
-    /* Universal Header */
+    /* Universal Header matching image_345a5a.png */
     .jl-header {
       display: flex;
       justify-content: space-between;
@@ -46,6 +54,7 @@
     .jl-nav { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
     .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s ease; }
     .nav-link:hover { color: var(--text-main); }
+    .nav-link.active { color: var(--accent-cyan); }
 
     /* Layout Container */
     .policy-container {
@@ -58,7 +67,7 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
 
-    h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; margin: 0 0 5px 0; }
+    h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; margin: 0 0 5px 0; color: var(--text-main); }
     .policy-subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 40px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
     
     h2 { font-size: 1.4rem; font-weight: 700; margin-top: 40px; margin-bottom: 15px; color: var(--text-main); }
@@ -104,12 +113,12 @@
       </a>
     </div>
     <nav class="jl-nav">
-      <a href="about.html" class="nav-link">About</a>
-      <a href="architecture.html" class="nav-link">Architecture</a>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="solutions.html" class="nav-link">Solutions</a>
       <a href="products.html" class="nav-link">Products</a>
-      <a href="https://developer.jielabs.com" class="nav-link">Dev Portal</a>
+      <a href="company.html" class="nav-link">Company</a>
+      <a href="developers.html" class="nav-link">Developers</a>
       <a href="security.html" class="nav-link">Security</a>
-      <a href="support.html" class="nav-link">Support</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </nav>
   </header>
