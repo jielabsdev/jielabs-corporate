@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | JieLabs</title>
+  <style>
+    :root {
+      --bg-dark: #0d0e12;
+      --bg-container: #16181f;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent-cyan: #00f5d4;
+      --accent-blue: #38bdf8;
+      --border-color: #1f2937;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    /* Slick Modern Header */
+    .jl-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border-color);
+      background-color: rgba(13, 14, 18, 0.8);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .jl-logo { text-decoration: none; font-size: 1.5rem; letter-spacing: -0.05em; }
+    .logo-bold { color: var(--text-main); font-weight: 800; }
+    .logo-light { color: var(--text-muted); font-weight: 300; }
+    .logo-cursor { color: var(--accent-cyan); font-weight: 800; }
+
+    .jl-nav { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
+    .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s ease; }
+    .nav-link:hover { color: var(--text-main); }
+
+    /* Main Content Container */
+    .policy-container {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 40px;
+      background-color: var(--bg-container);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; margin-top: 0; margin-bottom: 10px; color: var(--text-main); }
+    
+    .effective-date {
+      color: var(--accent-blue);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 20px;
+    }
+
+    h2 { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 35px; margin-bottom: 12px; color: var(--text-main); display: flex; align-items: center; }
+    h2::before { content: ">"; color: var(--accent-cyan); margin-right: 10px; font-family: monospace; font-weight: 800; }
+
+    p, ul { color: var(--text-muted); margin-bottom: 20px; font-size: 1.05rem; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 8px; }
+    strong { color: var(--text-main); }
+    a { color: var(--accent-blue); text-decoration: none; transition: opacity 0.2s ease; }
+    a:hover { text-decoration: underline; }
+
+    /* Integrated Compliance Footer */
+    .policy-footer {
+      text-align: center;
+      padding: 40px 20px 0 20px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      margin-top: 60px;
+    }
+    .footer-links {
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-link { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .footer-link:hover { color: var(--accent-cyan); }
+    .footer-divider { color: var(--border-color); }
+
+    @media (max-width: 768px) {
+      .policy-container { margin: 20px; padding: 24px; }
+      h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="jl-header">
+    <div class="jl-logo-container">
+      <a href="index.html" class="jl-logo">
+        <span class="logo-bold">JIE</span><span class="logo-light">labs</span><span class="logo-cursor">_</span>
+      </a>
+    </div>
+    <nav class="jl-nav">
+      <a href="about.html" class="nav-link">About</a>
+      <a href="architecture.html" class="nav-link">Architecture</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="developer.html" class="nav-link">Dev Portal</a>
+      <a href="security.html" class="nav-link">Security</a>
+      <a href="support.html" class="nav-link">Support</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <main class="policy-container">
+    <h1>About JieLabs</h1>
+    <div class="effective-date">Laboratory Blueprint &amp; Core Philosophy</div>
+
+    <p>
+      <strong>JieLabs</strong> is a specialized software engineering and sovereign AI research lab focused on building high-determinism execution frameworks, autonomous multi-agent swarms, and advanced vertical workflow environments.
+    </p>
+    <p>
+      Our core development philosophy centers on <strong>local-first execution, complete intellectual property protection, and absolute data privacy</strong>. We believe critical infrastructure—whether it governs quantitative analytics, vertical industries, or creative engineering—should run robustly without relying on leaky third-party dependencies.
+    </p>
+
+    <h2>Engineering Pillars</h2>
+    <p>
+      Instead of passive, standard software models, JieLabs architectures operate across several unified pillars to maximize automation safety and real-time efficiency:
+    </p>
+    <ul>
+      <li><strong>Autonomous Swarm Orchestration:</strong> Engineering multi-vector architectures that plan, coordinate, and maintain codebases under strict runtime guardrails.</li>
+      <li><strong>Quantitative Intelligence:</strong> Deploying highly isolated local multi-agent swarms to track live telemetry, news data, and system-state trees to flag high-confidence market variations.</li>
+      <li><strong>Sovereign Infrastructure:</strong> Designing centralized command hubs and secure local runtimes capable of automated self-healing, resource optimization, and absolute isolation.</li>
+      <li><strong>Local-First Core Engines:</strong> Building privacy-guarded digital frameworks for heavy local processing loads—ranging from complex medical coordination backends to neural audio engineering chains.</li>
+    </ul>
+
+    <h2>Ecosystem Architecture</h2>
+    <p>
+      Our active roadmap currently indexes 19 integrated environments, registries, and diagnostic layers. This includes deep infrastructure layers like <strong>Apeiron Core</strong>, codebase-state ledgers like <strong>OTML</strong>, market-oriented quantitative engines like <strong>VP14</strong>, and localized vertical operating environments like <strong>VHS HOS</strong> and <strong>DECON Pro</strong>.
+    </p>
+    <p>
+      Every tier of the system is strictly engineered to support human-guided decisions, keeping human intelligence at the center of critical automated outcomes.
+    </p>
+
+    <h2>Security &amp; Structural Safety</h2>
+    <p>
+      JieLabs models software design around strict auditability and deterministic outcomes. All platforms are structured with deterministic safety boundaries, sandbox safety nets, and robust telemetry tracking to guarantee predictable operational run-states.
+    </p>
+
+    <h2>Contact Information</h2>
+    <p>
+      For high-level inquiries, operational technical consultations, or project alignment details, please reach out directly:
+    </p>
+    <p style="background-color: rgba(255,255,255,0.03); padding: 15px; border-radius: 6px; border-left: 3px solid var(--accent-cyan); font-family: monospace;">
+      <strong>JieLabs Dev Core</strong><br />
+      Secure Communication Vector: <a href="mailto:jielabs.dev@gmail.com">jielabs.dev@gmail.com</a>
+    </p>
+
+    <footer class="policy-footer">
+      <div class="footer-links">
+        <a href="privacy.html" class="footer-link">Privacy Policy</a>
+        <span class="footer-divider">|</span>
+        <a href="terms.html" class="footer-link">Terms of Service</a>
+        <span class="footer-divider">|</span>
+        <a href="security.html" class="footer-link">Security Framework</a>
+      </div>
+      <div>&copy; 2026 JieLabs. All rights reserved. System Runtimes Sovereign.</div>
+    </footer>
+  </main>
+
+</body>
+</html>
