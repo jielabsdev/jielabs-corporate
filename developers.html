@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer Center | JieLabs</title>
+  <style>
+    :root {
+      --bg-dark: #0d0e12;
+      --bg-container: #16181f;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent-cyan: #00f5d4;
+      --accent-blue: #38bdf8;
+      --border-color: #1f2937;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    /* Universal Header matching index.html exactly */
+    .jl-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border-color);
+      background-color: rgba(13, 14, 18, 0.8);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .jl-logo {
+      text-decoration: none;
+      font-size: 1.5rem;
+      letter-spacing: -0.05em;
+    }
+    .logo-bold { color: var(--text-main); font-weight: 800; }
+    .logo-light { color: var(--text-muted); font-weight: 300; }
+    .logo-cursor { color: var(--accent-cyan); font-weight: 800; }
+    
+    .jl-nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--text-main); }
+    .nav-link.active { color: var(--text-main); font-weight: 700; }
+
+    /* Developer Portal Content Layout */
+    .dev-container { 
+      max-width: 1000px; 
+      margin: 60px auto 100px auto; 
+      padding: 0 20px; 
+    }
+    
+    .dev-header { 
+      text-align: center; 
+      margin-bottom: 40px; 
+    }
+    .dev-header h1 { 
+      font-size: 2.5rem; 
+      font-weight: 800; 
+      letter-spacing: -0.04em; 
+      margin-bottom: 10px; 
+    }
+    .dev-subtitle {
+      font-size: 1.25rem;
+      color: var(--accent-blue);
+      font-weight: 600;
+      max-width: 800px;
+      margin: 0 auto 30px auto;
+      line-height: 1.5;
+    }
+    
+    .intro-text {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 850px;
+      margin: 0 auto 40px auto;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    /* Top Action Button Container */
+    .hero-actions {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .btn-primary {
+      display: inline-block;
+      background-color: transparent;
+      color: var(--accent-cyan);
+      border: 1px solid var(--accent-cyan);
+      padding: 12px 24px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+    .btn-primary:hover {
+      background-color: rgba(0, 245, 212, 0.05);
+    }
+
+    .section-header {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 60px 0 35px 0;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
+      color: var(--text-main);
+    }
+
+    /* Resource and Tech Grid Frameworks */
+    .resource-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+    @media (max-width: 768px) { .resource-grid { grid-template-columns: 1fr; } }
+
+    .resource-card {
+      background-color: var(--bg-container);
+      border: 1px solid var(--border-color);
+      padding: 30px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .resource-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+    .resource-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin: 0 0 20px 0;
+    }
+    .resource-status {
+      font-size: 0.8rem;
+      font-family: monospace;
+      color: var(--accent-blue);
+    }
+    .resource-link {
+      font-size: 0.9rem;
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .resource-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Row Stacking for Lists and Targets */
+    .list-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+    @media (max-width: 640px) { .list-row { flex-direction: column; gap: 5px; } }
+    .list-meta { font-weight: 700; font-size: 1.1rem; color: var(--text-main); min-width: 300px; }
+    .list-desc { color: var(--text-muted); margin: 0; font-size: 1rem; }
+
+    /* Developer Contact Block */
+    .dev-contact-block {
+      background-color: var(--bg-container);
+      border: 1px solid var(--border-color);
+      padding: 40px;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 60px;
+    }
+    .dev-contact-block h3 { margin-top: 0; margin-bottom: 10px; font-size: 1.4rem; }
+    .dev-contact-block p { color: var(--text-muted); margin-bottom: 20px; }
+    .dev-email { font-family: monospace; font-size: 1.1rem; color: var(--accent-cyan); text-decoration: none; font-weight: 600; }
+
+    /* Corporate Footer matching index.html exactly */
+    .corporate-footer {
+      background-color: #090a0d;
+      border-top: 1px solid var(--border-color);
+      padding: 60px 20px 40px 20px;
+      margin-top: 120px;
+    }
+    .footer-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .footer-brand h4 { margin: 0 0 8px 0; font-size: 1.25rem; }
+    .footer-division { font-size: 0.85rem; color: var(--text-muted); }
+    .footer-nav { display: flex; gap: 40px; }
+    .footer-column h5 { color: var(--text-main); margin: 0 0 15px 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .footer-list { list-style: none; padding: 0; margin: 0; }
+    .footer-list li { margin-bottom: 10px; }
+    .footer-list a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-list a:hover { color: var(--accent-cyan); }
+    .footer-bottom { max-width: 1000px; margin: 40px auto 0 auto; padding-top: 25px; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.85rem; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+  <header class="jl-header">
+    <a href="index.html" class="jl-logo">
+      <span class="logo-bold">Jie</span><span class="logo-light">Labs</span><span class="logo-cursor">_</span>
+    </a>
+    <nav class="jl-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="solutions.html" class="nav-link">Solutions</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="company.html" class="nav-link">Company</a>
+      <a href="developers.html" class="nav-link active">Developer Center</a>
+      <a href="security.html" class="nav-link">Security</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <main class="dev-container">
+    <div class="dev-header">
+      <h1>Developer Center</h1>
+      <div class="dev-subtitle">Build on the JieLabs Platform</div>
+    </div>
+    
+    <p class="intro-text">
+      JieLabs provides secure, enterprise-grade technologies designed for organizations that require reliable automation, intelligent workflows, and private infrastructure. Whether you're integrating with healthcare systems, extending enterprise workflows, or building AI-powered applications, our platform is engineered for secure interoperability and long-term scalability.
+    </p>
+
+    <div class="hero-actions">
+      <a href="https://github.com" class="btn-primary" target="_blank" rel="noopener noreferrer">Explore Our GitHub Projects &rarr;</a>
+    </div>
+
+    <div class="section-header">Integration First</div>
+    <p class="intro-text" style="text-align: left; margin: 0 0 30px 0; font-size: 1.05rem;">
+      We believe enterprise software should work with the systems organizations already rely on. Our platforms are designed for secure integration with:
+    </p>
+    <div class="list-row"><div class="list-meta">Electronic Health Record (EHR) systems</div></div>
+    <div class="list-row"><div class="list-meta">REST APIs</div></div>
+    <div class="list-row"><div class="list-meta">FHIR-enabled healthcare platforms</div></div>
+    <div class="list-row"><div class="list-meta">Internal enterprise applications</div></div>
+    <div class="list-row"><div class="list-meta">Identity providers</div></div>
+    <div class="list-row"><div class="list-meta">Business automation platforms</div></div>
+
+    <div class="section-header">Developer Resources</div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <div>
+          <h3>API Documentation</h3>
+          <p>Comprehensive documentation for platform integrations, authentication, and service endpoints.</p>
+        </div>
+        <div class="resource-status">Status: Coming Soon</div>
+      </div>
+      
+      <div class="resource-card">
+        <div>
+          <h3>SDKs &amp; Libraries</h3>
+          <p>Official development libraries and tooling for building on JieLabs platforms.</p>
+        </div>
+        <div class="resource-status">Status: In Development</div>
+      </div>
+
+      <div class="resource-card">
+        <div>
+          <h3>GitHub</h3>
+          <p>Explore our open-source projects and developer tools directly within our code repositories.</p>
+        </div>
+        <div><a href="https://github.com" class="resource-link" target="_blank" rel="noopener noreferrer">View Open Source Projects &rarr;</a></div>
+      </div>
+
+      <div class="resource-card">
+        <div>
+          <h3>Security Documentation</h3>
+          <p>Review our security architecture, responsible disclosure process, and infrastructure deployment standards.</p>
+        </div>
+        <div class="resource-status">Status: Available upon request</div>
+      </div>
+    </div>
+
+    <div class="list-row" style="margin-top: 20px;">
+      <div class="list-meta">Integration Guides</div>
+      <p class="list-desc">Step-by-step implementation guides for enterprise deployments and healthcare integrations.</p>
+    </div>
+
+    <div class="section-header">Open Source Projects</div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <div>
+          <h3>Subjectus</h3>
+          <p>Policy-driven governance framework for Human-in-the-Loop AI systems.</p>
+        </div>
+      </div>
+      <div class="resource-card">
+        <div>
+          <h3>ProofScope</h3>
+          <p>Enterprise verification and audit infrastructure for cryptographic proof validation.</p>
+        </div>
+      </div>
+      <div class="resource-card">
+        <div>
+          <h3>BeaconNode</h3>
+          <p>Distributed Agent Resource Discovery framework for autonomous systems.</p>
+        </div>
+      </div>
+      <div class="resource-card">
+        <div>
+          <h3>IronCircuit</h3>
+          <p>Safety framework for autonomous AI systems focused on execution governance and resource protection.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header">Platform Principles</div>
+    <div class="list-row"><div class="list-meta">Security First</div><p class="list-desc">Enterprise-grade security designed into every layer.</p></div>
+    <div class="list-row"><div class="list-meta">API Driven</div><p class="list-desc">Modular services designed for interoperability.</p></div>
+    <div class="list-row"><div class="list-meta">Privacy by Design</div><p class="list-desc">Support for on-premises and private deployments.</p></div>
+    <div class="list-row"><div class="list-meta">Built to Scale</div><p class="list-desc">Architecture engineered for long-term enterprise growth.</p></div>
+
+    <div class="section-header">Enterprise Integrations</div>
+    <p class="intro-text" style="text-align: left; margin: 0 0 30px 0; font-size: 1.05rem;">
+      Our platforms are designed to integrate with modern enterprise ecosystems including healthcare, business automation, and operational infrastructure. Current integration initiatives include:
+    </p>
+    <div class="list-row"><div class="list-meta">Practice Fusion</div></div>
+    <div class="list-row"><div class="list-meta">FHIR Standards</div></div>
+    <div class="list-row"><div class="list-meta">Email Automation</div></div>
+    <div class="list-row"><div class="list-meta">Payroll Systems</div></div>
+    <div class="list-row"><div class="list-meta">Secure Document Processing</div></div>
+
+    <div class="section-header">Developer Community</div>
+    <p class="intro-text" style="text-align: left; margin: 0; font-size: 1.05rem;">
+      We're building an ecosystem for developers, partners, and enterprise customers interested in secure AI, workflow automation, and enterprise software. GitHub repositories, documentation, SDKs, and additional resources will continue expanding as the platform evolves.
+    </p>
+
+    <div class="dev-contact-block">
+      <h3>Contact Developers</h3>
+      <p>Need help with an integration or enterprise deployment?</p>
+      <a href="mailto:developer@jielabs.com" class="dev-email">developer@jielabs.com</a>
+    </div>
+  </main>
+
+  <footer class="corporate-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4><span class="logo-bold">Jie</span><span class="logo-light">Labs</span></h4>
+        <p class="footer-division">A division of Pristine Total Care Services LLC</p>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-column">
+          <h5>Trust &amp; Governance</h5>
+          <ul class="footer-list">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="security.html">Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h5>Resources</h5>
+          <ul class="footer-list">
+            <li><a href="support.html">Support</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="developers.html">Developer Center</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 JieLabs. All rights reserved. Operational Runtimes Sovereign.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
