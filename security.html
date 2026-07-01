@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Security | JieLabs</title>
+  <style>
+    :root {
+      --bg-dark: #0d0e12;
+      --bg-container: #16181f;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent-cyan: #00f5d4;
+      --accent-blue: #38bdf8;
+      --border-color: #1f2937;
+      --bg-card: rgba(255, 255, 255, 0.02);
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    .jl-header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-color); background-color: rgba(13, 14, 18, 0.8); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 100; }
+    .jl-logo { text-decoration: none; font-size: 1.5rem; letter-spacing: -0.05em; }
+    .logo-bold { color: var(--text-main); font-weight: 800; }
+    .logo-light { color: var(--text-muted); font-weight: 300; }
+    .logo-cursor { color: var(--accent-cyan); font-weight: 800; }
+    .jl-nav { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
+    .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s ease; }
+    .nav-link:hover { color: var(--text-main); }
+
+    .sec-container { max-width: 850px; margin: 60px auto; padding: 40px; background-color: var(--bg-container); border: 1px solid var(--border-color); border-radius: 12px; }
+    h1 { font-size: 2.5rem; font-weight: 800; margin: 0 0 5px 0; }
+    .sec-subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 40px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
+    
+    h2 { font-size: 1.4rem; font-weight: 700; margin-top: 40px; margin-bottom: 15px; color: var(--text-main); display: flex; align-items: center; }
+    h2::before { content: ">"; color: var(--accent-cyan); margin-right: 10px; font-family: monospace; font-weight: 800; }
+    
+    p, ul { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 20px; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    strong { color: var(--text-main); }
+
+    .vulnerability-box { border: 1px solid rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.03); padding: 24px; border-radius: 8px; margin-top: 30px; }
+    .vulnerability-box h3 { margin-top: 0; color: #ef4444; font-size: 1.15rem; }
+
+    .policy-footer { text-align: center; padding: 40px 20px 0 20px; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--border-color); margin-top: 60px; }
+    .footer-links { margin-bottom: 15px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .footer-link { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .footer-link:hover { color: var(--accent-cyan); }
+    .footer-divider { color: var(--border-color); }
+
+    @media (max-width: 768px) { .sec-container { margin: 20px; padding: 24px; } h1 { font-size: 2rem; } }
+  </style>
+</head>
+<body>
+
+  <header class="jl-header">
+    <div class="jl-logo-container">
+      <a href="index.html" class="jl-logo"><span class="logo-bold">JIE</span><span class="logo-light">labs</span><span class="logo-cursor">_</span></a>
+    </div>
+    <nav class="jl-nav">
+      <a href="about.html" class="nav-link">About</a>
+      <a href="architecture.html" class="nav-link">Architecture</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="developer.html" class="nav-link">Dev Portal</a>
+      <a href="security.html" class="nav-link">Security</a>
+      <a href="support.html" class="nav-link">Support</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <main class="sec-container">
+    <h1>Security Posture &amp; Architecture</h1>
+    <div class="sec-subtitle">Zero-Trust Directives, System Sandboxing &amp; Data Hardening Protocols</div>
+
+    <h2>Zero-Trust Local Execution Bounds</h2>
+    <p>
+      JieLabs platforms enforce a rigorous structural security approach. Our environments isolate operational memory spaces completely, assuming any lateral network vector could be subject to compromise:
+    </p>
+    <ul>
+      <li><strong>Isolated Micro-Sandboxing:</strong> Core runtime workflows operate within closed environment scopes, blocking unmapped read/write requests from exploring file system roots.</li>
+      <li><strong>Encrypted Local Configurations:</strong> High-security parameters, connection configurations, and systemic keys are protected locally using verified cryptographic layers rather than exposed text variables.</li>
+      <li><strong>Role-Based Approval Gates:</strong> Downstream operations are locked behind strict credential criteria, blocking execution tasks from firing unless authentications match explicit role profiles.</li>
+    </ul>
+
+    <h2>Immutable Verification Logging</h2>
+    <p>
+      System telemetry registers every transaction state change instantly. The internal ledger records interactions into a tamper-resistant local log array, guaranteeing that administrative teams maintain clear transparency for diagnostic audits.
+    </p>
+
+    <h2>Sovereign Data Protection &amp; Recovery</h2>
+    <p>
+      Client databases retain absolute, uncompromised structural data isolation:
+    </p>
+    <ul>
+      <li><strong>Absolute Data Ownership:</strong> Client data blocks pass strictly through localized memory lanes and are never stored or reviewed by JieLabs.</li>
+      <li><strong>Disaster Recovery Snapshots:</strong> Runtimes build localized, encrypted system snapshots, allowing configurations to recover smoothly if severe local host faults occur.</li>
+    </ul>
+
+    <div class="vulnerability-box">
+      <h3>Responsible Disclosure &amp; Vulnerability Protocol</h3>
+      <p style="margin-bottom: 15px; font-size: 0.95rem;">
+        JieLabs values proactive technical defense. If you are a security researcher or system engineer who has discovered an execution anomaly, connection weakness, or logic drift vector, contact us immediately.
+      </p>
+      <p style="margin: 0; font-size: 0.95rem;">
+        Secure Vulnerability Channel: <a href="mailto:jielabs.dev@gmail.com" style="color: #ef4444; font-weight: bold; text-decoration: underline;">jielabs.dev@gmail.com</a><br />
+        <em>Protocol Agreement: We request that developers avoid disclosing security details publicly until our engineering response team has evaluated the logs and deployed necessary updates.</em>
+      </p>
+    </div>
+
+    <footer class="policy-footer">
+      <div class="footer-links">
+        <a href="privacy.html" class="footer-link">Privacy Policy</a>
+        <span class="footer-divider">|</span>
+        <a href="terms.html" class="footer-link">Terms of Service</a>
+        <span class="footer-divider">|</span>
+        <a href="security.html" class="footer-link">Security Framework</a>
+      </div>
+      <div>&copy; 2026 JieLabs. All rights reserved. System Runtimes Sovereign.</div>
+    </footer>
+  </main>
+
+</body>
+</html>
