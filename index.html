@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JieLabs | Intelligent Software for Healthcare &amp; Enterprise Operations</title>
+  <style>
+    :root {
+      --bg-dark: #0d0e12;
+      --bg-container: #16181f;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent-cyan: #00f5d4;
+      --accent-blue: #38bdf8;
+      --border-color: #1f2937;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    /* Enterprise Navigation */
+    .jl-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border-color);
+      background-color: rgba(13, 14, 18, 0.8);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .jl-logo {
+      text-decoration: none;
+      font-size: 1.5rem;
+      letter-spacing: -0.05em;
+    }
+    .logo-bold { color: var(--text-main); font-weight: 800; }
+    .logo-light { color: var(--text-muted); font-weight: 300; }
+    .logo-cursor { color: var(--accent-cyan); font-weight: 800; }
+    
+    .jl-nav {
+      display: flex;
+      gap: 1.75rem;
+      flex-wrap: wrap;
+    }
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--text-main); }
+    .nav-link.highlight { color: var(--accent-cyan); }
+
+    /* Corporate Hero Section */
+    .hero-section {
+      text-align: center;
+      padding: 100px 20px 60px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .hero-subtitle {
+      color: var(--accent-blue);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.2;
+      margin-bottom: 30px;
+    }
+    .hero-description {
+      color: var(--text-muted);
+      font-size: 1.25rem;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+    .cta-group {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+    .cta-btn {
+      background-color: transparent;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      padding: 0.85rem 1.75rem;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.2s, border-color 0.2s;
+    }
+    .cta-btn.primary {
+      border-color: var(--accent-blue);
+      background-color: rgba(56, 189, 248, 0.05);
+    }
+    .cta-btn:hover {
+      background-color: rgba(255, 255, 255, 0.03);
+      border-color: var(--text-muted);
+    }
+
+    /* Core Solutions Focus */
+    .solutions-section {
+      max-width: 1000px;
+      margin: 40px auto 80px auto;
+      padding: 0 20px;
+    }
+    .section-header {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 35px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
+      color: var(--text-main);
+    }
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+    @media (max-width: 768px) { .solutions-grid { grid-template-columns: 1fr; } }
+    
+    .solution-card {
+      background-color: var(--bg-container);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 30px;
+    }
+    .solution-card h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 1.3rem;
+      color: var(--text-main);
+    }
+    .solution-card p {
+      color: var(--text-muted);
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    /* Enterprise Products Catalog */
+    .products-section {
+      max-width: 1000px;
+      margin: 40px auto 100px auto;
+      padding: 0 20px;
+    }
+    .product-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 25px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+    @media (max-width: 640px) { 
+      .product-row { flex-direction: column; gap: 10px; } 
+    }
+    .product-meta {
+      min-width: 250px;
+    }
+    .product-meta h3 {
+      margin: 0 0 4px 0;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    .product-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent-blue);
+    }
+    .product-desc {
+      color: var(--text-muted);
+      margin: 0;
+      font-size: 1rem;
+      max-width: 600px;
+    }
+
+    /* Corporate Footer */
+    .corporate-footer {
+      background-color: #090a0d;
+      border-top: 1px solid var(--border-color);
+      padding: 60px 20px 40px 20px;
+      margin-top: 120px;
+    }
+    .footer-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .footer-brand h4 {
+      margin: 0 0 8px 0;
+      font-size: 1.25rem;
+    }
+    .footer-division {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .footer-nav {
+      display: flex;
+      gap: 40px;
+    }
+    .footer-column h5 {
+      color: var(--text-main);
+      margin: 0 0 15px 0;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .footer-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-list li {
+      margin-bottom: 10px;
+    }
+    .footer-list a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .footer-list a:hover {
+      color: var(--accent-cyan);
+    }
+    .footer-bottom {
+      max-width: 1000px;
+      margin: 40px auto 0 auto;
+      padding-top: 25px;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Main Navigation Layout -->
+  <header class="jl-header">
+    <a href="index.html" class="jl-logo">
+      <span class="logo-bold">JIE</span><span class="logo-light">labs</span><span class="logo-cursor">_</span>
+    </a>
+    <nav class="jl-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="solutions.html" class="nav-link">Solutions</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="company.html" class="nav-link">Company</a>
+      <a href="https://developer.jielabs.com" class="nav-link highlight" target="_blank">Developers</a>
+      <a href="security.html" class="nav-link">Security</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Branding -->
+  <section class="hero-section">
+    <div class="hero-subtitle">Intelligent Software for Healthcare and Enterprise Operations</div>
+    <h1>Automate complexity.<br>Execute with precision.</h1>
+    <p class="hero-description">
+      JieLabs builds secure AI-powered software systems that help organizations automate repetitive work, improve accuracy, and run complex operations with less manual effort.
+    </p>
+    <div class="cta-group">
+      <a href="contact.html" class="cta-btn primary">Request Enterprise Consultation</a>
+      <a href="products.html" class="cta-btn">View System Specs</a>
+    </div>
+  </section>
+
+  <!-- Core Problem Solving Layout -->
+  <section class="solutions-section">
+    <div class="section-header">What We Solve</div>
+    <div class="solutions-grid">
+      <div class="solution-card">
+        <h3>Operational Friction</h3>
+        <p>Eliminate highly manual workflows and redundant oversight checkpoints. Our environments handle heavy-duty coordination and task state orchestration natively.</p>
+      </div>
+      <div class="solution-card">
+        <h3>Strict Compliance Layers</h3>
+        <p>Engineered to sit within highly secure environments. We map out execution safety parameters to protect systemic integrity and administrative rulesets.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Portfolio (Clean and Accessible) -->
+  <section class="products-section">
+    <div class="section-header">Our Software Architecture Portfolio</div>
+
+    <div class="product-row">
+      <div class="product-meta">
+        <h3>VHS HOS</h3>
+        <span class="product-tag">Healthcare Operating System</span>
+      </div>
+      <p class="product-desc">Optimizes complex administrative pipelines, clinical task tracking, and medical operational frameworks safely.</p>
+    </div>
+
+    <div class="product-row">
+      <div class="product-meta">
+        <h3>VEDA</h3>
+        <span class="product-tag">Intelligent Operations Assistant</span>
+      </div>
+      <p class="product-desc">A context-aware system orchestration co-pilot tailored to run securely within explicit corporate boundaries.</p>
+    </div>
+
+    <div class="product-row">
+      <div class="product-meta">
+        <h3>Apeiron Core</h3>
+        <span class="product-tag">Deterministic Orchestration Engine</span>
+      </div>
+      <p class="product-desc">The high-reliability foundational engine driving private systems integration and predictable run-state executions.</p>
+    </div>
+
+    <div class="product-row">
+      <div class="product-meta">
+        <h3>ASCE</h3>
+        <span class="product-tag">Semantic Compression Research Engine</span>
+      </div>
+      <p class="product-desc">Advanced data processing architecture engineered for token optimization and high-fidelity background parsing.</p>
+    </div>
+  </section>
+
+  <!-- Structured Corporate Footer -->
+  <footer class="corporate-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4><span class="logo-bold">JIE</span><span class="logo-light">labs</span></h4>
+        <p class="footer-division">A division of Pristine Total Care Services LLC</p>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-column">
+          <h5>Trust &amp; Governance</h5>
+          <ul class="footer-list">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="security.html">Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h5>Resources</h5>
+          <ul class="footer-list">
+            <li><a href="support.html">Support</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://developer.jielabs.com" target="_blank">Developer Center</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 JieLabs. All rights reserved. Operational Runtimes Sovereign.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
