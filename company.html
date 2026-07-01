@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Company | JieLabs</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>About Us | JieLabs</title>
   <style>
     :root {
       --bg-dark: #0d0e12;
@@ -14,35 +11,201 @@
       --text-main: #f3f4f6;
       --text-muted: #9ca3af;
       --accent-cyan: #00f5d4;
+      --accent-blue: #38bdf8;
       --border-color: #1f2937;
     }
-    * { box-sizing: border-box; font-family: 'Inter', sans-serif; }
-    body { background-color: var(--bg-dark); color: var(--text-main); margin: 0; padding: 0; line-height: 1.7; }
-    
-    .jl-header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-color); background-color: rgba(13, 14, 18, 0.8); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 100; }
-    .jl-logo { text-decoration: none; font-size: 1.5rem; letter-spacing: -0.05em; }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    /* Universal Header matching index.html exactly */
+    .jl-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border-color);
+      background-color: rgba(13, 14, 18, 0.8);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .jl-logo {
+      text-decoration: none;
+      font-size: 1.5rem;
+      letter-spacing: -0.05em;
+    }
     .logo-bold { color: var(--text-main); font-weight: 800; }
     .logo-light { color: var(--text-muted); font-weight: 300; }
     .logo-cursor { color: var(--accent-cyan); font-weight: 800; }
-    .jl-nav { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
-    .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s ease; }
+    
+    .jl-nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
     .nav-link:hover { color: var(--text-main); }
-    .nav-link.active { color: var(--accent-cyan); }
+    .nav-link.active { color: var(--text-main); font-weight: 700; }
+    .nav-link.highlight { color: var(--accent-cyan); }
 
-    .content-container { max-width: 900px; margin: 60px auto; padding: 40px; background-color: var(--bg-container); border: 1px solid var(--border-color); border-radius: 12px; }
-    h1 { font-size: 2.5rem; font-weight: 800; margin: 0 0 5px 0; letter-spacing: -0.03em; }
-    .subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 40px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
-    p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 20px; }
+    /* Layout Structure for Company Content */
+    .company-container { 
+      max-width: 1000px; 
+      margin: 60px auto 100px auto; 
+      padding: 0 20px; 
+    }
+    
+    .company-header { 
+      text-align: center; 
+      margin-bottom: 50px; 
+    }
+    .company-header h1 { 
+      font-size: 2.5rem; 
+      font-weight: 800; 
+      letter-spacing: -0.04em; 
+      margin-bottom: 10px; 
+    }
+    .company-subtitle {
+      font-size: 1.25rem;
+      color: var(--accent-blue);
+      font-weight: 600;
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+      line-height: 1.5;
+    }
+    
+    .company-body-text {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 850px;
+      margin: 0 auto 50px auto;
+      line-height: 1.7;
+    }
 
-    .policy-footer { text-align: center; padding: 40px 20px 0 20px; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--border-color); margin-top: 60px; }
-    .footer-links { margin-bottom: 15px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-    .footer-link { color: var(--text-muted); text-decoration: none; }
-    .footer-link:hover { color: var(--accent-cyan); }
+    /* Split Grid Structure for Mission / Vision */
+    .vision-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin: 60px 0;
+    }
+    @media (max-width: 768px) { .vision-grid { grid-template-columns: 1fr; } }
+    
+    .vision-box {
+      background-color: var(--bg-container);
+      border: 1px solid var(--border-color);
+      padding: 35px;
+      border-radius: 8px;
+    }
+    .vision-box h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .vision-box p {
+      color: var(--text-muted);
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    /* Section Heading Split Lines */
+    .section-header {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 60px 0 35px 0;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
+      color: var(--text-main);
+    }
+
+    /* Our Approach Grid */
+    .approach-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+    @media (max-width: 768px) { .approach-grid { grid-template-columns: 1fr; } }
+    
+    .approach-card {
+      padding: 10px 0;
+    }
+    .approach-card h4 {
+      margin: 0 0 8px 0;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .approach-card p {
+      color: var(--text-muted);
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    /* Split List Stack for Industries / Choose Us */
+    .list-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+    @media (max-width: 640px) { .list-row { flex-direction: column; gap: 5px; } }
+    .list-meta { font-weight: 700; font-size: 1.1rem; color: var(--text-main); min-width: 300px; }
+    .list-desc { color: var(--text-muted); margin: 0; font-size: 1rem; }
+
+    /* Corporate Footer matching index.html exactly */
+    .corporate-footer {
+      background-color: #090a0d;
+      border-top: 1px solid var(--border-color);
+      padding: 60px 20px 40px 20px;
+      margin-top: 120px;
+    }
+    .footer-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .footer-brand h4 { margin: 0 0 8px 0; font-size: 1.25rem; }
+    .footer-division { font-size: 0.85rem; color: var(--text-muted); }
+    .footer-nav { display: flex; gap: 40px; }
+    .footer-column h5 { color: var(--text-main); margin: 0 0 15px 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .footer-list { list-style: none; padding: 0; margin: 0; }
+    .footer-list li { margin-bottom: 10px; }
+    .footer-list a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-list a:hover { color: var(--accent-cyan); }
+    .footer-bottom { max-width: 1000px; margin: 40px auto 0 auto; padding-top: 25px; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.85rem; color: var(--text-muted); }
   </style>
 </head>
 <body>
+
   <header class="jl-header">
-    <a href="index.html" class="jl-logo"><span class="logo-bold">Jie</span><span class="logo-light">Labs</span><span class="logo-cursor">_</span></a>
+    <a href="index.html" class="jl-logo">
+      <span class="logo-bold">Jie</span><span class="logo-light">Labs</span><span class="logo-cursor">_</span>
+    </a>
     <nav class="jl-nav">
       <a href="index.html" class="nav-link">Home</a>
       <a href="solutions.html" class="nav-link">Solutions</a>
@@ -53,20 +216,100 @@
       <a href="contact.html" class="nav-link">Contact</a>
     </nav>
   </header>
-  <main class="content-container">
-    <h1>About JieLabs</h1>
-    <div class="subtitle">Sovereign engineering principles driving future-facing system design.</div>
-    <p>JieLabs develops advanced infrastructure software, specializing in deterministic environments, zero-trust runtimes, and deep pipeline vertical integrations for enterprise and healthcare operations.</p>
-    <p>Our operational stance prioritizes complete runtime visibility, isolated local execution safety bounds, and clean cryptographic integrity across every layer we construct.</p>
 
-    <footer class="policy-footer">
-      <div class="footer-links">
-        <a href="privacy.html" class="footer-link">Privacy Policy</a> | 
-        <a href="terms.html" class="footer-link">Terms of Service</a> | 
-        <a href="security.html" class="footer-link">Security Framework</a>
+  <main class="company-container">
+    <div class="company-header">
+      <h1>About JieLabs</h1>
+      <div class="company-subtitle">Building Intelligent Software for Organizations That Can't Afford to Fail</div>
+    </div>
+    
+    <div class="company-body-text">
+      <p>JieLabs is an enterprise software company dedicated to designing secure, intelligent, and reliable technology for organizations operating in complex, mission-critical environments.</p>
+      <p>We develop software that helps businesses automate repetitive work, streamline operations, strengthen security, and make better decisions through intelligent automation. Every platform we build is engineered with a focus on reliability, privacy, and long-term scalability.</p>
+      <p>Whether deployed in healthcare, enterprise, or regulated industries, our goal is the same: create software that simplifies complexity while keeping organizations in complete control of their data and operations.</p>
+    </div>
+
+    <div class="vision-grid">
+      <div class="vision-box">
+        <h3>Our Mission</h3>
+        <p>To build intelligent software that empowers organizations to operate more efficiently through secure automation, private AI, and enterprise-grade technology.</p>
       </div>
-      <div>&copy; 2026 JieLabs. All rights reserved.</div>
-    </footer>
+      <div class="vision-box">
+        <h3>Our Vision</h3>
+        <p>To become a trusted leader in enterprise automation by creating software platforms that combine artificial intelligence, deterministic execution, and secure infrastructure to solve real-world operational challenges.</p>
+      </div>
+    </div>
+
+    <div class="section-header">Our Approach</div>
+    <div class="approach-grid">
+      <div class="approach-card">
+        <h4>Secure by Design</h4>
+        <p>Security is built into every platform from the beginning—not added later. Our solutions prioritize data protection, privacy, and resilient system architecture.</p>
+      </div>
+      <div class="approach-card">
+        <h4>Intelligent by Purpose</h4>
+        <p>Artificial intelligence should enhance human decision-making, not replace it. Our platforms are designed to reduce repetitive work while keeping people in control of critical business processes.</p>
+      </div>
+      <div class="approach-card">
+        <h4>Built for Reliability</h4>
+        <p>Organizations depend on software every day. We engineer our platforms for predictable performance, operational resilience, and long-term maintainability.</p>
+      </div>
+      <div class="approach-card">
+        <h4>Ready to Grow</h4>
+        <p>Every JieLabs platform is built on modular architecture, allowing organizations to expand capabilities without replacing existing systems or disrupting operations.</p>
+      </div>
+    </div>
+
+    <div class="section-header">Industries We Serve</div>
+    <div class="list-row"><div class="list-meta">Healthcare</div></div>
+    <div class="list-row"><div class="list-meta">Enterprise Operations</div></div>
+    <div class="list-row"><div class="list-meta">Professional Services</div></div>
+    <div class="list-row"><div class="list-meta">Government &amp; Public Sector</div></div>
+    <div class="list-row"><div class="list-meta">Organizations with Secure Infrastructure Requirements</div></div>
+
+    <div class="section-header">Our Technology Philosophy</div>
+    <div class="company-body-text" style="margin-bottom:0;">
+      <p>Behind every JieLabs platform is a commitment to engineering excellence. Our software is designed around secure architecture, intelligent automation, deterministic execution, and modular systems that can evolve alongside the organizations they serve. We believe technology should simplify operations—not create more complexity.</p>
+    </div>
+
+    <div class="section-header">Why Organizations Choose JieLabs</div>
+    <div class="list-row"><div class="list-meta">Enterprise-grade security</div></div>
+    <div class="list-row"><div class="list-meta">Intelligent workflow automation</div></div>
+    <div class="list-row"><div class="list-meta">Private AI solutions</div></div>
+    <div class="list-row"><div class="list-meta">Modern systems integration</div></div>
+    <div class="list-row"><div class="list-meta">Scalable architecture</div></div>
+    <div class="list-row"><div class="list-meta">Long-term technology partnership</div></div>
   </main>
+
+  <footer class="corporate-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4><span class="logo-bold">Jie</span><span class="logo-light">Labs</span></h4>
+        <p class="footer-division">A division of Pristine Total Care Services LLC</p>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-column">
+          <h5>Trust &amp; Governance</h5>
+          <ul class="footer-list">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="security.html">Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h5>Resources</h5>
+          <ul class="footer-list">
+            <li><a href="support.html">Support</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="developers.html">Developer Center</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 JieLabs. All rights reserved. Operational Runtimes Sovereign.</div>
+    </div>
+  </footer>
+
 </body>
 </html>
