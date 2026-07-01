@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support &amp; Status | JieLabs</title>
+  <style>
+    :root {
+      --bg-dark: #0d0e12;
+      --bg-container: #16181f;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent-cyan: #00f5d4;
+      --accent-blue: #38bdf8;
+      --border-color: #1f2937;
+      --bg-card: rgba(255, 255, 255, 0.02);
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    .jl-header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-color); background-color: rgba(13, 14, 18, 0.8); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 100; }
+    .jl-logo { text-decoration: none; font-size: 1.5rem; letter-spacing: -0.05em; }
+    .logo-bold { color: var(--text-main); font-weight: 800; }
+    .logo-light { color: var(--text-muted); font-weight: 300; }
+    .logo-cursor { color: var(--accent-cyan); font-weight: 800; }
+    .jl-nav { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
+    .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s ease; }
+    .nav-link:hover { color: var(--text-main); }
+
+    .supp-container { max-width: 850px; margin: 60px auto; padding: 40px; background-color: var(--bg-container); border: 1px solid var(--border-color); border-radius: 12px; }
+    h1 { font-size: 2.5rem; font-weight: 800; margin: 0 0 5px 0; }
+    .supp-subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 40px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
+    
+    h2 { font-size: 1.4rem; font-weight: 700; margin-top: 40px; margin-bottom: 15px; color: var(--text-main); display: flex; align-items: center; }
+    h2::before { content: ">"; color: var(--accent-cyan); margin-right: 10px; font-family: monospace; font-weight: 800; }
+    
+    p, ul { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 20px; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 10px; }
+
+    .status-panel { background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border-color); padding: 20px; border-radius: 8px; font-family: monospace; margin-bottom: 30px; }
+    .status-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.02); }
+    .status-row:last-child { border: none; }
+    .status-label { color: var(--text-muted); }
+    .status-value { color: var(--accent-cyan); font-weight: bold; }
+
+    .changelog-block { background: var(--bg-card); border: 1px solid var(--border-color); padding: 20px; border-radius: 8px; margin-top: 20px; }
+    .version-tag { font-family: monospace; color: var(--accent-blue); font-weight: bold; font-size: 1.1rem; margin-bottom: 5px; }
+
+    .policy-footer { text-align: center; padding: 40px 20px 0 20px; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--border-color); margin-top: 60px; }
+    .footer-links { margin-bottom: 15px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .footer-link { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .footer-link:hover { color: var(--accent-cyan); }
+    .footer-divider { color: var(--border-color); }
+  </style>
+</head>
+<body>
+
+  <header class="jl-header">
+    <div class="jl-logo-container">
+      <a href="index.html" class="jl-logo"><span class="logo-bold">JIE</span><span class="logo-light">labs</span><span class="logo-cursor">_</span></a>
+    </div>
+    <nav class="jl-nav">
+      <a href="about.html" class="nav-link">About</a>
+      <a href="architecture.html" class="nav-link">Architecture</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="developer.html" class="nav-link">Dev Portal</a>
+      <a href="security.html" class="nav-link">Security</a>
+      <a href="support.html" class="nav-link">Support</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <main class="supp-container">
+    <h1>Support &amp; System Status</h1>
+    <div class="supp-subtitle">Technical Triage, System Telemetry Logs &amp; Issue Tracking</div>
+
+    <h2>Active Registry Health Status</h2>
+    <div class="status-panel">
+      <div class="status-row">
+        <span class="status-label">Apeiron Core Foundation Runtimes</span>
+        <span class="status-value">[ OPERATIONAL ]</span>
+      </div>
+      <div class="status-row">
+        <span class="status-label">VHS HOS Secure Sync Gateway</span>
+        <span class="status-value">[ OPERATIONAL ]</span>
+      </div>
+      <div class="status-row">
+        <span class="status-label">VEDA Intelligence Matrix Layers</span>
+        <span class="status-value">[ OPERATIONAL ]</span>
+      </div>
+      <div class="status-row">
+        <span class="status-label">Local Data Encryption Rings</span>
+        <span class="status-value">[ OPERATIONAL ]</span>
+      </div>
+    </div>
+
+    <h2>Technical Triage Channels</h2>
+    <p>
+      JieLabs platforms provide dedicated technical tracking protocols to assist operators with system alignment:
+    </p>
+    <ul>
+      <li><strong>Integration &amp; API Support:</strong> Assistance for enterprise sync configurations or authorized partner handshakes (Pending Partner Certification / Staging Sandbox vectors).</li>
+      <li><strong>Bug &amp; Logic Anomaly Reports:</strong> Submit system state trees or anomalous execution console readouts directly to engineering.</li>
+      <li><strong>Feature Allocation Requests:</strong> Propose targeted adjustments to vertical workflow automation components.</li>
+    </ul>
+    <p>
+      For all active triage queues, submit reports via secure email routing to: <a href="mailto:jielabs.dev@gmail.com">jielabs.dev@gmail.com</a>.
+    </p>
+
+    <h2>Platform Version Ledger</h2>
+    <div class="changelog-block">
+      <div class="version-tag">v1.0.0 Baseline Build // Stable Launch</div>
+      <p style="margin: 5px 0 10px 0; font-size: 0.95rem; color: var(--text-muted);">Released: June 2026</p>
+      <ul style="margin: 0; font-size: 0.95rem;">
+        <li>Established foundational <strong>Apeiron Core</strong> isolated sandbox runtime execution state loops.</li>
+        <li>Prepared internal staging blueprints for future compliance-mapped <strong>HL7 FHIR R4</strong> object translation schemes inside the <strong>VHS HOS</strong> framework.</li>
+        <li>Configured <strong>OAuth 2.0 secure authorization handling</strong> to govern API token exchange tasks.</li>
+        <li>Validated <strong>VEDA multi-brain parsing channels</strong> for monitored data triage.</li>
+      </ul>
+    </div>
+
+    <footer class="policy-footer">
+      <div class="footer-links">
+        <a href="privacy.html" class="footer-link">Privacy Policy</a>
+        <span class="footer-divider">|</span>
+        <a href="terms.html" class="footer-link">Terms of Service</a>
+        <span class="footer-divider">|</span>
+        <a href="security.html" class="footer-link">Security Framework</a>
+      </div>
+      <div>&copy; 2026 JieLabs. All rights reserved. System Runtimes Sovereign.</div>
+    </footer>
+  </main>
+
+</body>
+</html>
