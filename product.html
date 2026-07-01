@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>System Matrix | JieLabs</title>
+  <style>
+    :root {
+      --bg-dark: #0d0e12;
+      --bg-container: #16181f;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent-cyan: #00f5d4;
+      --accent-blue: #38bdf8;
+      --border-color: #1f2937;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    /* Universal Header */
+    .jl-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border-color);
+      background-color: rgba(13, 14, 18, 0.8);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .jl-logo { text-decoration: none; font-size: 1.5rem; letter-spacing: -0.05em; }
+    .logo-bold { color: var(--text-main); font-weight: 800; }
+    .logo-light { color: var(--text-muted); font-weight: 300; }
+    .logo-cursor { color: var(--accent-cyan); font-weight: 800; }
+    
+    .jl-nav { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
+    .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-link:hover { color: var(--text-main); }
+
+    /* Content Area */
+    .matrix-container {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 8px; }
+    .subtitle { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 50px; }
+
+    .category-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--accent-blue);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 10px;
+      margin-top: 50px;
+      margin-bottom: 25px;
+    }
+
+    .matrix-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 768px) { .matrix-grid { grid-template-columns: 1fr; } }
+
+    .matrix-card {
+      background-color: var(--bg-container);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-header-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+    .matrix-card h3 { margin: 0; font-size: 1.3rem; }
+    
+    /* Git Link Badge */
+    .git-link {
+      font-size: 0.7rem;
+      font-family: monospace;
+      color: var(--accent-cyan);
+      text-decoration: none;
+      border: 1px solid rgba(0, 245, 212, 0.3);
+      padding: 2px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+    .git-link:hover {
+      background: rgba(0, 245, 212, 0.1);
+      border-color: var(--accent-cyan);
+    }
+
+    .badge-row { font-size: 0.8rem; font-weight: 600; margin-bottom: 15px; }
+    .badge-prod { color: #10b981; }
+    .badge-dev { color: var(--accent-cyan); }
+    .badge-core { color: var(--accent-blue); }
+    .badge-soon { color: #f59e0b; }
+    .matrix-card p { color: var(--text-muted); font-size: 0.95rem; margin-top: 0; margin-bottom: 25px; flex-grow: 1; }
+    .pending-txt { color: var(--text-muted); font-size: 0.95rem; font-style: italic; }
+
+    /* Footer Links */
+    .policy-footer {
+      text-align: center;
+      padding: 40px 20px 0 20px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      margin-top: 80px;
+    }
+    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 15px; }
+    .footer-link { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .footer-link:hover { color: var(--accent-cyan); }
+    .footer-divider { color: var(--border-color); }
+  </style>
+</head>
+<body>
+
+  <header class="jl-header">
+    <div class="jl-logo-container">
+      <a href="index.html" class="jl-logo">
+        <span class="logo-bold">JIE</span><span class="logo-light">labs</span><span class="logo-cursor">_</span>
+      </a>
+    </div>
+    <nav class="jl-nav">
+      <a href="about.html" class="nav-link">About</a>
+      <a href="architecture.html" class="nav-link">Architecture</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="developer.html" class="nav-link">Dev Portal</a>
+      <a href="security.html" class="nav-link">Security</a>
+      <a href="support.html" class="nav-link">Support</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <main class="matrix-container">
+    <h1>System Matrix</h1>
+    <div class="subtitle">Comprehensive engineering index of operational software environments and infrastructure layers.</div>
+
+    <div class="category-title">1. Core Architecture &amp; AI Orchestration</div>
+    <div class="matrix-grid">
+      <div class="matrix-card">
+        <div>
+          <div class="card-header-row">
+            <h3>Nexus HQ</h3>
+          </div>
+          <div class="badge-row"><span class="badge-prod">✔ Production Platform</span></div>
+          <p>Autonomous swarm orchestration engine utilizing a multi-vector architecture to plan, build, and maintain complex codebases by enforcing persistent engineering guardrails in real-time.</p>
+        </div>
+        <span class="pending-txt">Orchestrator Online</span>
+      </div>
+
+      <div class="matrix-card">
+        <div>
+          <div class="card-header-row">
+            <h3>Genesis Apex</h3>
+          </div>
+          <div class="badge-row"><span class="badge-prod">✔ Production Platform</span></div>
+          <p>The root diagnostic framework and automated builder layer responsible for environment compilation, executing seed sequences, and deploying system builds.</p>
+        </div>
