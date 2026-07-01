@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Solutions | JieLabs</title>
+  <title>Solutions &amp; Platforms | JieLabs</title>
   <style>
     :root {
       --bg-dark: #0d0e12;
@@ -28,7 +28,7 @@
       line-height: 1.7;
     }
 
-    /* Universal Header Header matching index.html exactly */
+    /* Universal Header matching index.html exactly */
     .jl-header {
       display: flex;
       justify-content: space-between;
@@ -91,18 +91,27 @@
     
     .intro-text {
       color: var(--text-muted);
-      font-size: 1.1rem;
-      max-width: 800px;
-      margin: 0 auto 50px auto;
+      font-size: 1.25rem;
+      max-width: 850px;
+      margin: 0 auto 60px auto;
       text-align: center;
       line-height: 1.6;
     }
 
+    .section-header {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 60px 0 35px 0;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
+      color: var(--text-main);
+    }
+
+    /* 6-Card Grid Matrix */
     .solutions-grid { 
       display: grid; 
       grid-template-columns: 1fr 1fr; 
       gap: 25px; 
-      margin-top: 30px;
     }
     @media (max-width: 768px) { .solutions-grid { grid-template-columns: 1fr; } }
     
@@ -124,6 +133,19 @@
       margin-bottom: 0; 
       font-size: 0.95rem;
     }
+
+    /* Why Choose Us - Key Value Row Stack */
+    .why-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 25px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+    @media (max-width: 640px) { .why-row { flex-direction: column; gap: 10px; } }
+    .why-meta { min-width: 280px; }
+    .why-meta h3 { margin: 0 0 4px 0; font-size: 1.3rem; font-weight: 700; color: var(--text-main); }
+    .why-desc { color: var(--text-muted); margin: 0; font-size: 1rem; max-width: 650px; }
 
     /* Corporate Footer matching index.html exactly */
     .corporate-footer {
@@ -171,23 +193,66 @@
 
   <main class="solutions-container">
     <div class="solutions-header">
-      <h1>Enterprise Solutions</h1>
-      <div class="solutions-subtitle">Architectural alignments built for high-reliability ecosystems.</div>
+      <h1>Enterprise Solutions &amp; Platforms</h1>
+      <div class="solutions-subtitle">Architectural platforms engineered for secure, intelligent, and mission-critical operations.</div>
     </div>
     
     <p class="intro-text">
-      We configure edge computing, intelligence parsing, and operational system integrations designed to minimize structural latency and secure absolute data integrity.
+      We design enterprise software that automates complex workflows, protects sensitive data, and delivers deterministic execution across healthcare, government, and high-reliability business environments.
     </p>
     
     <div class="solutions-grid">
       <div class="solution-card">
-        <h3>Healthcare Integration</h3>
-        <p>Connecting complex hospital data pipelines and custom internal networks securely without relying on third-party cloud aggregators.</p>
+        <h3>Healthcare Operations</h3>
+        <p>Modernizing clinical operations through intelligent workflow automation. Securely integrate patient intake, scheduling, provider coordination, billing workflows, and clinical data across existing healthcare systems while reducing manual administrative workload.</p>
       </div>
       <div class="solution-card">
-        <h3>Zero-Trust Frameworks</h3>
-        <p>Hardening enterprise software layers against vulnerability vectors using localized sandboxing and isolated memory bounds.</p>
+        <h3>AI Operations Intelligence</h3>
+        <p>Context-aware operational assistance without compromising data sovereignty. Deploy private AI assistants that operate entirely within your infrastructure, providing intelligent guidance, workflow support, document analysis, and operational insights without relying on public AI services.</p>
       </div>
+      <div class="solution-card">
+        <h3>Enterprise Workflow Automation</h3>
+        <p>Replacing manual processes with deterministic execution. Automate approvals, multi-step business workflows, task orchestration, and operational dependencies using rule-based execution designed to improve accuracy, consistency, and organizational efficiency.</p>
+      </div>
+      <div class="solution-card">
+        <h3>Security &amp; Compliance</h3>
+        <p>Built for organizations where security is a requirement—not an afterthought. Zero-trust architecture, encrypted communications, immutable audit trails, role-based access controls, and continuous verification help organizations maintain compliance while protecting sensitive operational data.</p>
+      </div>
+      <div class="solution-card">
+        <h3>Systems Integration</h3>
+        <p>Connecting enterprise systems into one intelligent operational ecosystem. Integrate existing software, databases, internal services, and third-party platforms into a unified environment that eliminates data silos and streamlines organizational workflows.</p>
+      </div>
+      <div class="solution-card">
+        <h3>Enterprise Infrastructure</h3>
+        <p>Designed for organizations that require reliability at scale. Deploy secure on-premises, hybrid, or private cloud environments with resilient infrastructure engineered for continuous operation, high availability, and long-term scalability.</p>
+      </div>
+    </div>
+
+    <div class="section-header">Why Organizations Choose JieLabs</div>
+
+    <div class="why-row">
+      <div class="why-meta"><h3>Private-by-Design</h3></div>
+      <p class="why-desc">Your data remains entirely under your local structural control.</p>
+    </div>
+    <div class="why-row">
+      <div class="why-meta"><h3>Enterprise Security</h3></div>
+      <p class="why-desc">Zero-trust architecture implemented with rigid defense-in-depth principles.</p>
+    </div>
+    <div class="why-row">
+      <div class="why-meta"><h3>Workflow Automation</h3></div>
+      <p class="why-desc">Reduce repetitive administrative work through intelligent, deterministic process orchestration.</p>
+    </div>
+    <div class="why-row">
+      <div class="why-meta"><h3>Operational Intelligence</h3></div>
+      <p class="why-desc">AI agents that work securely within your own ring-fenced infrastructure boundaries.</p>
+    </div>
+    <div class="why-row">
+      <div class="why-meta"><h3>Built for Scale</h3></div>
+      <p class="why-desc">Modular platform layouts engineered to scale vertically and horizontally as your organization grows.</p>
+    </div>
+    <div class="why-row">
+      <div class="why-meta"><h3>Future Ready</h3></div>
+      <p class="why-desc">Architected for long-term integration expansions without replacing your legacy systems.</p>
     </div>
   </main>
 
