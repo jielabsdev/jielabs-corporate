@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 Node Not Found | JieLabs</title>
+  <style>
+    :root {
+      --bg-dark: #0d0e12;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent-cyan: #00f5d4;
+      --border-color: #1f2937;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: monospace;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .error-container {
+      max-width: 600px;
+      padding: 30px;
+      border: 1px dashed var(--border-color);
+      background-color: #16181f;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .error-code { font-size: 3rem; font-weight: 800; color: #ef4444; margin-bottom: 10px; }
+    .error-title { font-size: 1.2rem; color: var(--text-main); margin-bottom: 20px; font-weight: bold; }
+    .error-message { color: var(--text-muted); font-size: 1rem; margin-bottom: 30px; line-height: 1.6; }
+    
+    .btn-return {
+      display: inline-block;
+      color: var(--bg-dark);
+      background-color: var(--accent-cyan);
+      text-decoration: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 4px;
+      transition: opacity 0.2s ease;
+    }
+    .btn-return:hover { opacity: 0.9; }
+  </style>
+</head>
+<body>
+
+  <div class="error-container">
+    <div class="error-code">[ 404 ]</div>
+    <div class="error-title">CRITICAL // Node Vector Not Found</div>
+    <p class="error-message">
+      The requested execution path does not exist inside the current registry. The resource address may have shifted or does not align with valid runtime paths.
+    </p>
+    <a href="index.html" class="btn-return">Execute Return to Command Center</a>
+  </div>
+
+</body>
+</html>
