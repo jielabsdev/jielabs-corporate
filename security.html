@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Security | JieLabs</title>
+  <!-- Explicitly importing the Inter font family to resolve text styling from image_345a7b.png -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-dark: #0d0e12;
@@ -16,30 +20,36 @@
       --bg-card: rgba(255, 255, 255, 0.02);
     }
 
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
     body {
       background-color: var(--bg-dark);
       color: var(--text-main);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.7;
     }
 
-    /* Universal Header */
+    /* Universal Header matching image_345a5a.png */
     .jl-header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-color); background-color: rgba(13, 14, 18, 0.8); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 100; }
     .jl-logo { text-decoration: none; font-size: 1.5rem; letter-spacing: -0.05em; }
     .logo-bold { color: var(--text-main); font-weight: 800; }
     .logo-light { color: var(--text-muted); font-weight: 300; }
     .logo-cursor { color: var(--accent-cyan); font-weight: 800; }
+    
     .jl-nav { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
     .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s ease; }
     .nav-link:hover { color: var(--text-main); }
+    .nav-link.active { color: var(--accent-cyan); }
 
     .sec-container { max-width: 850px; margin: 60px auto; padding: 40px; background-color: var(--bg-container); border: 1px solid var(--border-color); border-radius: 12px; }
-    h1 { font-size: 2.5rem; font-weight: 800; margin: 0 0 5px 0; }
+    h1 { font-size: 2.5rem; font-weight: 800; margin: 0 0 5px 0; letter-spacing: -0.03em; color: var(--text-main); }
     .sec-subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 40px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
     
-    h2 { font-size: 1.4rem; font-weight: 700; margin-top: 40px; margin-bottom: 15px; color: var(--text-main); display: flex; align-items: center; }
+    h2 { font-size: 1.4rem; font-weight: 700; margin-top: 40px; margin-bottom: 15px; color: var(--text-main); display: flex; align-items: center; letter-spacing: -0.02em; }
     h2::before { content: ">"; color: var(--accent-cyan); margin-right: 10px; font-family: monospace; font-weight: 800; }
     
     p, ul { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 20px; }
@@ -48,7 +58,7 @@
     strong { color: var(--text-main); }
 
     .vulnerability-box { border: 1px solid rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.03); padding: 24px; border-radius: 8px; margin-top: 30px; }
-    .vulnerability-box h3 { margin-top: 0; color: #ef4444; font-size: 1.15rem; }
+    .vulnerability-box h3 { margin-top: 0; color: #ef4444; font-size: 1.15rem; font-weight: 700; }
 
     .policy-footer { text-align: center; padding: 40px 20px 0 20px; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--border-color); margin-top: 60px; }
     .footer-links { margin-bottom: 15px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
@@ -68,12 +78,12 @@
       </a>
     </div>
     <nav class="jl-nav">
-      <a href="about.html" class="nav-link">About</a>
-      <a href="architecture.html" class="nav-link">Architecture</a>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="solutions.html" class="nav-link">Solutions</a>
       <a href="products.html" class="nav-link">Products</a>
-      <a href="https://developer.jielabs.com" class="nav-link">Dev Portal</a>
-      <a href="security.html" class="nav-link">Security</a>
-      <a href="support.html" class="nav-link">Support</a>
+      <a href="company.html" class="nav-link">Company</a>
+      <a href="developers.html" class="nav-link">Developers</a>
+      <a href="security.html" class="nav-link active">Security</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </nav>
   </header>
