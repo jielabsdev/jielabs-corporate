@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mission &amp; Principles | JieLabs</title>
+  <style>
+    :root {
+      --bg-dark: #0d0e12;
+      --bg-container: #16181f;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent-cyan: #00f5d4;
+      --accent-blue: #38bdf8;
+      --border-color: #1f2937;
+      --bg-card: rgba(255, 255, 255, 0.02);
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    .jl-header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-color); background-color: rgba(13, 14, 18, 0.8); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 100; }
+    .jl-logo { text-decoration: none; font-size: 1.5rem; letter-spacing: -0.05em; }
+    .logo-bold { color: var(--text-main); font-weight: 800; }
+    .logo-light { color: var(--text-muted); font-weight: 300; }
+    .logo-cursor { color: var(--accent-cyan); font-weight: 800; }
+    .jl-nav { display: flex; gap: 2rem; align-items: center; }
+    .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; font-weight: 500; }
+    .nav-link:hover { color: var(--text-main); }
+
+    .mission-container { max-width: 800px; margin: 60px auto; padding: 40px; background-color: var(--bg-container); border: 1px solid var(--border-color); border-radius: 12px; }
+    h1 { font-size: 2.5rem; font-weight: 800; margin: 0 0 5px 0; }
+    .mission-subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 40px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
+    
+    h2 { font-size: 1.35rem; font-weight: 700; margin-top: 35px; margin-bottom: 15px; color: var(--text-main); display: flex; align-items: center; }
+    h2::before { content: ">"; color: var(--accent-cyan); margin-right: 10px; font-family: monospace; font-weight: 800; }
+    
+    p, ul { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 20px; }
+    strong { color: var(--text-main); }
+
+    .principle-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 24px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .principle-title { font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 6px; }
+    .principle-desc { color: var(--text-muted); margin: 0; font-size: 1rem; }
+
+    .policy-footer { text-align: center; margin-top: 60px; margin-bottom: 40px; font-size: 0.85rem; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+  <header class="jl-header">
+    <div class="jl-logo-container">
+      <a href="index.html" class="jl-logo"><span class="logo-bold">JIE</span><span class="logo-light">labs</span><span class="logo-cursor">_</span></a>
+    </div>
+    <nav class="jl-nav">
+      <a href="about.html" class="nav-link">About</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <main class="mission-container">
+    <h1>Mission &amp; Engineering Principles</h1>
+    <div class="mission-subtitle">Our Philosophical Manifesto &amp; Operational Directives</div>
+
+    <h2>Core Mission</h2>
+    <p>
+      The mission of JieLabs is to construct high-determinism, local-first computing frameworks that augment human oversight. We reject fragile, cloud-dependent, unguided systems, choosing instead to design sovereign software structures capable of predictable, air-gapped performance inside mission-critical enterprise environments.
+    </p>
+
+    <h2>Engineering Pillars</h2>
+
+    <div class="principle-block">
+      <div class="principle-title">01 // Reliability Over Novelty</div>
+      <p class="principle-desc">We do not chase transient software trends. We prioritize established architectural blueprints, mathematically sound state machines, and rigorous compile-time isolation to build systems designed to perform indefinitely.</p>
+    </div>
+
+    <div class="principle-block">
+      <div class="principle-title">02 // Human-in-the-Loop Governance</div>
+      <p class="principle-desc">Autonomous systems must function strictly to augment human intelligence. JieLabs engineering protocols mandate that any critical cross-boundary data mutations or transaction state updates require explicit human verification.</p>
+    </div>
+
+    <div class="principle-block">
+      <div class="principle-title">03 // Local-First Infrastructure</div>
+      <p class="principle-desc">Critical infrastructure should never depend on third-party cloud routing models. By keeping processing loops completely local, our architectures ensure absolute data sovereignty, massive reduction in latent overhead, and native resilience against external outages.</p>
+    </div>
+
+    <div class="principle-block">
+      <div class="principle-title">04 // Security By Design</div>
+      <p class="principle-desc">Security is treated as a core architectural characteristic, not an patch added at deployment. We utilize zero-trust local configuration sandboxing, automated cryptographic verification tracking, and encrypted environmental configuration pools by default.</p>
+    </div>
+
+    <div class="principle-block">
+      <div class="principle-title">05 // Operational Transparency</div>
+      <p class="principle-desc">Black-box operational logic is unacceptable in enterprise deployment. Every processing branch, multi-agent evaluation path, and data sync execution loop produces clean, auditable telemetry records that operators can inspect at any moment.</p>
+    </div>
+  </main>
+
+  <footer class="policy-footer">&copy; 2026 JieLabs. All rights reserved.</footer>
+</body>
+</html>
