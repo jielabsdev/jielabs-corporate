@@ -118,8 +118,67 @@
       color: var(--text-main);
     }
 
-    /* Corporate Footer */
-    .corporate-footer { background-color: #090a0d; border-top: 1px solid var(--border-color); padding: 40px 20px; margin-top: 120px; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
+    /* Corporate Footer Components */
+    .corporate-footer {
+      background-color: #090a0d;
+      border-top: 1px solid var(--border-color);
+      padding: 60px 20px 40px 20px;
+      margin-top: 120px;
+    }
+    .footer-container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .footer-brand h4 {
+      margin: 0 0 8px 0;
+      font-size: 1.25rem;
+    }
+    .footer-division {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .footer-nav {
+      display: flex;
+      gap: 40px;
+    }
+    .footer-column h5 {
+      color: var(--text-main);
+      margin: 0 0 15px 0;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .footer-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-list li {
+      margin-bottom: 10px;
+    }
+    .footer-list a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .footer-list a:hover {
+      color: var(--accent-cyan);
+    }
+    .footer-bottom {
+      max-width: 900px;
+      margin: 40px auto 0 auto;
+      padding-top: 25px;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
   </style>
 </head>
 <body>
@@ -142,6 +201,7 @@
       <h1>System Architectures</h1>
     </div>
 
+    <!-- VHS HOS Section -->
     <div class="system-block">
       <div class="system-title-row">
         <h2>VHS HOS Matrix</h2>
@@ -162,6 +222,7 @@
       </div>
     </div>
 
+    <!-- Apeiron Core Section -->
     <div class="system-block">
       <div class="system-title-row">
         <h2>Apeiron Core Specifications</h2>
@@ -183,8 +244,35 @@
     </div>
   </div>
 
+  <!-- Identical Footer Architecture for Uniform Experience -->
   <footer class="corporate-footer">
-    <div>&copy; 2026 JieLabs. All rights reserved. A division of Pristine Total Care Services LLC.</div>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4><span class="logo-bold">Jie</span><span class="logo-light">Labs</span></h4>
+        <p class="footer-division">A division of Pristine Total Care Services LLC</p>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-column">
+          <h5>Trust &amp; Governance</h5>
+          <ul class="footer-list">
+            <li><a href="https://developer.jielabs.com">Privacy Policy</a></li>
+            <li><a href="https://developer.jielabs.com">Terms of Service</a></li>
+            <li><a href="architecture.html">Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h5>Resources</h5>
+          <ul class="footer-list">
+            <li><a href="https://developer.jielabs.com">Support</a></li>
+            <li><a href="https://developer.jielabs.com">Contact</a></li>
+            <li><a href="https://developer.jielabs.com" target="_blank">Developer Center</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 JieLabs. All rights reserved. Operational Runtimes Sovereign.</div>
+    </div>
   </footer>
 
 </body>
