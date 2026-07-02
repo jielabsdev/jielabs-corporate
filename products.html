@@ -1,454 +1,427 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Platforms &amp; Technologies | JieLabs</title>
-
+  <title>Platforms | JieLabs</title>
   <style>
-
     :root {
-
       --bg-dark: #0d0e12;
-
       --bg-container: #16181f;
-
       --text-main: #f3f4f6;
-
       --text-muted: #9ca3af;
-
       --accent-cyan: #00f5d4;
-
       --accent-blue: #38bdf8;
-
       --border-color: #1f2937;
-
     }
-
 
     * {
-
       box-sizing: border-box;
-
     }
-
 
     body {
-
       background-color: var(--bg-dark);
-
       color: var(--text-main);
-
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-
       margin: 0;
-
       padding: 0;
-
       line-height: 1.7;
-
     }
 
-
-    /* Universal Header matching index.html exactly */
-
+    /* Universal Header */
     .jl-header {
-
       display: flex;
-
       justify-content: space-between;
-
       align-items: center;
-
       padding: 1.5rem 2rem;
-
       border-bottom: 1px solid var(--border-color);
-
       background-color: rgba(13, 14, 18, 0.8);
-
       backdrop-filter: blur(8px);
-
       position: sticky;
-
       top: 0;
-
       z-index: 100;
-
     }
-
-    .jl-logo { 
-
-      text-decoration: none; 
-
-      font-size: 1.5rem; 
-
-      letter-spacing: -0.05em; 
-
+    .jl-logo {
+      text-decoration: none;
+      font-size: 1.5rem;
+      letter-spacing: -0.05em;
     }
-
     .logo-bold { color: var(--text-main); font-weight: 800; }
-
     .logo-light { color: var(--text-muted); font-weight: 300; }
-
     .logo-cursor { color: var(--accent-cyan); font-weight: 800; }
-
     
-
-    .jl-nav { 
-
-      display: flex; 
-
-      gap: 1.5rem; 
-
-      flex-wrap: wrap; 
-
-      align-items: center; 
-
+    .jl-nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
     }
-
-    .nav-link { 
-
-      color: var(--text-muted); 
-
-      text-decoration: none; 
-
-      font-size: 0.9rem; 
-
-      font-weight: 500; 
-
-      transition: color 0.2s ease; 
-
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
     }
-
     .nav-link:hover { color: var(--text-main); }
-
     .nav-link.active { color: var(--text-main); font-weight: 700; }
 
-    .nav-link.highlight { color: var(--accent-cyan); }
-
-
-    /* Layout Portfolio Container */
-
-    .catalog-container { max-width: 1000px; margin: 60px auto 100px auto; padding: 0 20px; }
-
-    .catalog-header { text-align: center; margin-bottom: 60px; }
-
-    .catalog-header h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.04em; margin-bottom: 10px; }
-
-    
-
-    /* Section Classification Headers */
-
-    .section-category {
-
-      font-size: 1.4rem;
-
-      font-weight: 700;
-
+    /* Page Container */
+    .products-container { 
+      max-width: 1000px; 
+      margin: 60px auto 100px auto; 
+      padding: 0 20px; 
+    }
+    .products-header { 
+      text-align: center; 
+      margin-bottom: 60px; 
+    }
+    .products-header h1 { 
+      font-size: 2.5rem; 
+      font-weight: 800; 
+      letter-spacing: -0.04em; 
+      margin-bottom: 15px; 
+    }
+    .products-subtitle {
+      font-size: 1.1rem;
       color: var(--accent-blue);
-
-      margin: 50px 0 20px 0;
-
-      letter-spacing: -0.02em;
-
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
-
-    .section-intro {
-
+    
+    .intro-text {
       color: var(--text-muted);
-
-      font-size: 1.05rem;
-
-      margin-bottom: 30px;
-
-      max-width: 800px;
-
+      font-size: 1.25rem;
+      max-width: 850px;
+      margin: 0 auto 80px auto;
+      text-align: center;
+      line-height: 1.6;
     }
 
+    /* Platform Entry Layout */
+    .platform-entry {
+      background-color: var(--bg-container);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 40px;
+      margin-bottom: 40px;
+    }
+    .platform-lead {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 20px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .platform-title h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin: 0 0 5px 0;
+      color: var(--text-main);
+    }
+    .platform-category {
+      font-size: 1.05rem;
+      color: var(--accent-blue);
+      font-weight: 600;
+    }
+    .platform-status {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: 1px solid var(--border-color);
+      padding: 6px 12px;
+      border-radius: 4px;
+      background-color: rgba(255, 255, 255, 0.02);
+    }
+    .platform-desc {
+      font-size: 1.1rem;
+      color: var(--text-main);
+      margin-bottom: 25px;
+    }
+    .platform-details h4 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin: 30px 0 15px 0;
+    }
+    
+    /* Grid Matrix for Capabilities / Specs */
+    .spec-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 15px;
+    }
+    .spec-item {
+      background-color: rgba(13, 14, 18, 0.4);
+      border: 1px solid var(--border-color);
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
 
-    /* Structured Product Rows */
+    /* Generic Section Blocks */
+    .section-header {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 80px 0 35px 0;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
+      color: var(--text-main);
+    }
+    .content-block {
+      margin-bottom: 40px;
+    }
+    .content-block p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
 
-    .product-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 30px 0; border-bottom: 1px solid var(--border-color); }
+    /* Principles List Layout */
+    .principles-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+    @media (max-width: 768px) { .principles-grid { grid-template-columns: 1fr; } }
+    .principle-card h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 1.15rem;
+      color: var(--text-main);
+    }
+    .principle-card p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
 
-    @media (max-width: 640px) { .product-row { flex-direction: column; gap: 12px; } }
-
-    .product-meta { min-width: 280px; padding-right: 20px; }
-
-    .product-meta h3 { margin: 0 0 4px 0; font-size: 1.4rem; font-weight: 700; color: var(--text-main); }
-
-    .product-tag { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); display: block; margin-bottom: 6px; }
-
-    .product-status { font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 0.05em; }
-
-    .product-desc { color: var(--text-muted); margin: 0; font-size: 1rem; max-width: 620px; flex-grow: 1; }
-
-
-    /* Corporate Footer matching layout specs */
-
-    .corporate-footer { background-color: #090a0d; border-top: 1px solid var(--border-color); padding: 60px 20px 40px 20px; margin-top: 120px; }
-
-    .footer-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px; }
-
+    /* Corporate Footer */
+    .corporate-footer {
+      background-color: #090a0d;
+      border-top: 1px solid var(--border-color);
+      padding: 60px 20px 40px 20px;
+      margin-top: 120px;
+    }
+    .footer-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
     .footer-brand h4 { margin: 0 0 8px 0; font-size: 1.25rem; }
-
     .footer-division { font-size: 0.85rem; color: var(--text-muted); }
-
     .footer-nav { display: flex; gap: 40px; }
-
     .footer-column h5 { color: var(--text-main); margin: 0 0 15px 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
-
     .footer-list { list-style: none; padding: 0; margin: 0; }
-
     .footer-list li { margin-bottom: 10px; }
-
     .footer-list a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
-
     .footer-list a:hover { color: var(--accent-cyan); }
-
     .footer-bottom { max-width: 1000px; margin: 40px auto 0 auto; padding-top: 25px; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.85rem; color: var(--text-muted); }
-
   </style>
-
 </head>
-
 <body>
 
-
   <header class="jl-header">
-
     <a href="index.html" class="jl-logo">
-
       <span class="logo-bold">Jie</span><span class="logo-light">Labs</span><span class="logo-cursor">_</span>
-
     </a>
-
     <nav class="jl-nav">
-
       <a href="index.html" class="nav-link">Home</a>
-
       <a href="solutions.html" class="nav-link">Solutions</a>
-
-      <a href="products.html" class="nav-link active">Platforms &amp; Technologies</a>
-
+      <a href="products.html" class="nav-link active">Platforms</a>
       <a href="company.html" class="nav-link">Company</a>
-
       <a href="developers.html" class="nav-link">Developer Center</a>
-
       <a href="security.html" class="nav-link">Security</a>
-
       <a href="contact.html" class="nav-link">Contact</a>
-
     </nav>
-
   </header>
 
-
-  <main class="catalog-container">
-
-    <div class="catalog-header">
-
-      <h1>Platforms &amp; Technologies</h1>
-
+  <main class="products-container">
+    <div class="products-header">
+      <h1>Platforms</h1>
+      <div class="products-subtitle">Enterprise Platforms Built for Modern Operations</div>
     </div>
-
-
-    <!-- Tier 1: Software Platforms -->
-
-    <div class="section-category">Software Platforms</div>
-
     
+    <p class="intro-text">
+      JieLabs develops intelligent enterprise platforms that help organizations automate operations, improve efficiency, and extend the software they already trust. Our solutions are designed to complement existing systems—not replace them—through secure integrations, intelligent automation, and enterprise workflow management.
+    </p>
 
-    <div class="product-row">
-
-      <div class="product-meta">
-
-        <h3>HOS</h3>
-
-        <span class="product-tag">Healthcare Operating System</span>
-
-        <span class="product-status">Production Platform</span>
-
+    <!-- FLAGSHIP PRODUCT: HOP -->
+    <div class="platform-entry">
+      <div class="platform-lead">
+        <div class="platform-title">
+          <h2>HOP</h2>
+          <div class="platform-category">Healthcare Operations Platform / The Enterprise Healthcare Operations ERP</div>
+        </div>
+        <div class="platform-status">Status: Active Platform</div>
       </div>
+      <p class="platform-desc">
+        HOP is a next-generation Healthcare Operations ERP designed to unify the operational side of modern medical practices into a single intelligent platform. Rather than replacing an Electronic Health Record, HOP extends its capabilities by coordinating the people, departments, workflows, communications, and business operations that surround patient care while preserving the EHR as the authoritative clinical system of record.
+      </p>
+      
+      <div class="platform-details">
+        <h4>HOP Brings Together</h4>
+        <div class="spec-matrix">
+          <div class="spec-item">Executive Operations</div>
+          <div class="spec-item">Clinical Operations</div>
+          <div class="spec-item">Financial Management</div>
+          <div class="spec-item">Human Resources</div>
+          <div class="spec-item">Compliance</div>
+          <div class="spec-item">Communications</div>
+          <div class="spec-item">Business Operations</div>
+          <div class="spec-item">Operational Intelligence</div>
+        </div>
 
-      <p class="product-desc">An enterprise healthcare operations platform that unifies patient intake, scheduling, provider coordination, billing, payroll automation, and operational intelligence into one secure ecosystem.</p>
-
+        <h4>Designed For</h4>
+        <div class="spec-matrix">
+          <div class="spec-item">Independent Medical Practices</div>
+          <div class="spec-item">Multi-Provider Clinics</div>
+          <div class="spec-item">Specialty Practices</div>
+          <div class="spec-item">Healthcare Networks</div>
+          <div class="spec-item">Growing Multi-Location Organizations</div>
+        </div>
+      </div>
     </div>
 
-
-    <div class="product-row">
-
-      <div class="product-meta">
-
-        <h3>VEDA Intelligence</h3>
-
-        <span class="product-tag">Enterprise Operations Assistant</span>
-
-        <span class="product-status">Integrated Intelligence Layer</span>
-
+    <!-- INTELLIGENCE LAYER: VEDA -->
+    <div class="platform-entry">
+      <div class="platform-lead">
+        <div class="platform-title">
+          <h2>VEDA Intelligence</h2>
+          <div class="platform-category">Enterprise Operations Intelligence</div>
+        </div>
+        <div class="platform-status">Status: Integrated Platform</div>
       </div>
-
-      <p class="product-desc">A private AI operations assistant that provides contextual guidance, workflow automation, document intelligence, and decision support while operating entirely within your organization's secure infrastructure.</p>
-
+      <p class="platform-desc">
+        VEDA is the intelligent operations layer that assists staff across every department by organizing work, surfacing relevant information, coordinating workflows, and supporting informed decision-making. Designed to work alongside people—not replace them—VEDA helps organizations reduce administrative workload while maintaining human oversight for critical operational decisions.
+      </p>
+      
+      <div class="platform-details">
+        <h4>Capabilities</h4>
+        <div class="spec-matrix">
+          <div class="spec-item">Workflow Assistance</div>
+          <div class="spec-item">Operational Intelligence</div>
+          <div class="spec-item">Document Understanding</div>
+          <div class="spec-item">Department Coordination</div>
+          <div class="spec-item">Decision Support</div>
+          <div class="spec-item">Human-Guided Automation</div>
+        </div>
+      </div>
     </div>
 
-
-    <!-- Tier 2: Core Technology -->
-
-    <div class="section-category" style="margin-top: 60px;">Core Technology</div>
-
-
-    <div class="product-row">
-
-      <div class="product-meta">
-
-        <h3>Apeiron Core</h3>
-
-        <span class="product-tag">Deterministic Orchestration Engine</span>
-
-        <span class="product-status">Core Technology</span>
-
+    <!-- CORE PLATFORM: APEIRON -->
+    <div class="platform-entry">
+      <div class="platform-lead">
+        <div class="platform-title">
+          <h2>Apeiron Platform</h2>
+          <div class="platform-category">Enterprise Automation Platform</div>
+        </div>
+        <div class="platform-status">Status: Core Platform</div>
       </div>
-
-      <p class="product-desc">The foundational execution engine that powers every JieLabs platform, delivering deterministic workflow orchestration, secure systems integration, and high-reliability enterprise automation.</p>
-
+      <p class="platform-desc">
+        Apeiron is the enterprise platform that powers JieLabs software. Built around secure execution, modular architecture, and reliable systems integration, Apeiron provides the foundation that allows every JieLabs solution to scale while remaining secure, resilient, and adaptable.
+      </p>
+      
+      <div class="platform-details">
+        <h4>Built For</h4>
+        <div class="spec-matrix">
+          <div class="spec-item">Enterprise Automation</div>
+          <div class="spec-item">Secure Integrations</div>
+          <div class="spec-item">Workflow Orchestration</div>
+          <div class="spec-item">Private Deployments</div>
+          <div class="spec-item">High Availability</div>
+          <div class="spec-item">Long-Term Scalability</div>
+        </div>
+      </div>
     </div>
 
-
-    <!-- Tier 3: Open Source Technologies -->
-
-    <div class="section-category" style="margin-top: 60px;">Open Source Technologies</div>
-
-    <p class="section-intro">JieLabs actively contributes foundational infrastructure to the open-source community. These projects provide secure building blocks for developers creating reliable AI and enterprise systems.</p>
-
-
-    <div class="product-row">
-
-      <div class="product-meta">
-
-        <h3>Subjectus</h3>
-
-        <span class="product-tag">AI Governance Framework</span>
-
+    <!-- INTEGRATION ECOSYSTEM -->
+    <div class="section-header">Integration Ecosystem</div>
+    <div class="content-block">
+      <p>HOP is designed to integrate with the technology organizations already use. Current integration initiatives include:</p>
+      <div class="spec-matrix" style="margin-top: 20px;">
+        <div class="spec-item">Practice Fusion</div>
+        <div class="spec-item">Microsoft 365</div>
+        <div class="spec-item">Google Workspace</div>
+        <div class="spec-item">QuickBooks</div>
+        <div class="spec-item">Twilio</div>
+        <div class="spec-item">Standards-Based Healthcare APIs</div>
       </div>
-
-      <p class="product-desc">A policy-driven Human-in-the-Loop (HITL) governance framework that validates autonomous AI decisions before execution, improving operational safety and oversight.</p>
-
+      <p style="margin-top: 20px; font-size: 0.95rem;"><em>Additional enterprise connectors continue to expand as the platform evolves.</em></p>
     </div>
 
-
-    <div class="product-row">
-
-      <div class="product-meta">
-
-        <h3>ProofScope</h3>
-
-        <span class="product-tag">Verification &amp; Audit Platform</span>
-
+    <!-- PLATFORM PRINCIPLES -->
+    <div class="section-header">Platform Principles</div>
+    <div class="principles-grid">
+      <div class="principle-card">
+        <h3>Secure by Design</h3>
+        <p>Security is integrated into every layer of the platform from the beginning.</p>
       </div>
-
-      <p class="product-desc">Enterprise-grade cryptographic verification and audit infrastructure that transforms proof artifacts into verifiable, tamper-evident compliance records.</p>
-
+      <div class="principle-card">
+        <h3>Human-Centered Automation</h3>
+        <p>Technology should empower people—not replace them.</p>
+      </div>
+      <div class="principle-card">
+        <h3>Enterprise Ready</h3>
+        <p>Designed to support organizations from a single practice to large multi-location operations.</p>
+      </div>
+      <div class="principle-card">
+        <h3>Modular by Architecture</h3>
+        <p>Organizations can expand capabilities without replacing existing systems.</p>
+      </div>
+      <div class="principle-card font-block" style="grid-column: span 2;">
+        <h3>Built for the Future</h3>
+        <p>Our platforms continuously evolve while preserving compatibility with existing customer environments.</p>
+      </div>
     </div>
 
-
-    <div class="product-row">
-
-      <div class="product-meta">
-
-        <h3>BeaconNode</h3>
-
-        <span class="product-tag">Agent Resource Discovery Engine</span>
-
-      </div>
-
-      <p class="product-desc">A decentralized service discovery framework that enables intelligent agents to locate services, resources, and capabilities across distributed environments.</p>
-
+    <!-- LOOKING AHEAD -->
+    <div class="section-header">Looking Ahead</div>
+    <div class="content-block">
+      <p>
+        HOP is being developed as the operational foundation for modern healthcare organizations. As the platform continues to evolve, future capabilities will expand operational intelligence, enterprise coordination, analytics, executive visibility, and multi-location management—while maintaining compatibility with the clinical systems organizations already rely on.
+      </p>
     </div>
-
-
-    <div class="product-row">
-
-      <div class="product-meta">
-
-        <h3>IronCircuit</h3>
-
-        <span class="product-tag">AI Safety Framework</span>
-
-      </div>
-
-      <p class="product-desc">A lightweight protection layer that prevents runaway costs, unauthorized execution, and unsafe behavior in autonomous AI systems through real-time policy enforcement.</p>
-
-    </div>
-
   </main>
 
-
   <footer class="corporate-footer">
-
     <div class="footer-container">
-
       <div class="footer-brand">
-
         <h4><span class="logo-bold">Jie</span><span class="logo-light">Labs</span></h4>
-
         <p class="footer-division">A division of Pristine Total Care Services LLC</p>
-
       </div>
-
       <div class="footer-nav">
-
         <div class="footer-column">
-
           <h5>Trust &amp; Governance</h5>
-
           <ul class="footer-list">
-
             <li><a href="privacy.html">Privacy Policy</a></li>
-
             <li><a href="terms.html">Terms of Service</a></li>
-
             <li><a href="security.html">Security</a></li>
-
           </ul>
-
         </div>
-
         <div class="footer-column">
-
           <h5>Resources</h5>
-
           <ul class="footer-list">
-
             <li><a href="support.html">Support</a></li>
-
             <li><a href="contact.html">Contact</a></li>
-
             <li><a href="developers.html">Developer Center</a></li>
-
           </ul>
-
         </div>
-
       </div>
-
     </div>
-
     <div class="footer-bottom">
-
       <div>&copy; 2026 JieLabs. All rights reserved. Operational Runtimes Sovereign.</div>
-
     </div>
-
   </footer>
 
-
 </body>
-
 </html>
-
-
