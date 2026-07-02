@@ -15,9 +15,7 @@
       --border-color: #1f2937;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       background-color: var(--bg-dark);
@@ -28,7 +26,7 @@
       line-height: 1.7;
     }
 
-    /* Universal Header matching index.html exactly */
+    /* Universal Header matching all core templates */
     .jl-header {
       display: flex;
       justify-content: space-between;
@@ -41,64 +39,212 @@
       top: 0;
       z-index: 100;
     }
-    .jl-logo { 
-      text-decoration: none; 
-      font-size: 1.5rem; 
-      letter-spacing: -0.05em; 
+    .jl-logo {
+      text-decoration: none;
+      font-size: 1.5rem;
+      letter-spacing: -0.05em;
     }
     .logo-bold { color: var(--text-main); font-weight: 800; }
     .logo-light { color: var(--text-muted); font-weight: 300; }
     .logo-cursor { color: var(--accent-cyan); font-weight: 800; }
     
-    .jl-nav { 
-      display: flex; 
-      gap: 1.5rem; 
-      flex-wrap: wrap; 
-      align-items: center; 
-    }
-    .nav-link { 
-      color: var(--text-muted); 
-      text-decoration: none; 
-      font-size: 0.9rem; 
-      font-weight: 500; 
-      transition: color 0.2s ease; 
+    .jl-nav { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
     }
     .nav-link:hover { color: var(--text-main); }
     .nav-link.active { color: var(--text-main); font-weight: 700; }
-    .nav-link.highlight { color: var(--accent-cyan); }
 
-    /* Layout Portfolio Container */
-    .catalog-container { max-width: 1000px; margin: 60px auto 100px auto; padding: 0 20px; }
-    .catalog-header { text-align: center; margin-bottom: 60px; }
-    .catalog-header h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.04em; margin-bottom: 10px; }
-    
-    /* Section Classification Headers */
-    .section-category {
-      font-size: 1.4rem;
-      font-weight: 700;
+    /* Page Container Layout */
+    .products-container {
+      max-width: 1100px;
+      margin: 60px auto 100px auto;
+      padding: 0 20px;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .page-header h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 15px;
+    }
+    .page-header p {
+      font-size: 1.2rem;
       color: var(--accent-blue);
-      margin: 50px 0 20px 0;
+      max-width: 800px;
+      margin: 0 auto;
+      font-weight: 500;
+    }
+
+    /* Philosophy Banner */
+    .philosophy-banner {
+      background-color: rgba(56, 189, 248, 0.04);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      border-left: 4px solid var(--accent-blue);
+      border-radius: 4px;
+      padding: 25px;
+      margin-bottom: 60px;
+    }
+    .philosophy-banner h3 { margin: 0 0 10px 0; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-main); }
+    .philosophy-banner p { margin: 0; color: var(--text-muted); font-size: 1.05rem; }
+
+    /* The Core Pillars Sections */
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin: 60px 0 25px 0;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
       letter-spacing: -0.02em;
     }
-    .section-intro {
+
+    .pillar-intro {
+      font-size: 1.1rem;
       color: var(--text-muted);
-      font-size: 1.05rem;
       margin-bottom: 30px;
-      max-width: 800px;
     }
 
-    /* Structured Product Rows */
-    .product-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 30px 0; border-bottom: 1px solid var(--border-color); }
-    @media (max-width: 640px) { .product-row { flex-direction: column; gap: 12px; } }
-    .product-meta { min-width: 280px; padding-right: 20px; }
-    .product-meta h3 { margin: 0 0 4px 0; font-size: 1.4rem; font-weight: 700; color: var(--text-main); }
-    .product-tag { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); display: block; margin-bottom: 6px; }
-    .product-status { font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 0.05em; }
-    .product-desc { color: var(--text-muted); margin: 0; font-size: 1rem; max-width: 620px; flex-grow: 1; }
+    /* Platform Architecture Visualization (ASCII Box Design) */
+    .architecture-box {
+      background-color: #090a0d;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 30px;
+      font-family: monospace;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #d1d5db;
+      margin-bottom: 50px;
+      overflow-x: auto;
+    }
+    .arch-title { color: var(--accent-cyan); font-weight: bold; }
+    .arch-subtitle { color: var(--accent-blue); font-weight: bold; }
+    .arch-layer { color: var(--text-main); font-weight: bold; }
 
-    /* Corporate Footer matching layout specs */
-    .corporate-footer { background-color: #090a0d; border-top: 1px solid var(--border-color); padding: 60px 20px 40px 20px; margin-top: 120px; }
-    .footer-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px; }
+    /* Component Grids */
+    .component-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+      margin-bottom: 50px;
+    }
+    .component-card {
+      background-color: var(--bg-container);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 30px;
+    }
+    .component-card h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .component-card p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+    .component-card ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--text-muted);
+    }
+    .component-card li { margin-bottom: 6px; font-size: 0.95rem; }
+
+    /* Timeline Roadmap Layout */
+    .roadmap-timeline {
+      position: relative;
+      margin: 40px 0;
+      padding-left: 30px;
+      border-left: 2px solid var(--border-color);
+    }
+    .roadmap-phase {
+      position: relative;
+      margin-bottom: 45px;
+    }
+    .roadmap-phase::before {
+      content: '';
+      position: absolute;
+      left: -37px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: var(--bg-dark);
+      border: 2px solid var(--accent-blue);
+    }
+    .roadmap-phase.approved::before {
+      border-color: var(--accent-cyan);
+      background-color: var(--accent-cyan);
+    }
+    .phase-badge {
+      display: inline-block;
+      font-family: monospace;
+      font-size: 0.8rem;
+      font-weight: 700;
+      background-color: #1f2937;
+      color: var(--accent-blue);
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    .phase-badge.approved-badge {
+      color: var(--accent-cyan);
+      background-color: rgba(0, 245, 212, 0.1);
+    }
+    .roadmap-phase h4 {
+      margin: 0 0 10px 0;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .roadmap-phase p {
+      color: var(--text-muted);
+      margin: 0 0 15px 0;
+      font-size: 1rem;
+    }
+
+    /* Summary Matrix Block */
+    .summary-matrix {
+      background-color: var(--bg-container);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 40px;
+      margin-top: 60px;
+    }
+    .summary-matrix h3 { margin-top: 0; margin-bottom: 20px; font-size: 1.4rem; font-weight: 800; }
+    .matrix-item { margin-bottom: 25px; }
+    .matrix-item:last-child { margin-bottom: 0; }
+    .matrix-title { font-weight: 700; color: var(--text-main); margin-bottom: 5px; font-size: 1.05rem; }
+    .matrix-desc { color: var(--text-muted); font-size: 1rem; margin: 0; }
+
+    /* Corporate Footer */
+    .corporate-footer {
+      background-color: #090a0d;
+      border-top: 1px solid var(--border-color);
+      padding: 60px 20px 40px 20px;
+      margin-top: 120px;
+    }
+    .footer-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
     .footer-brand h4 { margin: 0 0 8px 0; font-size: 1.25rem; }
     .footer-division { font-size: 0.85rem; color: var(--text-muted); }
     .footer-nav { display: flex; gap: 40px; }
@@ -127,78 +273,173 @@
     </nav>
   </header>
 
-  <main class="catalog-container">
-    <div class="catalog-header">
+  <main class="products-container">
+    <div class="page-header">
       <h1>Platforms &amp; Technologies</h1>
+      <p>Transforming complex healthcare modules into a unified Enterprise Operational ERP architecture.</p>
     </div>
 
-    <!-- Tier 1: Software Platforms -->
-    <div class="section-category">Software Platforms</div>
-    
-    <div class="product-row">
-      <div class="product-meta">
-        <h3>HOS</h3>
-        <span class="product-tag">Healthcare Operating System</span>
-        <span class="product-status">Production Platform</span>
+    <!-- Engineering & Architecture Philosophy -->
+    <div class="philosophy-banner">
+      <h3>Core Design Philosophy</h3>
+      <p>
+        <strong>Never rebuild what already works.</strong> The platform layers, healthcare structures, and execution systems remain structurally stable. Everything moving forward is additive, built to layer securely on top of deterministic execution models without re-engineering stable cores.
+      </p>
+    </div>
+
+    <div class="section-title">The Three-Tier Architecture Stack</div>
+    <p class="pillar-intro">
+      Our ecosystem coordinates the entire operational lifecycle of a medical practice while preserving the Electronic Health Record (EHR) as the strict clinical system of record.
+    </p>
+
+    <!-- Master Structural Blueprint Representation -->
+    <div class="architecture-box">
+Practice Owner
+     │
+Executive Operations Center
+     │
+ ────────────────────────────────────────────────────────────────────────
+ <span class="arch-title">Healthcare Operations ERP (HOP)</span>
+ ────────────────────────────────────────────────────────────────────────
+  Executive Office        Clinical Operations       Financial Operations
+  Communications          Compliance                Human Resources
+  Business Operations     Operational Intelligence  Digital Workforce
+  Practice Digital Twin   Simulation Engine         Organizational Memory
+  Integration Hub
+ ────────────────────────────────────────────────────────────────────────
+ <span class="arch-subtitle">Healthcare Business Engine</span>
+ ────────────────────────────────────────────────────────────────────────
+  Patient Workflow   Scheduling    Billing       Payroll      Email / Fax
+  Eligibility        Notifications Document Processing (Practice Fusion Ready)
+ ────────────────────────────────────────────────────────────────────────
+ <span class="arch-layer">Apeiron Enterprise Platform</span>
+ ────────────────────────────────────────────────────────────────────────
+  Runtime      Security      Execution Engine     Workers     Scheduler
+  Registry     Verification  Integration Engine   Deployment  Health/Recovery
+ ────────────────────────────────────────────────────────────────────────
+  Practice Fusion ── QuickBooks ── Microsoft 365 ── Google Workspace ── Twilio
+    </div>
+
+    <div class="section-title">Core Ecosystem Pillars</div>
+    <div class="component-grid">
+      <div class="component-card">
+        <h3>Apeiron Platform</h3>
+        <p>The underlying reusable enterprise platform built for highly secure execution, deterministic integrations, and local environment isolation controls.</p>
+        <ul>
+          <li>Isolated secure worker engine runtimes</li>
+          <li>Systemic cryptographic process verification</li>
+          <li>Real-time telemetry and health self-recovery</li>
+          <li>Pluggable external service registry adapters</li>
+        </ul>
       </div>
-      <p class="product-desc">An enterprise healthcare operations platform that unifies patient intake, scheduling, provider coordination, billing, payroll automation, and operational intelligence into one secure ecosystem.</p>
-    </div>
 
-    <div class="product-row">
-      <div class="product-meta">
+      <div class="component-card">
+        <h3>HOP ERP</h3>
+        <p>The Healthcare Operations Platform. A cohesive operations ERP that bridges practice finances, personnel queues, administrative compliance, and resource usage metrics.</p>
+        <ul>
+          <li>Cross-departmental task queue pooling</li>
+          <li>Preserves clinical systems as source of truth</li>
+          <li>Integrated facility and layout resource management</li>
+          <li>Comprehensive organizational workflow standard logs</li>
+        </ul>
+      </div>
+
+      <div class="component-card">
         <h3>VEDA Intelligence</h3>
-        <span class="product-tag">Enterprise Operations Assistant</span>
-        <span class="product-status">Integrated Intelligence Layer</span>
+        <p>Our custom digital workforce engine that provides automated system guidance, ambient workflow coordination, and contextual data analysis.</p>
+        <ul>
+          <li>Context-aware task recommendations</li>
+          <li>Human-in-the-loop validation checkpoints</li>
+          <li>Automated operational anomaly detection</li>
+          <li>Predictive trend reporting inputs</li>
+        </ul>
       </div>
-      <p class="product-desc">A private AI operations assistant that provides contextual guidance, workflow automation, document intelligence, and decision support while operating entirely within your organization's secure infrastructure.</p>
     </div>
 
-    <!-- Tier 2: Core Technology -->
-    <div class="section-category" style="margin-top: 60px;">Core Technology</div>
+    <!-- Official HOP v2.0 Architecture Roadmap Section -->
+    <div class="section-title">HOP v2.0 Technical Roadmap</div>
+    <p class="pillar-intro">
+      Moving past disconnected point solutions to achieve an integrated operational model of the modern ambulatory practice environment.
+    </p>
 
-    <div class="product-row">
-      <div class="product-meta">
-        <h3>Apeiron Core</h3>
-        <span class="product-tag">Deterministic Orchestration Engine</span>
-        <span class="product-status">Core Technology</span>
+    <div class="roadmap-timeline">
+      <div class="roadmap-phase approved">
+        <div class="phase-badge approved-badge">Phase 1 — Architecture Approved</div>
+        <h4>Enterprise Operational Data Model (ERP Core)</h4>
+        <p>Establishing the data foundation that forces every internal software module to work from a single unified view. Translates isolated module behaviors into standard tracking objects: Practice, Facility, Department, Provider, Employee, Patient, Insurance, Payer, Vendor, Service, Asset, and Location.</p>
       </div>
-      <p class="product-desc">The foundational execution engine that powers every JieLabs platform, delivering deterministic workflow orchestration, secure systems integration, and high-reliability enterprise automation.</p>
+
+      <div class="roadmap-phase approved">
+        <div class="phase-badge approved-badge">Phase 2 — Architecture Approved</div>
+        <h4>Enterprise Operations Layer</h4>
+        <p>Transforming disconnected application tools into formalized corporate departments. Outfitting individual components—Executive Office, Clinical Ops, Finance, HR, Compliance, and Business Ops—with their own dedicated work queues, custom KPIs, and automated approval logic cascades.</p>
+      </div>
+
+      <div class="roadmap-phase">
+        <div class="phase-badge">Phase 3 — Implementation Pipeline</div>
+        <h4>Practice Digital Twin</h4>
+        <p>Engineering a continuous, real-time digital replication model of active practice operations. Aggregates live patient flow, current clinician capacity, processing claims, active scheduling states, insurance mix metrics, and staff asset utilization into an unbroken operational heartbeat.</p>
+      </div>
+
+      <div class="roadmap-phase">
+        <div class="phase-badge">Phase 4 — System Integration</div>
+        <h4>Simulation Engine</h4>
+        <p>Building predictive scenario modeling algorithms to answer strategic executive questions before decisions are deployed. Models exactly how hiring choices, payroll alterations, capacity adjustments, or multi-location growths impact patient wait times and bottom-line ROI.</p>
+      </div>
+
+      <div class="roadmap-phase">
+        <div class="phase-badge">Phase 5 — Analytics Core</div>
+        <h4>Operational Intelligence Engine</h4>
+        <p>Implementing systemic score metrics to constantly run background health diagnostics across practice efficiency, legal compliance indices, revenue risk tables, and executive KPI forecasting models.</p>
+      </div>
+
+      <div class="roadmap-phase">
+        <div class="phase-badge">Phase 6 — Data Core</div>
+        <h4>Organizational Memory</h4>
+        <p>Developing deep systemic retention capabilities. Allows the software layers to map, study, and remember custom workflow anomalies, provider fulfillment profiles, insurance behaviors, and seasonal baseline patterns over multi-year horizons.</p>
+      </div>
+
+      <div class="roadmap-phase">
+        <div class="phase-badge">Phase 7 — Interface Deployment</div>
+        <h4>Executive Operations Center</h4>
+        <p>Designing the ultimate management dashboard interface. Features morning executive briefings, critical compliance alarms, automated revenue projections, and real-time operational trend timelines designed for instant clarity.</p>
+      </div>
+
+      <div class="roadmap-phase">
+        <div class="phase-badge">Phase 8 — Optimization Layer</div>
+        <h4>Autonomous Operations Loops</h4>
+        <p>Completing automated background workflows using a closed-loop framework (Observe → Analyze → Simulate → Recommend → Approve → Execute → Verify → Learn). Critical automation shifts to proactive task staging while remaining entirely human-approved.</p>
+      </div>
+
+      <div class="roadmap-phase">
+        <div class="phase-badge">Phase 9 — Scaling Architecture</div>
+        <h4>Enterprise Multi-Practice Management</h4>
+        <p>Enabling multi-facility medical networks to coordinate shared resource models, unified corporate payroll processes, and benchmarking matrices across infinite distinct clinic nodes via a single ERP engine.</p>
+      </div>
+
+      <div class="roadmap-phase">
+        <div class="phase-badge">Phase 10 — Ecosystem Extension</div>
+        <h4>Healthcare Marketplace Ecosystem</h4>
+        <p>Creating modular flexibility without touching core code bases. Introduces standard connector marketplace channels, custom adapter kits, industry template packs, and partner SDK profiles for zero-friction expansion.</p>
+      </div>
     </div>
 
-    <!-- Tier 3: Open Source Technologies -->
-    <div class="section-category" style="margin-top: 60px;">Open Source Technologies</div>
-    <p class="section-intro">JieLabs actively contributes foundational infrastructure to the open-source community. These projects provide secure building blocks for developers creating reliable AI and enterprise systems.</p>
-
-    <div class="product-row">
-      <div class="product-meta">
-        <h3>Subjectus</h3>
-        <span class="product-tag">AI Governance Framework</span>
+    <!-- Long Term Strategic Framework Accomplishments Summary Matrix -->
+    <div class="summary-matrix">
+      <h3>The Industry Shift</h3>
+      <p style="color: var(--text-muted); margin-bottom: 30px;">
+        Traditional healthcare systems help staff record clinical data or input independent tasks. JieLabs technologies connect the entire operation.
+      </p>
+      
+      <div class="matrix-item">
+        <div class="matrix-title">The Complete Ambulatory Operation</div>
+        <p class="matrix-desc">While specialized EHR platforms like Practice Fusion remain the trusted source for medical documentation, HOP serves as the unified engine coordinating workflows, communication routing, staff scheduling, corporate accounting, and asset security.</p>
       </div>
-      <p class="product-desc">A policy-driven Human-in-the-Loop (HITL) governance framework that validates autonomous AI decisions before execution, improving operational safety and oversight.</p>
-    </div>
 
-    <div class="product-row">
-      <div class="product-meta">
-        <h3>ProofScope</h3>
-        <span class="product-tag">Verification &amp; Audit Platform</span>
+      <div class="matrix-item">
+        <div class="matrix-title">Cross-Industry Extensibility</div>
+        <p class="matrix-desc">Because the underlying Apeiron Enterprise Platform is engineered to be entirely industry-agnostic, our architecture isolates the business layer from the execution framework. This core separation of concerns ensures the same structural stack can scale seamlessly into legal infrastructure, logistics management, accounting operations, or governance systems without altering platform code bases.</p>
       </div>
-      <p class="product-desc">Enterprise-grade cryptographic verification and audit infrastructure that transforms proof artifacts into verifiable, tamper-evident compliance records.</p>
-    </div>
-
-    <div class="product-row">
-      <div class="product-meta">
-        <h3>BeaconNode</h3>
-        <span class="product-tag">Agent Resource Discovery Engine</span>
-      </div>
-      <p class="product-desc">A decentralized service discovery framework that enables intelligent agents to locate services, resources, and capabilities across distributed environments.</p>
-    </div>
-
-    <div class="product-row">
-      <div class="product-meta">
-        <h3>IronCircuit</h3>
-        <span class="product-tag">AI Safety Framework</span>
-      </div>
-      <p class="product-desc">A lightweight protection layer that prevents runaway costs, unauthorized execution, and unsafe behavior in autonomous AI systems through real-time policy enforcement.</p>
     </div>
   </main>
 
@@ -206,7 +447,7 @@
     <div class="footer-container">
       <div class="footer-brand">
         <h4><span class="logo-bold">Jie</span><span class="logo-light">Labs</span></h4>
-        <p class="footer-division">A division of Pristine Total Care Services LLC</p>
+        <p class="footer-division">A division of Pristine Total Care Services LLC.</p>
       </div>
       <div class="footer-nav">
         <div class="footer-column">
