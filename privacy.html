@@ -4,10 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy | JieLabs</title>
-  <!-- Explicitly importing the Inter font family -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-dark: #0d0e12;
@@ -21,18 +17,18 @@
 
     * {
       box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
     }
 
     body {
       background-color: var(--bg-dark);
       color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.7;
     }
 
-    /* Universal Header matching image_345a5a.png */
+    /* Universal Header matching index.html and all core production pages */
     .jl-header {
       display: flex;
       justify-content: space-between;
@@ -45,131 +41,353 @@
       top: 0;
       z-index: 100;
     }
-
-    .jl-logo { text-decoration: none; font-size: 1.5rem; letter-spacing: -0.05em; }
+    .jl-logo {
+      text-decoration: none;
+      font-size: 1.5rem;
+      letter-spacing: -0.05em;
+    }
     .logo-bold { color: var(--text-main); font-weight: 800; }
     .logo-light { color: var(--text-muted); font-weight: 300; }
     .logo-cursor { color: var(--accent-cyan); font-weight: 800; }
-
-    .jl-nav { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
-    .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s ease; }
+    
+    .jl-nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
     .nav-link:hover { color: var(--text-main); }
-    .nav-link.active { color: var(--accent-cyan); }
+    .nav-link.active { color: var(--text-main); font-weight: 700; }
 
-    /* Layout Container */
-    .policy-container {
-      max-width: 800px;
-      margin: 60px auto;
-      padding: 40px;
+    /* Privacy Layout Content Container */
+    .policy-container { 
+      max-width: 850px; 
+      margin: 60px auto 100px auto; 
+      padding: 0 20px; 
+    }
+    
+    .policy-header { 
+      text-align: center; 
+      margin-bottom: 50px; 
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 30px;
+    }
+    .policy-header h1 { 
+      font-size: 2.5rem; 
+      font-weight: 800; 
+      letter-spacing: -0.04em; 
+      margin-bottom: 10px; 
+    }
+    .policy-date {
+      font-size: 0.95rem;
+      color: var(--accent-blue);
+      font-family: monospace;
+      font-weight: 600;
+    }
+    
+    p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 25px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 45px 0 20px 0;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin: 25px 0 10px 0;
+      color: var(--text-main);
+    }
+
+    /* Structured Lists */
+    ul {
+      margin: 0 0 25px 0;
+      padding-left: 20px;
+      color: var(--text-muted);
+    }
+    li {
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+    }
+    li strong {
+      color: var(--text-main);
+    }
+
+    /* Highlight Callout Boxes */
+    .callout-box {
       background-color: var(--bg-container);
       border: 1px solid var(--border-color);
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      border-left: 4px solid var(--accent-cyan);
+      padding: 25px;
+      border-radius: 0 8px 8px 0;
+      margin: 30px 0;
+    }
+    .callout-box p {
+      margin: 0;
+      font-size: 1.05rem;
     }
 
-    h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; margin: 0 0 5px 0; color: var(--text-main); }
-    .policy-subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 40px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
-    
-    h2 { font-size: 1.4rem; font-weight: 700; margin-top: 40px; margin-bottom: 15px; color: var(--text-main); }
-    p, ul { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 20px; }
-    ul { padding-left: 20px; }
-    li { margin-bottom: 10px; }
-    strong { color: var(--text-main); }
-
-    .compliance-box {
-      background: rgba(56, 189, 248, 0.03);
-      border: 1px solid rgba(56, 189, 248, 0.2);
-      padding: 20px;
-      border-radius: 6px;
-      margin: 25px 0;
+    .alert-box {
+      background-color: var(--bg-container);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--accent-blue);
+      padding: 25px;
+      border-radius: 0 8px 8px 0;
+      margin: 30px 0;
     }
+    .alert-box h3 { margin-top: 0; }
+    .alert-box p { margin: 0; }
 
-    /* Footer Links */
-    .policy-footer {
-      text-align: center;
-      padding: 40px 20px 0 20px;
-      font-size: 0.85rem;
-      color: var(--text-muted);
+    /* Contact Links block */
+    .policy-contact-block {
+      background-color: var(--bg-container);
+      border: 1px solid var(--border-color);
+      padding: 35px;
+      border-radius: 8px;
+      margin-top: 50px;
+    }
+    .policy-contact-block h3 { margin-top: 0; margin-bottom: 15px; }
+    .policy-contact-block p { margin-bottom: 15px; font-size: 1rem; }
+    .policy-email { font-family: monospace; font-size: 1.05rem; color: var(--accent-cyan); text-decoration: none; font-weight: 600; display: block; margin-bottom: 8px; }
+    .policy-email:hover { text-decoration: underline; }
+
+    /* Corporate Footer matching all production templates */
+    .corporate-footer {
+      background-color: #090a0d;
       border-top: 1px solid var(--border-color);
-      margin-top: 60px;
+      padding: 60px 20px 40px 20px;
+      margin-top: 120px;
     }
-    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 15px; }
-    .footer-link { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-    .footer-link:hover { color: var(--accent-cyan); }
-    .footer-divider { color: var(--border-color); }
-
-    @media (max-width: 768px) {
-      .policy-container { margin: 20px; padding: 24px; }
-      h1 { font-size: 2rem; }
+    .footer-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 40px;
     }
+    .footer-brand h4 { margin: 0 0 8px 0; font-size: 1.25rem; }
+    .footer-division { font-size: 0.85rem; color: var(--text-muted); }
+    .footer-nav { display: flex; gap: 40px; }
+    .footer-column h5 { color: var(--text-main); margin: 0 0 15px 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .footer-list { list-style: none; padding: 0; margin: 0; }
+    .footer-list li { margin-bottom: 10px; }
+    .footer-list a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-list a:hover { color: var(--accent-cyan); }
+    .footer-bottom { max-width: 1000px; margin: 40px auto 0 auto; padding-top: 25px; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.85rem; color: var(--text-muted); }
   </style>
 </head>
 <body>
 
   <header class="jl-header">
-    <div class="jl-logo-container">
-      <a href="index.html" class="jl-logo">
-        <span class="logo-bold">Jie</span><span class="logo-light">Labs</span><span class="logo-cursor">_</span>
-      </a>
-    </div>
+    <a href="index.html" class="jl-logo">
+      <span class="logo-bold">Jie</span><span class="logo-light">Labs</span><span class="logo-cursor">_</span>
+    </a>
     <nav class="jl-nav">
       <a href="index.html" class="nav-link">Home</a>
       <a href="solutions.html" class="nav-link">Solutions</a>
-      <a href="products.html" class="nav-link">Products</a>
+      <a href="products.html" class="nav-link">Platforms &amp; Technologies</a>
       <a href="company.html" class="nav-link">Company</a>
-      <a href="developers.html" class="nav-link">Developers</a>
+      <a href="developers.html" class="nav-link">Developer Center</a>
       <a href="security.html" class="nav-link">Security</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </nav>
   </header>
 
   <main class="policy-container">
-    <h1>Privacy Policy</h1>
-    <div class="policy-subtitle">Last Updated: June 2026 // Sovereign Runtime Principles</div>
-
+    <div class="policy-header">
+      <h1>Privacy Policy</h1>
+      <div class="policy-date">Last Updated: July 2026</div>
+    </div>
+    
     <p>
-      At JieLabs, we build localized, deterministic software architectures engineered to safeguard data integrity. Your computational footprint and administrative operational profiles are restricted under zero-trust safety bounds.
+      JieLabs ("we," "our," or "us") respects your privacy and is committed to protecting the information entrusted to us. This Privacy Policy explains what information we collect, how we use it, how we protect it, and the choices available to you. 
     </p>
 
-    <div class="compliance-box">
-      <strong>Sovereign Data Mandate:</strong> JieLabs vertical frameworks (including VHS HOS architectural sandbox environments) process operational inputs through local compute layers. Internal data loops pass fluidly within host memory parameters rather than utilizing centralized third-party data-mining clouds.
-    </div>
-
-    <h2>1. Information We Coordinate</h2>
     <p>
-      Because our primary systems run on localized sandboxes, we only collect or process transactional variables necessary to maintain core stability and account authorization:
+      Our software platforms and underlying systems are designed with user privacy and operational data sovereignty as core architectural principles.
+    </p>
+
+    <h2>Information We Collect</h2>
+    <p>
+      Depending on how you interact with our website or products, we may collect the following classifications of information:
+    </p>
+
+    <h3>1. Contact Information</h3>
+    <p>
+      When voluntarily provided through our consultation forms, request channels, or direct email, we collect:
     </p>
     <ul>
-      <li><strong>Identity Records:</strong> Standard telemetry metadata, basic contact portals, and authorization parameters managed directly via your core profile setup.</li>
-      <li><strong>Telemetry Logs:</strong> High-reliability run-state metrics used strictly by our background monitors (such as ProofScope) to guarantee system execution pathways do not drift.</li>
+      <li><strong>Name</strong> and primary identification data</li>
+      <li><strong>Business email address</strong> and phone details</li>
+      <li><strong>Organization</strong> or enterprise entity name</li>
+      <li><strong>Job title</strong> or corporate role context</li>
+    </ul>
+    <p>
+      This information is used strictly to respond to specific inquiries, provide system demonstrations, and communicate regarding our technical products and services.
+    </p>
+
+    <h3>2. Website Information</h3>
+    <p>
+      Like most modern platforms, we may automatically collect limited technical data through standard web server operations, including:
+    </p>
+    <ul>
+      <li>Browser type and software versions</li>
+      <li>Device identification and hardware parameters</li>
+      <li>Internet Protocol (IP) address</li>
+      <li>Operating system frameworks</li>
+      <li>Specific pages visited, including date and time of access</li>
+    </ul>
+    <p>
+      This data helps us evaluate platform health, monitor performance, and enforce structural website security.
+    </p>
+
+    <h3>3. Product &amp; System Information</h3>
+    <p>
+      Customers using hosted or licensed JieLabs software solutions generate operational metrics necessary to ensure functional platform stability, including:
+    </p>
+    <ul>
+      <li>User authentication events and access timestamps</li>
+      <li>Local environment configuration settings</li>
+      <li>System health metrics and failure alerts</li>
+      <li>Administrative audit trails</li>
+      <li>Operational telemetry indicators</li>
+    </ul>
+    <p>
+      This data is compiled solely to operate, secure, track anomalies, and maintain our systems.
+    </p>
+
+    <div class="callout-box">
+      <h3>What We Do Not Do</h3>
+      <ul>
+        <li>We <strong>never</strong> sell personal information to brokers or third parties.</li>
+        <li>We <strong>never</strong> rent customer contact lists or database records.</li>
+        <li>We <strong>never</strong> share customer information with external marketing or advertising agencies.</li>
+        <li>We <strong>never</strong> pass corporate or user text arrays to train public AI models.</li>
+        <li>We <strong>never</strong> access client deployment environments unless explicitly requested and authorized.</li>
+      </ul>
+    </div>
+
+    <h2>How Information Is Used</h2>
+    <p>
+      Information collected within our frameworks may be used to:
+    </p>
+    <ul>
+      <li>Provide requested software architectures and consulting deliverables</li>
+      <li>Respond directly to technical or enterprise consultation inquiries</li>
+      <li>Analyze diagnostic telemetry to improve our application pipelines</li>
+      <li>Protect and secure our platforms from cyber threats or malicious use</li>
+      <li>Detect, prevent, and mitigate unauthorized infrastructure activity</li>
+      <li>Fulfill operational baseline legal requirements and regulatory protocols</li>
     </ul>
 
-    <h2>2. Processing Guardrails &amp; Third Parties</h2>
+    <h2>Data Security</h2>
     <p>
-      We do not trade, sell, or rent your processing profiles. When interacting with critical industry ecosystems (including staging structures for external EHR/EMR pipelines or sandbox integrations), data transitions are isolated exclusively to pre-validated, cryptographically linked pathways.
+      Protecting customer information is a core software design principle at JieLabs. Our platforms employ multiple security layers, including advanced infrastructure encryption, strict Role-Based Access Controls (RBAC), zero-trust authentication loops, immutable system audit logging, secure network credential storage, and private environment isolation boundaries to shield information from exposure.
     </p>
 
-    <h2>3. Security Architecture &amp; Storage Boundaries</h2>
+    <h2>Data Sovereignty</h2>
     <p>
-      Every downstream product inherits physical and digital isolation barriers enforced by <strong>Apeiron Core</strong> layers. Information is securely retained inside protected environmental pools to prevent cross-tenant data leakage or unauthorized edge parsing.
+      We build solutions optimized for data sovereignty. Many JieLabs systems are architected to support private, on-premises, or isolated cloud infrastructure deployments where data processing and persistent storage remain entirely within the customer's secure perimeter, keeping total control in your hands.
     </p>
 
-    <h2>4. Your Governance Rights</h2>
+    <div class="alert-box">
+      <h3>Healthcare Data &amp; Compliance</h3>
+      <p>
+        JieLabs develops advanced software tools used by healthcare organizations. Our enterprise clients remain solely responsible for determining whether their specific infrastructure implementations are subject to applicable healthcare regulations, including the Health Insurance Portability and Accountability Act (HIPAA). 
+      </p>
+      <p style="margin-top: 15px;">
+        Where required, JieLabs will execute appropriate contractual agreements, including formal <strong>Business Associate Agreements (BAAs)</strong>, to fully support regulated enterprise healthcare deployments.
+      </p>
+    </div>
+
+    <h2>Third-Party Services</h2>
     <p>
-      You maintain absolute command over your infrastructure states. You may audit, scrub, or completely wipe deployment tokens and stored configurations directly through your local dashboard node at any point.
+      Certain platform integrations may connect with external providers selected and managed entirely by the customer, including:
+    </p>
+    <ul>
+      <li>Electronic Health Record (EHR) data environments</li>
+      <li>Federated enterprise identity providers (OIDC/SAML)</li>
+      <li>Private cloud hosting networks</li>
+      <li>Automated administrative email delivery channels</li>
+    </ul>
+    <p>
+      Each external system maintains its own isolated privacy policies and handling methods.
     </p>
 
-    <footer class="policy-footer">
-      <div class="footer-links">
-        <a href="privacy.html" class="footer-link">Privacy Policy</a>
-        <span class="footer-divider">|</span>
-        <a href="terms.html" class="footer-link">Terms of Service</a>
-        <span class="footer-divider">|</span>
-        <a href="security.html" class="footer-link">Security Framework</a>
-      </div>
-      <div>&copy; 2026 JieLabs. All rights reserved. System Runtimes Sovereign.</div>
-    </footer>
+    <h2>Data Retention</h2>
+    <p>
+      We retain personal and technical data records only for the duration required to satisfy active system tasks, maintain necessary operational security, honor corporate contracts, or fulfill relevant legal compliance frameworks. Customers running self-hosted platforms retain exclusive authority over their own database preservation timelines.
+    </p>
+
+    <h2>Your Rights</h2>
+    <p>
+      Depending on your regional location and applicable local statutes, you may possess specific rights regarding your data, including the right to request comprehensive access to your information, update inaccurate data fields, request programmatic deletion where legally viable, or withdraw consent for data processing where previously granted.
+    </p>
+
+    <h2>Children's Privacy</h2>
+    <p>
+      Our enterprise platforms, developer portals, and marketing websites are not engineered for, targeted toward, or intended for individuals under the age of 13.
+    </p>
+
+    <h2>Changes to This Policy</h2>
+    <p>
+      This Privacy Policy may be updated periodically to adjust for new platform offerings, structural compliance revisions, or shifting regulatory mandates. Any updated draft will be published instantly on this page with a revised effective timestamp.
+    </p>
+
+    <div class="policy-contact-block">
+      <h3>Contact Privacy Desk</h3>
+      <p>Please address all inquiries, privacy-related legal questions, or data mapping requests to our corporate privacy desk:</p>
+      <a href="mailto:privacy@jielabs.com" class="policy-email">privacy@jielabs.com</a>
+      <a href="mailto:info@jielabs.com" class="policy-email">info@jielabs.com</a>
+    </div>
   </main>
+
+  <footer class="corporate-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4><span class="logo-bold">Jie</span><span class="logo-light">Labs</span></h4>
+        <p class="footer-division">A division of Pristine Total Care Services LLC.</p>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-column">
+          <h5>Trust &amp; Governance</h5>
+          <ul class="footer-list">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="security.html">Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h5>Resources</h5>
+          <ul class="footer-list">
+            <li><a href="support.html">Support</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="developers.html">Developer Center</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 JieLabs. All rights reserved. Operational Runtimes Sovereign.</div>
+    </div>
+  </footer>
 
 </body>
 </html>
