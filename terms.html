@@ -4,10 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Terms of Service | JieLabs</title>
-  <!-- Explicitly importing the Inter font family -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-dark: #0d0e12;
@@ -15,23 +11,24 @@
       --text-main: #f3f4f6;
       --text-muted: #9ca3af;
       --accent-cyan: #00f5d4;
+      --accent-blue: #38bdf8;
       --border-color: #1f2937;
     }
 
     * {
       box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
     }
 
     body {
       background-color: var(--bg-dark);
       color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.7;
     }
 
-    /* Universal Header matching image_345a5a.png */
+    /* Universal Header matching all core production templates */
     .jl-header {
       display: flex;
       justify-content: space-between;
@@ -44,181 +41,323 @@
       top: 0;
       z-index: 100;
     }
-
-    .jl-logo { text-decoration: none; font-size: 1.5rem; letter-spacing: -0.05em; }
+    .jl-logo {
+      text-decoration: none;
+      font-size: 1.5rem;
+      letter-spacing: -0.05em;
+    }
     .logo-bold { color: var(--text-main); font-weight: 800; }
     .logo-light { color: var(--text-muted); font-weight: 300; }
     .logo-cursor { color: var(--accent-cyan); font-weight: 800; }
-
-    .jl-nav { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
-    .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s ease; }
+    
+    .jl-nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
     .nav-link:hover { color: var(--text-main); }
-    .nav-link.active { color: var(--accent-cyan); }
+    .nav-link.active { color: var(--text-main); font-weight: 700; }
 
-    /* Main Content Container */
-    .policy-container {
-      max-width: 800px;
-      margin: 60px auto;
-      padding: 40px;
+    /* Terms Layout Content Container */
+    .terms-container { 
+      max-width: 850px; 
+      margin: 60px auto 100px auto; 
+      padding: 0 20px; 
+    }
+    
+    .terms-header { 
+      text-align: center; 
+      margin-bottom: 50px; 
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 30px;
+    }
+    .terms-header h1 { 
+      font-size: 2.5rem; 
+      font-weight: 800; 
+      letter-spacing: -0.04em; 
+      margin-bottom: 10px; 
+    }
+    .terms-date {
+      font-size: 0.95rem;
+      color: var(--accent-blue);
+      font-family: monospace;
+      font-weight: 600;
+    }
+    
+    p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 25px;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 45px 0 15px 0;
+      color: var(--text-main);
+      border-bottom: 1px solid #1f2937;
+      padding-bottom: 8px;
+    }
+
+    /* Structured Lists */
+    ul {
+      margin: 0 0 25px 0;
+      padding-left: 20px;
+      color: var(--text-muted);
+    }
+    li {
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+    }
+    li strong {
+      color: var(--text-main);
+    }
+
+    /* Standard Legal Disclaimer Block */
+    .caps-disclaimer {
+      font-family: monospace;
+      font-size: 0.95rem;
       background-color: var(--bg-container);
       border: 1px solid var(--border-color);
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      border-radius: 6px;
+      color: #d1d5db;
+      line-height: 1.6;
     }
 
-    h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; margin-top: 0; margin-bottom: 10px; color: var(--text-main); }
-    
-    .effective-date {
-      color: var(--accent-cyan);
-      font-size: 0.95rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 40px;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 20px;
+    /* Contact Links block */
+    .terms-contact-block {
+      background-color: var(--bg-container);
+      border: 1px solid var(--border-color);
+      padding: 35px;
+      border-radius: 8px;
+      margin-top: 50px;
     }
+    .terms-contact-block h3 { margin-top: 0; margin-bottom: 15px; }
+    .terms-contact-block p { margin-bottom: 15px; font-size: 1rem; }
+    .terms-email { font-family: monospace; font-size: 1.05rem; color: var(--accent-cyan); text-decoration: none; font-weight: 600; display: block; margin-bottom: 8px; }
+    .terms-email:hover { text-decoration: underline; }
 
-    h2 { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 35px; margin-bottom: 12px; color: var(--text-main); display: flex; align-items: center; }
-    h2::before { content: ">"; color: var(--accent-cyan); margin-right: 10px; font-family: monospace; font-weight: 800; }
-
-    p, ul { color: var(--text-muted); margin-bottom: 20px; font-size: 1.05rem; }
-    ul { padding-left: 20px; }
-    li { margin-bottom: 8px; }
-    a { color: var(--accent-cyan); text-decoration: none; transition: opacity 0.2s ease; }
-    a:hover { text-decoration: underline; }
-
-    /* Integrated Compliance Footer */
-    .policy-footer {
-      text-align: center;
-      padding: 40px 20px 0 20px;
-      font-size: 0.85rem;
-      color: var(--text-muted);
+    /* Corporate Footer matching all production templates */
+    .corporate-footer {
+      background-color: #090a0d;
       border-top: 1px solid var(--border-color);
-      margin-top: 60px;
+      padding: 60px 20px 40px 20px;
+      margin-top: 120px;
     }
-    .footer-links {
-      margin-bottom: 15px;
+    .footer-container {
+      max-width: 1000px;
+      margin: 0 auto;
       display: flex;
-      justify-content: center;
-      gap: 20px;
+      justify-content: space-between;
+      align-items: flex-start;
       flex-wrap: wrap;
+      gap: 40px;
     }
-    .footer-link { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-    .footer-link:hover { color: var(--accent-cyan); }
-    .footer-divider { color: var(--border-color); }
-
-    @media (max-width: 768px) {
-      .policy-container { margin: 20px; padding: 24px; }
-      h1 { font-size: 2rem; }
-    }
+    .footer-brand h4 { margin: 0 0 8px 0; font-size: 1.25rem; }
+    .footer-division { font-size: 0.85rem; color: var(--text-muted); }
+    .footer-nav { display: flex; gap: 40px; }
+    .footer-column h5 { color: var(--text-main); margin: 0 0 15px 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .footer-list { list-style: none; padding: 0; margin: 0; }
+    .footer-list li { margin-bottom: 10px; }
+    .footer-list a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-list a:hover { color: var(--accent-cyan); }
+    .footer-bottom { max-width: 1000px; margin: 40px auto 0 auto; padding-top: 25px; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.85rem; color: var(--text-muted); }
   </style>
 </head>
 <body>
 
   <header class="jl-header">
-    <div class="jl-logo-container">
-      <a href="index.html" class="jl-logo">
-        <span class="logo-bold">Jie</span><span class="logo-light">Labs</span><span class="logo-cursor">_</span>
-      </a>
-    </div>
+    <a href="index.html" class="jl-logo">
+      <span class="logo-bold">Jie</span><span class="logo-light">Labs</span><span class="logo-cursor">_</span>
+    </a>
     <nav class="jl-nav">
       <a href="index.html" class="nav-link">Home</a>
       <a href="solutions.html" class="nav-link">Solutions</a>
-      <a href="products.html" class="nav-link">Products</a>
+      <a href="products.html" class="nav-link">Platforms &amp; Technologies</a>
       <a href="company.html" class="nav-link">Company</a>
-      <a href="developers.html" class="nav-link">Developers</a>
+      <a href="developers.html" class="nav-link">Developer Center</a>
       <a href="security.html" class="nav-link">Security</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </nav>
   </header>
 
-  <main class="policy-container">
-    <h1>Terms of Service</h1>
-    <div class="effective-date">Effective Date: June 26, 2026</div>
+  <main class="terms-container">
+    <div class="terms-header">
+      <h1>Terms of Service</h1>
+      <div class="terms-date">Effective Date: July 2026</div>
+    </div>
+    
+    <p>
+      These Terms of Service govern access to and use of the websites, software platforms, applications, APIs, and related services provided by JieLabs, including the Healthcare Operating System (HOS), VEDA Intelligence frameworks, and other enterprise software solutions.
+    </p>
 
     <p>
-      Welcome to JieLabs. These Terms of Service govern the use of software, services, and applications developed by JieLabs, including VHS HOS (Healthcare Operating System), VEDA Intelligence, and related software platforms.
+      By accessing or using JieLabs products or services, you agree to be bound by these Terms. If you are entering into these Terms on behalf of a company, hospital network, or other legal entity, you represent that you possess the authority to bind such entity. If you do not agree to these Terms, you should not access or use our products or services.
     </p>
 
     <h2>1. Acceptance of Terms</h2>
     <p>
-      By accessing or using JieLabs software, you agree to comply with these Terms of Service. If you do not agree with these terms, you should not use the software.
+      Your access to our services is conditioned strictly on your compliance with and acceptance of these Terms. These public framework terms apply to all visitors, users, and enterprise administrators who access or utilize our digital endpoints.
     </p>
 
-    <h2>2. Intended Use</h2>
+    <h2>2. License to Use the Software</h2>
     <p>
-      JieLabs software is intended for authorized healthcare organizations, business users, administrators, and approved personnel. Users are responsible for complying with all applicable laws, regulations, organizational policies, and contractual obligations.
+      JieLabs grants customers a limited, non-exclusive, non-transferable, revocable license to access and use our software platforms strictly in accordance with their active subscription tiers, enterprise license agreements, or executed written contracts. This license does not transfer ownership of the underlying software codebase, infrastructure design layouts, or any native intellectual property rights.
     </p>
 
-    <h2>3. Customer Responsibilities</h2>
+    <h2>3. Intended Use</h2>
+    <p>
+      Our platforms are engineered to provide secure automation, local systems integration, data parsing, and interface layer scaling for enterprise, corporate, and healthcare system networks. All use cases must remain inside boundaries defined by explicit client-side agreements.
+    </p>
+
+    <h2>4. Acceptable Use Restrictions</h2>
+    <p>
+      Users, operators, and developers may not under any circumstances:
+    </p>
     <ul>
-      <li>Maintain the confidentiality of login credentials.</li>
-      <li>Use the software only for authorized business purposes.</li>
-      <li>Protect patient and organizational information.</li>
-      <li>Maintain appropriate security practices within their organization.</li>
-      <li>Ensure only authorized users access the platform.</li>
+      <li>Attempt to reverse engineer, decompile, or extract the source code of any JieLabs application binary or web component.</li>
+      <li>Circumvent, bypass, or test the vulnerabilities of configured infrastructure security controls or edge validation loops.</li>
+      <li>Introduce malicious payloads, software worms, logical viruses, or corrupted code parameters into JieLabs software pipelines.</li>
+      <li>Utilize our software tools or services to perform unlawful, fraudulent, or non-compliant operations.</li>
+      <li>Attempt unauthorized horizontal or vertical privilege access escalation within our administrative services.</li>
+      <li>Share licensed workspace access credentials, technical seats, or API environment keys with unauthorized third parties.</li>
     </ul>
 
-    <h2>4. Healthcare Information</h2>
+    <h2>5. Customer Responsibilities</h2>
     <p>
-      Healthcare information processed through VHS HOS remains the property of the healthcare organization. JieLabs does not claim ownership of customer data.
-    </p>
-    <p>
-      Customers are responsible for ensuring their use of the software complies with all applicable healthcare privacy and security requirements.
+      Customers and designated administrators are solely responsible for provisioning their internal endpoints, maintaining network hardware configuration, securing administrative login credentials, ensuring stable server runtimes for on-premises nodes, and auditing the internal use paths of their employees or active contractors.
     </p>
 
-    <h2>5. Third-Party Integrations</h2>
+    <h2>6. Customer Data Ownership</h2>
     <p>
-      VHS HOS may integrate with third-party systems including electronic health record platforms, accounting systems, email providers, fax services, scheduling platforms, and other approved business applications. Availability of third-party integrations depends on approval and availability from those providers.
+      Customers retain full, exclusive ownership of all business data, healthcare information, uploaded data arrays, documents, and records processed through JieLabs platforms. JieLabs acquires no ownership rights, commercial privileges, or proprietary interests over customer-generated content or input telemetry.
     </p>
 
-    <h2>6. Security</h2>
+    <h2>7. Artificial Intelligence and Automation Assist</h2>
     <p>
-      JieLabs implements commercially reasonable administrative, technical, and organizational safeguards designed to protect system integrity and customer information. No software system can guarantee absolute security, and customers are responsible for maintaining secure operating environments.
+      Certain JieLabs products may incorporate AI-assisted data parsing capabilities or machine-learning suggestion pathways. All automated outputs or structural recommendations are engineered solely to assist qualified users and should never replace professional human judgment, clinical verification, or mandatory operational safety reviews.
     </p>
 
-    <h2>7. Availability</h2>
+    <h2>8. Healthcare Information and Compliance</h2>
     <p>
-      JieLabs strives to provide reliable software and services but does not guarantee uninterrupted availability. Maintenance, updates, third-party outages, and unforeseen events may temporarily affect service availability.
+      JieLabs develops advanced infrastructure software deployed by healthcare organizations. Customers remain entirely responsible for determining whether their specific deployment topology, isolated configurations, and personnel data workflows adhere to regional healthcare regulations, including the Health Insurance Portability and Accountability Act (HIPAA). Wherever legally required, JieLabs will execute appropriate contractual frameworks, including formal <strong>Business Associate Agreements (BAAs)</strong>, to govern enterprise healthcare accounts.
     </p>
 
-    <h2>8. Intellectual Property</h2>
+    <h2>9. Regulatory Compliance</h2>
     <p>
-      All software, documentation, source code, designs, trademarks, and related intellectual property developed by JieLabs remain the exclusive property of JieLabs unless otherwise agreed in writing.
+      Beyond healthcare mandates, clients retain sole ownership and liability for keeping their usage metrics strictly aligned with applicable state privacy laws, organizational compliance directives, global data protection frameworks, and local professional industry licensing parameters.
     </p>
 
-    <h2>9. Limitation of Liability</h2>
+    <h2>10. Third-Party Integrations</h2>
     <p>
-      To the maximum extent permitted by law, JieLabs shall not be liable for indirect, incidental, consequential, special, or punitive damages arising from the use of the software.
+      Our solutions may connect or communicate directly with external environments, including Electronic Health Record (EHR) databases, identity management hubs (OIDC/SAML), and specialized cloud networks. JieLabs does not operate, monitor, or accept liability for the performance, payload processing methods, or reliability of third-party infrastructure.
     </p>
 
-    <h2>10. Changes</h2>
+    <h2>11. Software Updates and Maintenance</h2>
     <p>
-      JieLabs may update these Terms of Service from time to time. Updated versions will be published on this page with a revised effective date.
+      JieLabs may periodically release scheduled patches, infrastructure security updates, system bug fixes, feature revisions, or general performance enhancements. While hosted service distributions receive these modifications seamlessly, customers running localized or self-hosted platforms are responsible for allowing updates according to their internal operational parameters.
     </p>
 
-    <h2>11. Contact</h2>
+    <h2>12. Infrastructure Security</h2>
     <p>
-      Questions regarding these Terms may be directed to:
+      JieLabs agrees to deploy technical and organizational security controls outlined in our core Security Architecture Documentation. Our methods rely on zero-trust execution models, end-to-end data packet encryption, role-based controls, and isolated environment configurations to mitigate risk profiles.
     </p>
 
-    <p style="background-color: rgba(255,255,255,0.03); padding: 15px; border-radius: 6px; border-left: 3px solid var(--accent-cyan);">
-      <strong>JieLabs</strong><br />
-      Email: <a href="mailto:jielabs.dev@gmail.com">jielabs.dev@gmail.com</a>
+    <h2>13. System Availability and Uptime</h2>
+    <p>
+      While we target high infrastructural accessibility for our hosted web endpoints, public availability is provided on an "as available" basis. Public networks face interruptions, server cycles, or maintenance events. Enterprise service level commitments are separated completely from this public document.
     </p>
 
-    <footer class="policy-footer">
-      <div class="footer-links">
-        <a href="privacy.html" class="footer-link">Privacy Policy</a>
-        <span class="footer-divider">|</span>
-        <a href="terms.html" class="footer-link">Terms of Service</a>
-        <span class="footer-divider">|</span>
-        <a href="security.html" class="footer-link">Security Framework</a>
-      </div>
-      <div>&copy; 2026 JieLabs. All rights reserved. System Runtimes Sovereign.</div>
-    </footer>
+    <h2>14. Support Services</h2>
+    <p>
+      Operational technical support, ticket response timelines, maintenance windows, and system-wide service level guarantees are governed explicitly by separate executed enterprise agreements or active subscription contracts. Unless explicitly stated in writing by a corporate officer, these Terms of Service do not constitute an official Service Level Agreement (SLA).
+    </p>
+
+    <h2>15. Suspension of Service</h2>
+    <p>
+      JieLabs reserves the right to temporarily suspend system or API access if we detect that user accounts are compromised, software pipelines are actively being abused, commercial payment obligations are not met, or continued network connectivity introduces an immediate security risk to neighboring nodes or client systems.
+    </p>
+
+    <h2>16. Intellectual Property Rights</h2>
+    <p>
+      All rights, titles, and interests in and to JieLabs assets—including application code, database structures, UI components, branding styles, trade secrets, documentation arrays, and algorithmic design models—remain the exclusive property of JieLabs and its parent entity.
+    </p>
+
+    <h2>17. Termination of Use</h2>
+    <p>
+      Either party may terminate an active service interaction according to terms stated within their respective commercial contracts. Upon termination of service rights: all customer endpoint access protocols cease, intellectual property rights revert fully to original owners, and stored customer data remains subject to contractual retention and safe wipe parameters.
+    </p>
+
+    <h2>18. Limitation of Liability</h2>
+    <p>
+      To the maximum extent permitted by applicable law, JieLabs and its suppliers shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data corruption, or operational system downtime, arising out of or relating to your use of the platforms.
+    </p>
+
+    <h2>19. Warranty Disclaimer</h2>
+    <div class="caps-disclaimer">
+      EXCEPT WHERE EXPRESSLY PROVIDED OTHERWISE IN A SEPARATE WRITTEN CONTRACT, JIELABS PROVIDES ITS SOFTWARE PLATFORMS AND SERVICES ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING WITHOUT LIMITATION ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.
+    </div>
+
+    <h2>20. Governing Law</h2>
+    <p>
+      These Terms of Service and any operational claims or legal disputes arising out of their framework shall be governed by, construed, and enforced according to the laws of the <strong>State of Florida, United States</strong>, without regard to conflict-of-law principles.
+    </p>
+
+    <h2>21. Changes to These Terms</h2>
+    <p>
+      We reserve the right to modify these Terms of Service at any time. If modifications change our core operational terms, we will publish the revised copy on this page with an updated effective date timestamp. Continued interaction with our services implies acceptance of the revised text.
+    </p>
+
+    <h2>22. Entire Agreement</h2>
+    <p>
+      These public Terms of Service, combined with any executed software contracts, non-disclosure agreements, or Business Associate Agreements, constitute the entire legal and structural understanding between you and JieLabs regarding system usage.
+    </p>
+
+    <div class="terms-contact-block">
+      <h3>Contact Legal Desk</h3>
+      <p>For questions, formal corporate notifications, legal compliance documentation, or BAA inquiries, please connect directly with our legal desk:</p>
+      <a href="mailto:legal@jielabs.com" class="terms-email">legal@jielabs.com</a>
+      <a href="mailto:info@jielabs.com" class="terms-email">info@jielabs.com</a>
+    </div>
   </main>
+
+  <footer class="corporate-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4><span class="logo-bold">Jie</span><span class="logo-light">Labs</span></h4>
+        <p class="footer-division">A division of Pristine Total Care Services LLC.</p>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-column">
+          <h5>Trust &amp; Governance</h5>
+          <ul class="footer-list">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="security.html">Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h5>Resources</h5>
+          <ul class="footer-list">
+            <li><a href="support.html">Support</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="developers.html">Developer Center</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 JieLabs. All rights reserved. Operational Runtimes Sovereign.</div>
+    </div>
+  </footer>
 
 </body>
 </html>
