@@ -3,11 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Support &amp; Status | JieLabs</title>
-  <!-- Explicitly importing the Inter font family -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Support Center | JieLabs</title>
   <style>
     :root {
       --bg-dark: #0d0e12;
@@ -17,140 +13,521 @@
       --accent-cyan: #00f5d4;
       --accent-blue: #38bdf8;
       --border-color: #1f2937;
-      --bg-card: rgba(255, 255, 255, 0.02);
+      --status-green: #10b981;
     }
 
     * {
       box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
     }
 
     body {
       background-color: var(--bg-dark);
       color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.7;
     }
 
-    /* Universal Header matching image_345a5a.png */
-    .jl-header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-color); background-color: rgba(13, 14, 18, 0.8); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 100; }
-    .jl-logo { text-decoration: none; font-size: 1.5rem; letter-spacing: -0.05em; }
+    /* Universal Header matching all core production templates */
+    .jl-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border-color);
+      background-color: rgba(13, 14, 18, 0.8);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .jl-logo {
+      text-decoration: none;
+      font-size: 1.5rem;
+      letter-spacing: -0.05em;
+    }
     .logo-bold { color: var(--text-main); font-weight: 800; }
     .logo-light { color: var(--text-muted); font-weight: 300; }
     .logo-cursor { color: var(--accent-cyan); font-weight: 800; }
     
-    .jl-nav { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
-    .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s ease; }
+    .jl-nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
     .nav-link:hover { color: var(--text-main); }
-    .nav-link.active { color: var(--accent-cyan); }
+    .nav-link.active { color: var(--text-main); font-weight: 700; }
 
-    .supp-container { max-width: 850px; margin: 60px auto; padding: 40px; background-color: var(--bg-container); border: 1px solid var(--border-color); border-radius: 12px; }
-    h1 { font-size: 2.5rem; font-weight: 800; margin: 0 0 5px 0; letter-spacing: -0.03em; color: var(--text-main); }
-    .supp-subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 40px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
+    /* Support Layout Content Container */
+    .support-container { 
+      max-width: 1000px; 
+      margin: 60px auto 100px auto; 
+      padding: 0 20px; 
+    }
     
-    h2 { font-size: 1.4rem; font-weight: 700; margin-top: 40px; margin-bottom: 15px; color: var(--text-main); display: flex; align-items: center; letter-spacing: -0.02em; }
-    h2::before { content: ">"; color: var(--accent-cyan); margin-right: 10px; font-family: monospace; font-weight: 800; }
+    .support-header { 
+      text-align: center; 
+      margin-bottom: 40px; 
+    }
+    .support-header h1 { 
+      font-size: 2.5rem; 
+      font-weight: 800; 
+      letter-spacing: -0.04em; 
+      margin-bottom: 10px; 
+    }
+    .support-subtitle {
+      font-size: 1.25rem;
+      color: var(--accent-blue);
+      font-weight: 600;
+    }
+
+    .intro-text {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 20px auto 40px auto;
+      text-align: center;
+    }
+
+    /* Live System Status Banner */
+    .status-banner {
+      background-color: rgba(16, 185, 129, 0.06);
+      border: 1px solid var(--status-green);
+      border-radius: 8px;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .status-message {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #e6f4ea;
+    }
+    .status-pulse {
+      width: 12px;
+      height: 12px;
+      background-color: var(--status-green);
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5); }
+      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+    .status-time {
+      font-family: monospace;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Layout Grids */
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 50px 0 25px 0;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 10px;
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      gap: 30px;
+    }
+    @media (max-width: 500px) { .support-grid { grid-template-columns: 1fr; } }
+
+    .support-card {
+      background-color: var(--bg-container);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 30px;
+    }
+    .support-card h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 1.25rem;
+      color: var(--text-main);
+    }
+    .support-card ul {
+      margin: 0 0 20px 0;
+      padding-left: 20px;
+      color: var(--text-muted);
+    }
+    .support-card li { margin-bottom: 6px; }
     
-    p, ul { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 20px; }
-    ul { padding-left: 20px; }
-    li { margin-bottom: 10px; }
+    .support-email {
+      font-family: monospace;
+      font-size: 1rem;
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+    }
+    .support-email:hover { text-decoration: underline; }
 
-    .status-panel { background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border-color); padding: 20px; border-radius: 8px; font-family: monospace; margin-bottom: 30px; }
-    .status-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.02); }
-    .status-row:last-child { border: none; }
-    .status-label { color: var(--text-muted); }
-    .status-value { color: var(--accent-cyan); font-weight: bold; }
+    /* Corporate Tables */
+    .enterprise-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+      text-align: left;
+      background-color: var(--bg-container);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .enterprise-table th, .enterprise-table td {
+      padding: 14px 20px;
+      font-size: 0.95rem;
+    }
+    .enterprise-table th {
+      background-color: #1e222b;
+      color: var(--text-main);
+      font-weight: 700;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .enterprise-table td {
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border-color);
+    }
+    .enterprise-table tr:last-child td { border-bottom: none; }
+    .indicator-text { color: var(--status-green); font-weight: 600; }
 
-    .changelog-block { background: var(--bg-card); border: 1px solid var(--border-color); padding: 20px; border-radius: 8px; margin-top: 20px; }
-    .version-tag { font-family: monospace; color: var(--accent-blue); font-weight: bold; font-size: 1.1rem; margin-bottom: 5px; }
+    /* 3-Column Product Update Section */
+    .release-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+    .release-card {
+      background-color: rgba(22, 24, 31, 0.5);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 25px;
+    }
+    .release-badge {
+      display: inline-block;
+      font-family: monospace;
+      font-size: 0.8rem;
+      font-weight: 700;
+      background-color: #1f2937;
+      color: var(--accent-blue);
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
 
-    .policy-footer { text-align: center; padding: 40px 20px 0 20px; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--border-color); margin-top: 60px; }
-    .footer-links { margin-bottom: 15px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-    .footer-link { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-    .footer-link:hover { color: var(--accent-cyan); }
-    .footer-divider { color: var(--border-color); }
+    .topic-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .topic-badge {
+      background-color: var(--bg-container);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .notice-box {
+      background-color: var(--bg-container);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--accent-blue);
+      padding: 25px;
+      border-radius: 0 8px 8px 0;
+      color: var(--text-muted);
+    }
+
+    /* Corporate Footer matching all production templates */
+    .corporate-footer {
+      background-color: #090a0d;
+      border-top: 1px solid var(--border-color);
+      padding: 60px 20px 40px 20px;
+      margin-top: 120px;
+    }
+    .footer-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .footer-brand h4 { margin: 0 0 8px 0; font-size: 1.25rem; }
+    .footer-division { font-size: 0.85rem; color: var(--text-muted); }
+    .footer-nav { display: flex; gap: 40px; }
+    .footer-column h5 { color: var(--text-main); margin: 0 0 15px 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .footer-list { list-style: none; padding: 0; margin: 0; }
+    .footer-list li { margin-bottom: 10px; }
+    .footer-list a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-list a:hover { color: var(--accent-cyan); }
+    .footer-bottom { max-width: 1000px; margin: 40px auto 0 auto; padding-top: 25px; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.85rem; color: var(--text-muted); }
   </style>
 </head>
 <body>
 
   <header class="jl-header">
-    <div class="jl-logo-container">
-      <a href="index.html" class="jl-logo">
-        <span class="logo-bold">Jie</span><span class="logo-light">Labs</span><span class="logo-cursor">_</span>
-      </a>
-    </div>
+    <a href="index.html" class="jl-logo">
+      <span class="logo-bold">Jie</span><span class="logo-light">Labs</span><span class="logo-cursor">_</span>
+    </a>
     <nav class="jl-nav">
       <a href="index.html" class="nav-link">Home</a>
       <a href="solutions.html" class="nav-link">Solutions</a>
-      <a href="products.html" class="nav-link">Products</a>
+      <a href="products.html" class="nav-link">Platforms &amp; Technologies</a>
       <a href="company.html" class="nav-link">Company</a>
-      <a href="developers.html" class="nav-link">Developers</a>
+      <a href="developers.html" class="nav-link">Developer Center</a>
       <a href="security.html" class="nav-link">Security</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </nav>
   </header>
 
-  <main class="supp-container">
-    <h1>Support &amp; System Status</h1>
-    <div class="supp-subtitle">Technical Triage, System Telemetry Logs &amp; Issue Tracking</div>
+  <main class="support-container">
+    <div class="support-header">
+      <h1>Support Center</h1>
+      <div class="support-subtitle">Enterprise Support You Can Rely On</div>
+    </div>
+    
+    <p class="intro-text">
+      Whether you are deploying a new platform instance, integrating systemic infrastructure layers, or maintaining live operations in production, JieLabs provides technical assistance engineered to sustain absolute operational continuity.
+    </p>
 
-    <h2>Active Registry Health Status</h2>
-    <div class="status-panel">
-      <div class="status-row">
-        <span class="status-label">Apeiron Core Foundation Runtimes</span>
-        <span class="status-value">[ OPERATIONAL ]</span>
+    <!-- Top Live Status Hook -->
+    <div class="status-banner">
+      <div class="status-message">
+        <span class="status-pulse"></span>
+        All JieLabs Services Operational
       </div>
-      <div class="status-row">
-        <span class="status-label">VHS HOS Secure Sync Gateway</span>
-        <span class="status-value">[ OPERATIONAL ]</span>
+      <div class="status-time">Last Updated: July 1, 2026</div>
+    </div>
+
+    <div class="section-title">Current Platform Status</div>
+    <table class="enterprise-table">
+      <thead>
+        <tr>
+          <th>Platform Module</th>
+          <th>Classification</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>HOS Platform</td>
+          <td>Core Healthcare Operating Environment</td>
+          <td class="indicator-text">🟢 Operational</td>
+        </tr>
+        <tr>
+          <td>VEDA Intelligence Systems</td>
+          <td>Contextual Operational Automation</td>
+          <td class="indicator-text">🟢 Operational</td>
+        </tr>
+        <tr>
+          <td>Apeiron Core</td>
+          <td>Deterministic Execution Layer</td>
+          <td class="indicator-text">🟢 Operational</td>
+        </tr>
+        <tr>
+          <td>Developer Services</td>
+          <td>API Integrations &amp; Sandbox Hubs</td>
+          <td class="indicator-text">🟢 Operational</td>
+        </tr>
+        <tr>
+          <td>Documentation Portal</td>
+          <td>Technical Architecture Manuals</td>
+          <td class="indicator-text">🟢 Operational</td>
+        </tr>
+        <tr>
+          <td>Website Services</td>
+          <td>Public Web Routing Endpoints</td>
+          <td class="indicator-text">🟢 Operational</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="section-title">Technical Support Matrices</div>
+    <div class="support-grid">
+      <div class="support-card">
+        <h3>Technical Support</h3>
+        <ul>
+          <li>Advanced product setup &amp; configuration</li>
+          <li>System framework troubleshooting</li>
+          <li>Patch releases &amp; runtime software updates</li>
+          <li>Anomalous operational pipeline challenges</li>
+        </ul>
+        <a href="mailto:support@jielabs.com" class="support-email">support@jielabs.com</a>
       </div>
-      <div class="status-row">
-        <span class="status-label">VEDA Intelligence Matrix Layers</span>
-        <span class="status-value">[ OPERATIONAL ]</span>
+
+      <div class="support-card">
+        <h3>Integration Support</h3>
+        <ul>
+          <li>API gateway &amp; routing integration</li>
+          <li>EHR database connectivity mapping</li>
+          <li>FHIR compliance implementation pipelines</li>
+          <li>OAuth secure credential configurations</li>
+          <li>Enterprise-wide deployment architecture guidance</li>
+        </ul>
+        <a href="mailto:developer@jielabs.com" class="support-email">developer@jielabs.com</a>
       </div>
-      <div class="status-row">
-        <span class="status-label">Local Data Encryption Rings</span>
-        <span class="status-value">[ OPERATIONAL ]</span>
+
+      <div class="support-card">
+        <h3>Enterprise Consulting</h3>
+        <ul>
+          <li>Evaluating high-availability platform deployments</li>
+          <li>Bespoke infrastructure design blueprints</li>
+          <li>Coordinating custom automation workflows</li>
+        </ul>
+        <a href="mailto:partnerships@jielabs.com" class="support-email">partnerships@jielabs.com</a>
+      </div>
+
+      <div class="support-card">
+        <h3>Security Desk</h3>
+        <ul>
+          <li>Responsible systemic vulnerability disclosures</li>
+          <li>Infrastructure hardening and compliance queries</li>
+          <li>Security validation logs audit access</li>
+        </ul>
+        <a href="mailto:security@jielabs.com" class="support-email">security@jielabs.com</a>
       </div>
     </div>
 
-    <h2>Technical Triage Channels</h2>
-    <p>
-      JieLabs platforms provide dedicated technical tracking protocols to assist operators with system alignment:
-    </p>
-    <ul>
-      <li><strong>Integration &amp; API Support:</strong> Assistance for enterprise sync configurations or authorized partner handshakes (Pending Partner Certification / Staging Sandbox vectors).</li>
-      <li><strong>Bug &amp; Logic Anomaly Reports:</strong> Submit system state trees or anomalous execution console readouts directly to engineering.</li>
-      <li><strong>Feature Allocation Requests:</strong> Propose targeted adjustments to vertical workflow automation components.</li>
-    </ul>
-    <p>
-      For all active triage queues, submit reports via secure email routing to: <a href="mailto:jielabs.dev@gmail.com">jielabs.dev@gmail.com</a>.
-    </p>
+    <div class="section-title">Response Expectations</div>
+    <table class="enterprise-table">
+      <thead>
+        <tr>
+          <th>Inquiry Classification</th>
+          <th>Standard Response Matrix Target</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>General Account Questions</td>
+          <td>1 Business Day</td>
+        </tr>
+        <tr>
+          <td>Technical Platform Support</td>
+          <td>1 Business Day</td>
+        </tr>
+        <tr>
+          <td>Enterprise Architecture &amp; Sales</td>
+          <td>1 Business Day</td>
+        </tr>
+        <tr>
+          <td>Infrastructural Security Reports</td>
+          <td style="color: var(--accent-blue); font-weight: 600;">Immediate Strategic Triage</td>
+        </tr>
+      </tbody>
+    </table>
 
-    <h2>Platform Version Ledger</h2>
-    <div class="changelog-block">
-      <div class="version-tag">v1.0.0 Baseline Build // Stable Launch</div>
-      <p style="margin: 5px 0 10px 0; font-size: 0.95rem; color: var(--text-muted);">Released: June 2026</p>
-      <ul style="margin: 0; font-size: 0.95rem;">
-        <li>Established foundational <strong>Apeiron Core</strong> isolated sandbox runtime execution state loops.</li>
-        <li>Prepared internal staging blueprints for future compliance-mapped <strong>HL7 FHIR R4</strong> object translation schemes inside the <strong>VHS HOS</strong> framework.</li>
-        <li>Configured <strong>OAuth 2.0 secure authorization handling</strong> to govern API token exchange tasks.</li>
-        <li>Validated <strong>VEDA multi-brain parsing channels</strong> for monitored data triage.</li>
+    <div class="section-title">Product &amp; Technology Tracks</div>
+    <div class="release-grid">
+      <div class="release-card">
+        <div class="release-badge">HOS v1.0 — Production</div>
+        <p class="intro-text" style="text-align: left; margin: 0; font-size: 0.95rem;">
+          Initial commercial baseline. Supports localized enterprise workflow automation, clinical process maps, integrated security loop checks, and deep layer connectivity solutions.
+        </p>
+      </div>
+      <div class="release-card">
+        <div class="release-badge">VEDA Intelligence — Dev Track</div>
+        <p class="intro-text" style="text-align: left; margin: 0; font-size: 0.95rem;">
+          Evaluating context-aware system processing bounds, algorithmic workflow orchestration, and localized network optimization engines.
+        </p>
+      </div>
+      <div class="release-card">
+        <div class="release-badge">Apeiron Core — Core Foundation</div>
+        <p class="intro-text" style="text-align: left; margin: 0; font-size: 0.95rem;">
+          Deterministic execution engines providing underlying safe-thread environments and cryptographic performance optimization loops.
+        </p>
+      </div>
+    </div>
+
+    <div class="section-title">Upcoming System Enhancements</div>
+    <div class="support-card" style="background-color: transparent;">
+      <ul style="margin: 0;">
+        <li>Extended enterprise software ecosystem integrations</li>
+        <li>Native healthcare platform adapter arrays</li>
+        <li>Granular administrative reporting dashboards</li>
+        <li>Comprehensive public developer API catalogs</li>
+        <li>Pre-built modular automation micro-suites</li>
       </ul>
     </div>
 
-    <footer class="policy-footer">
-      <div class="footer-links">
-        <a href="privacy.html" class="footer-link">Privacy Policy</a>
-        <span class="footer-divider">|</span>
-        <a href="terms.html" class="footer-link">Terms of Service</a>
-        <span class="footer-divider">|</span>
-        <a href="security.html" class="footer-link">Security Framework</a>
-      </div>
-      <div>&copy; 2026 JieLabs. All rights reserved. System Runtimes Sovereign.</div>
-    </footer>
+    <div class="section-title">Frequently Requested Support Focus Areas</div>
+    <div class="topic-links">
+      <span class="topic-badge">Account Access</span>
+      <span class="topic-badge">Platform Configuration</span>
+      <span class="topic-badge">System Integrations</span>
+      <span class="topic-badge">Data Migration</span>
+      <span class="topic-badge">Product Training</span>
+      <span class="topic-badge">Security Questions</span>
+      <span class="topic-badge">Enterprise Deployment</span>
+    </div>
+
+    <div class="section-title">Documentation &amp; Framework Resources</div>
+    <div class="topic-links">
+      <a href="developers.html" class="topic-badge" style="text-decoration: none; border-color: var(--accent-blue); color: var(--accent-blue);">Developer Center</a>
+      <a href="security.html" class="topic-badge" style="text-decoration: none; border-color: var(--accent-blue); color: var(--accent-blue);">Security Framework</a>
+      <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="topic-badge" style="text-decoration: none; border-color: var(--accent-blue); color: var(--accent-blue);">GitHub Projects</a>
+      <span class="topic-badge" style="opacity: 0.5;">Core API Manuals (Coming Soon)</span>
+    </div>
+
+    <div class="section-title">System Maintenance Protocols</div>
+    <div class="notice-box">
+      Scheduled structural maintenance windows are broadcast to enterprise clients in advance whenever viable. Urgent or emergency remediation protocols may be executed without proactive alerts exclusively when required to insulate global environment security or data integrity layers.
+    </div>
+
   </main>
+
+  <footer class="corporate-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4><span class="logo-bold">Jie</span><span class="logo-light">Labs</span></h4>
+        <p class="footer-division">A division of Pristine Total Care Services LLC.</p>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-column">
+          <h5>Trust &amp; Governance</h5>
+          <ul class="footer-list">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="security.html">Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h5>Resources</h5>
+          <ul class="footer-list">
+            <li><a href="support.html">Support</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="developers.html">Developer Center</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 JieLabs. All rights reserved. Operational Runtimes Sovereign.</div>
+    </div>
+  </footer>
 
 </body>
 </html>
