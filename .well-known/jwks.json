@@ -1,0 +1,12 @@
+{
+  "keys": [
+    {
+      "kty": "RSA",
+      "use": "sig",
+      "kid": "hop-practicefusion-dev-2026-07",
+      "alg": "RS384",
+      "n": "07MBiRJLiiMUPvpR73HnLXzk1HdaTHbDxOZFbCe7o3n0udS0rjgrjEfivyj2XCFx1lJx5UvcLVg7QgBxGxL5fhCbob_XFSWocPEvDmBqtbtObMYxmyLEoEdhfHTbeipxckCNOtn4RWxQ4HOviKh-soCAml9Sw4sC5L7nOkIJCB1AK7YfAkl0zDynycbfzqVaut1U6BZZB5YKW3U288BjxZdamAI23ekUIM_zrlHWjIkxjj-QBXiAB203p75aIozPXWobs-HNL0dqORJjRpe172uSn_Bp1pxUj6CtGKNP5Oth2KXTSIcpXfBxP-xp_uawZx6zXRnSP9e7_oyhVnh7kw",
+      "e": "AQAB"
+    }
+  ]
+}
