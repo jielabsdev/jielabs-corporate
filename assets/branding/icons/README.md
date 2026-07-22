@@ -1,0 +1,1 @@
+Official SVG icons.
